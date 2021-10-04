@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="check"
+            type="boolean" />
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.ui.activity.identityverfication.IdentityVerficationActivityVM" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:background="@color/colorPrimary"
+            android:layout_height="@dimen/toolbar_height">
+
+            <ImageView
+                android:id="@+id/image_Back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="?selectableItemBackground"
+                android:padding="@dimen/dp15"
+                android:onClick="@{()->vm.onBack()}"
+                android:src="@drawable/ic_back_icon"/>
+
+            <TextView
+                android:id="@+id/tv_title"
+                style="@style/TextViewStyleTitleMedium"
+                android:layout_centerInParent="true"
+                android:textColor="@color/white"
+                android:text="@string/identity_verfication"/>
+
+            <ImageView
+                android:id="@+id/imgAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="?selectableItemBackground"
+                android:padding="@dimen/dp15"
+                android:layout_alignParentEnd="true"
+                android:onClick="@{v->vm.onClick(v)}"
+                android:src="@drawable/ic_plus_icon"/>
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_identity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:id="@+id/noIdentity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:text="@string/no_identity_added"/>
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/spin_kit"
+                style="@style/SpinKitView.Large.ThreeBounce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="300dp"
+                android:layout_marginLeft="150dp"
+                android:visibility="@{check?View.VISIBLE:View.GONE}"
+                app:SpinKit_Color="?textColorTheme" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+</layout>

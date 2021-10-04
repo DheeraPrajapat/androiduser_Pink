@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="vm"
+            type="com.marius.valeyou.ui.fragment.loadtype.removaljob.when.WhenActivityVM" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/back_gradient_view">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:layout_marginTop="@dimen/dp150"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp100"
+                android:layout_marginStart="-50dp"
+                android:layout_marginTop="@dimen/dp100"
+                android:layout_marginEnd="-50dp"
+                android:background="@color/white"
+                android:rotation="-10" />
+
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp60"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginEnd="@dimen/dp10"
+            android:layout_marginBottom="@dimen/dp5"
+            app:cardCornerRadius="@dimen/dp10">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:overScrollMode="never"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_margin="@dimen/dp10">
+
+                    <LinearLayout
+                        android:id="@+id/ll_time_picker"
+                        android:onClick="@{v->vm.onClick(v)}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:orientation="vertical">
+                        <TextView
+                            style="@style/TextViewStyleSubTitleRegular"
+                            android:text="@string/pick_time"
+                            android:layout_marginStart="@dimen/dp10"
+                            android:drawableLeft="@drawable/ic_pick_time_icon"
+                            android:drawablePadding="@dimen/dp5"
+                            android:layout_marginTop="@dimen/dp10"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp10"
+                            android:layout_marginEnd="@dimen/dp10"
+                            android:layout_marginTop="@dimen/dp5"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_hour"
+                                android:layout_width="@dimen/dp60"
+                                android:layout_height="@dimen/dp60"
+                                style="@style/TextViewStyleSubTitleRegular"
+                                android:text="10"
+                                android:gravity="center"
+                                android:textSize="@dimen/sp25"
+                                android:background="@drawable/back_round_corner1"/>
+
+                            <TextView
+                                android:layout_width="@dimen/dp30"
+                                android:layout_height="@dimen/dp60"
+                                style="@style/TextViewStyleSubTitleRegular"
+                                android:text=":"
+                                android:gravity="center"
+                                android:textSize="@dimen/sp25"
+                                />
+
+                            <TextView
+                                android:id="@+id/tv_minutes"
+                                android:layout_width="@dimen/dp60"
+                                android:layout_height="@dimen/dp60"
+                                style="@style/TextViewStyleSubTitleRegular"
+                                android:text="20"
+                                android:gravity="center"
+                                android:textSize="@dimen/sp25"
+                                android:background="@drawable/back_round_corner1"/>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:paddingStart="@dimen/dp10">
+                                <TextView
+                                    android:id="@+id/tv_am_pm"
+                                    style="@style/TextViewStyleSubTitleRegular"
+                                    android:text="AM"
+                                    android:layout_centerVertical="true" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/dp15"
+                        android:weightSum="2">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_margin="@dimen/dp10"
+                            android:padding="@dimen/dp10"
+                            android:background="@drawable/back_round_corner2"
+                            android:backgroundTint="@color/white"
+                            android:elevation="@dimen/dp2"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/tv_start_month"
+                                style="@style/TextViewStyleSubTitleRegular"
+                                android:text="July"
+                                android:textColor="@color/edit_text" />
+
+                            <TextView
+                                android:id="@+id/tv_start_year"
+                                android:layout_below="@+id/tv_start_month"
+                                style="@style/TextViewStyleSubTitleRegular"
+                                android:textColor="@color/grey"
+                                android:text="2020" />
+
+                            <TextView
+                                android:id="@+id/tv_start_date"
+                                style="@style/TextViewStyleTitleMedium"
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentEnd="true"
+                                android:textSize="@dimen/dp20"
+                                android:text="23" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_margin="@dimen/dp10"
+                            android:padding="@dimen/dp10"
+                            android:background="@drawable/back_round_corner2"
+                            android:backgroundTint="@color/white"
+                            android:elevation="@dimen/dp2"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/tv_end_month"
+                                style="@style/TextViewStyleSubTitleRegular"
+                                android:text="July"
+                                android:textColor="@color/edit_text" />
+
+                            <TextView
+                                android:id="@+id/tv_end_year"
+                                android:layout_below="@+id/tv_end_month"
+                                style="@style/TextViewStyleSubTitleRegular"
+                                android:textColor="@color/grey"
+                                android:text="2020" />
+
+                            <TextView
+                                android:id="@+id/tv_end_date"
+                                style="@style/TextViewStyleTitleMedium"
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentEnd="true"
+                                android:textSize="@dimen/dp20"
+                                android:text="26" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <com.archit.calendardaterangepicker.customviews.DateRangeCalendarView
+                        android:id="@+id/calendar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:disable_date_color="@color/grey_light"
+                        app:range_color="@color/range_color"
+                        app:selected_date_circle_color="?textColorTheme"
+                        app:title_color="@color/grey"
+                        app:week_color="@color/edit_text"
+                        app:text_size_title="@dimen/dp18"
+                        app:text_size_week="@dimen/dp14"
+                        app:text_size_date="@dimen/dp14"/>
+
+                    <Button
+                        android:id="@+id/btn_save"
+                        android:layout_below="@+id/cv_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp40"
+                        android:layout_marginStart="@dimen/dp10"
+                        android:layout_marginEnd="@dimen/dp10"
+                        android:layout_gravity="center_vertical"
+                        style="@style/RectangleButtonStyle"
+                        android:onClick="@{(v)->vm.onClick(v)}"
+                        android:text="@string/save"
+                        android:textColor="@color/white"
+                        android:layout_marginBottom="@dimen/dp40"
+                        android:foreground="?selectableItemBackground"
+                        android:textSize="@dimen/sp14" />
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </androidx.cardview.widget.CardView>
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/toolbar_layout"
+            app:vm="@{vm}" />
+
+    </RelativeLayout>
+
+</layout>

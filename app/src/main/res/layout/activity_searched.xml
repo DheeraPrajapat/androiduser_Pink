@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".localMarketModel.ui.activity.allCategory.AllCategoryActivity">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="check"
+            type="boolean" />
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.localMarketModel.ui.activity.searched.SearchedActivityVM" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/pageBgColor"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@color/colorPrimaryDark">
+
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:text="@string/searched_keyword"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp16" />
+
+            <ImageView
+                android:id="@+id/imgBack"
+                android:layout_width="@dimen/toolbar_height"
+                android:layout_height="match_parent"
+                android:background="?selectableItemBackground"
+                android:onClick="@{()->vm.onBack()}"
+                android:padding="@dimen/dp15"
+                android:src="@drawable/ic_back_white" />
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSearched"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/txtNoData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/no_data_found"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</layout>

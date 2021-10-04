@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="position"
+            type="Integer" />
+
+        <variable
+            name="bean"
+            type="com.marius.valeyou.data.beans.respbean.CategoryListBean" />
+
+    </data>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_item"
+        android:foreground="?selectableItemBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/dp5"
+        android:layout_margin="@dimen/dp5">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp15"
+            android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_icon"
+                    android:layout_width="@dimen/dp40"
+                    android:layout_height="@dimen/dp40"
+                    android:padding="@dimen/dp5"
+                    android:layout_gravity="center"
+                    app:job_image="@{bean.image}"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    style="@style/TextViewStyleSubTitleRegular"
+                    android:text="@{bean.name}"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:layout_toRightOf="@+id/iv_icon"
+                    android:layout_centerVertical="true"
+                    android:paddingStart="@dimen/dp10"
+                    android:textColor="@color/black"
+                    />
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

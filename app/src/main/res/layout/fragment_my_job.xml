@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="loading"
+            type="boolean" />
+
+        <variable
+            name="check"
+            type="boolean" />
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.ui.fragment.myjob.MyJobFragmentVM" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/back_gradient_view"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:layout_marginTop="@dimen/dp150"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp100"
+                android:background="@color/white"
+                android:layout_marginTop="@dimen/dp100"
+                android:rotation="-10"
+                android:layout_marginStart="-50dp"
+                android:layout_marginEnd="-50dp"
+                />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/dp100"
+            android:layout_marginBottom="@dimen/dp80">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp10"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:id="@+id/ll_one"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:foreground="?selectableItemBackground"
+                    android:onClick="@{v->vm.onClick(v)}"
+                    android:layout_weight="1">
+
+                    <TextView
+                        style="@style/TextViewStyleTitleMedium"
+                        android:text="@string/all_jobs"
+                        android:textColor="@{check?@color/grey_light:@color/colorPrimary}"
+                        android:padding="@dimen/dp10"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp2"
+                        android:background="@color/colorPrimary"/>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/ll_two"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:foreground="?selectableItemBackground"
+                    android:layout_weight="1">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:entries="@array/job_type"
+                        android:layout_centerVertical="true"
+                        app:selectedValue="@={vm.text}"
+                        android:layout_alignParentEnd="true"/>
+
+                    <ImageView
+                        android:id="@+id/iv_filter"
+                        android:onClick="@{v->vm.onClick(v)}"
+                        android:foreground="?selectableItemBackground"
+                        android:layout_width="30dp"
+                        android:padding="5dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/ic_filter_icon"
+                        android:layout_centerVertical="true"
+                        />
+
+                    <!--<TextView
+                        style="@style/TextViewStyleTitleMedium"
+                        android:text="Past"
+                        android:textColor="@{check?@color/colorPrimary:@color/grey_light}"
+                        android:padding="@dimen/dp10"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp2"
+                        android:background="@{check?@color/colorPrimary:@color/grey_light}"/>-->
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <com.marius.valeyou.util.NonSwipeableViewPager
+                android:id="@+id/vp_job"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                android:visibility="gone"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_upcoming"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                android:layout_marginEnd="@dimen/dp10"
+                android:layout_marginStart="@dimen/dp10"
+                android:scrollbars="none"
+                />
+
+
+
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_add_jobb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fabSize="normal"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/dp60"
+            android:src="@drawable/ic_add_icon"
+            android:layout_marginEnd="@dimen/dp20"
+            android:tint="@color/white"
+            android:backgroundTint="?textColorTheme"
+            android:onClick="@{v->vm.onClick(v)}"
+            android:visibility="gone" />
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/spin_kit"
+            style="@style/SpinKitView.Large.ThreeBounce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="@{loading?View.VISIBLE:View.GONE}"
+            app:SpinKit_Color="?textColorTheme" />
+
+    </RelativeLayout>
+        <FrameLayout
+            android:layout_width="@dimen/dp50"
+            android:layout_height="@dimen/dp50"
+            android:layout_gravity="right"
+           >
+
+            <ImageView
+                android:id="@+id/notificationIcon"
+                android:layout_width="@dimen/dp50"
+                android:layout_height="@dimen/dp50"
+                android:src="@drawable/ic_notification_icon"
+                android:foreground="?selectableItemBackground"
+                android:onClick="@{v->vm.onClick(v)}"
+                android:padding="@dimen/dp15"
+                android:tint="@color/white"
+                />
+
+            <TextView
+                android:id="@+id/notificationCount"
+                android:layout_width="@dimen/dp20"
+                android:layout_height="@dimen/dp20"
+                android:layout_gravity="bottom|right"
+                android:textAlignment="center"
+                android:visibility="gone"
+                android:padding="1dp"
+                android:textSize="@dimen/dp13"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="@dimen/dp3"
+                android:textColor="@color/white"
+                android:fontFamily="@font/sfpro_regular"
+                android:background="@drawable/badge_shape"
+                />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/noData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:text="@string/no_job_found"/>
+
+    </FrameLayout>
+
+</layout>

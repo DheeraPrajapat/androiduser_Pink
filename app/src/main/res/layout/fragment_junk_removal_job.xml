@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="check"
+            type="boolean" />
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.ui.fragment.loadtype.removaljob.JunkRemovalJobFragmentVM" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/back_gradient_view">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <include android:id="@+id/header"
+                    layout="@layout/toolbar_layout"
+                    app:vm="@{vm}"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:layout_marginTop="@dimen/dp150"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp100"
+                    android:background="@color/white"
+                    android:layout_marginTop="@dimen/dp100"
+                    android:rotation="-10"
+                    android:layout_marginStart="-50dp"
+                    android:layout_marginEnd="-50dp"
+                    />
+
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp60"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginEnd="@dimen/dp10"
+                android:layout_marginBottom="@dimen/dp10"
+                app:cardCornerRadius="@dimen/dp10">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fillViewport="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_margin="@dimen/dp10">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:visibility="gone"
+                                android:padding="@dimen/dp10">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    style="@style/TextViewStyleTitleMedium"
+                                    android:text="Selected Subcategories"
+                                    android:textColor="@color/edit_text"
+                                    android:layout_centerVertical="true" />
+
+                                <TextView
+                                    android:id="@+id/tv_change"
+                                    android:onClick="@{v->vm.onClick(v)}"
+                                    android:foreground="?selectableItemBackground"
+                                    android:layout_width="wrap_content"
+                                    style="@style/TextViewStyleTitleMedium"
+                                    android:text="Change"
+                                    android:padding="@dimen/dp5"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true" />
+
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/tv_subcategory"
+                                android:layout_width="match_parent"
+                                style="@style/TextViewStyleSubTitleRegular"
+                                android:text=""
+                                android:textColor="@color/edit_text"
+                                android:layout_marginStart="@dimen/dp10"
+                                android:layout_marginBottom="@dimen/dp10"
+                                android:layout_centerVertical="true" />
+
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rl_one"
+                            android:onClick="@{v->vm.onClick(v)}"
+                            android:foreground="?selectableItemBackground"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/back_round_corner2"
+                            android:padding="@dimen/dp10"
+                            android:layout_margin="@dimen/dp5"
+                            android:backgroundTint="@color/white"
+                            android:elevation="@dimen/dp2">
+
+                            <ImageView
+                                android:id="@+id/iv_one"
+                                android:layout_width="@dimen/dp24"
+                                android:layout_height="@dimen/dp24"
+                                android:src="@drawable/ic_miles_icon"
+                                android:layout_margin="@dimen/dp10"
+                                />
+
+                            <TextView
+                                android:layout_toRightOf="@+id/iv_one"
+                                android:layout_toLeftOf="@+id/iv_next_one"
+                                android:layout_width="match_parent"
+                                style="@style/TextViewStyleSubTitleRegular"
+                                android:text="@string/where"
+                                android:textColor="@color/edit_text"
+                                android:layout_centerVertical="true"
+                                />
+
+                            <ImageView
+                                android:id="@+id/iv_next_one"
+                                android:layout_width="@dimen/dp24"
+                                android:layout_height="@dimen/dp24"
+                                android:layout_alignParentEnd="true"
+                                android:src="@drawable/ic_next_icon"
+                                android:layout_margin="@dimen/dp10"
+                                />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rl_two"
+                            android:onClick="@{v->vm.onClick(v)}"
+                            android:foreground="?selectableItemBackground"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/back_round_corner2"
+                            android:padding="@dimen/dp10"
+                            android:layout_margin="@dimen/dp5"
+                            android:backgroundTint="@color/white"
+                            android:elevation="@dimen/dp2">
+
+                            <ImageView
+                                android:id="@+id/iv_two"
+                                android:layout_width="@dimen/dp24"
+                                android:layout_height="@dimen/dp24"
+                                android:src="@drawable/ic_calendar_icon"
+                                android:layout_margin="@dimen/dp10"
+                                />
+
+                            <TextView
+                                android:layout_toRightOf="@+id/iv_two"
+                                android:layout_width="match_parent"
+                                style="@style/TextViewStyleSubTitleRegular"
+                                android:text="@string/when"
+                                android:textColor="@color/edit_text"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/iv_next_two"
+                                />
+
+
+                            <ImageView
+                                android:id="@+id/iv_next_two"
+                                android:layout_width="@dimen/dp24"
+                                android:layout_height="@dimen/dp24"
+                                android:layout_alignParentEnd="true"
+                                android:src="@drawable/ic_next_icon"
+                                android:layout_margin="@dimen/dp10"
+                                />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rl_three"
+                            android:onClick="@{v->vm.onClick(v)}"
+                            android:foreground="?selectableItemBackground"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/back_round_corner2"
+                            android:padding="@dimen/dp10"
+                            android:layout_margin="@dimen/dp5"
+                            android:backgroundTint="@color/white"
+                            android:elevation="@dimen/dp2">
+
+                            <ImageView
+                                android:id="@+id/iv_three"
+                                android:layout_width="@dimen/dp24"
+                                android:layout_height="@dimen/dp24"
+                                android:src="@drawable/ic_photo_icon"
+                                android:layout_margin="@dimen/dp10"
+                                />
+
+                            <TextView
+                                android:layout_toRightOf="@+id/iv_three"
+                                android:layout_width="match_parent"
+                                style="@style/TextViewStyleSubTitleRegular"
+                                android:text="@string/photo"
+                                android:textColor="@color/edit_text"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/iv_next_three"
+                                />
+
+                            <ImageView
+                                android:id="@+id/iv_next_three"
+                                android:layout_width="@dimen/dp24"
+                                android:layout_height="@dimen/dp24"
+                                android:layout_alignParentEnd="true"
+                                android:src="@drawable/ic_next_icon"
+                                android:layout_margin="@dimen/dp10"
+                                />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rl_four"
+                            android:onClick="@{v->vm.onClick(v)}"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/back_round_corner2"
+                            android:padding="@dimen/dp10"
+                            android:layout_margin="@dimen/dp5"
+                            android:backgroundTint="@color/white"
+                            android:elevation="@dimen/dp2">
+
+                            <ImageView
+                                android:id="@+id/iv_four"
+                                android:layout_width="@dimen/dp24"
+                                android:layout_height="@dimen/dp24"
+                                android:src="@drawable/ic_photo_icon"
+                                android:layout_margin="@dimen/dp10"
+                                />
+
+                            <TextView
+                                android:layout_toRightOf="@+id/iv_four"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp44"
+                                style="@style/TextViewStyleSubTitleRegular"
+                                android:text="@string/estimated_price"
+                                android:gravity="center_vertical"
+                                android:textColor="@color/edit_text"
+                                android:layout_toLeftOf="@+id/iv_next_four"
+                                />
+
+                            <ImageView
+                                android:id="@+id/iv_next_four"
+                                android:layout_width="@dimen/dp24"
+                                android:layout_height="@dimen/dp24"
+                                android:layout_alignParentEnd="true"
+                                android:src="@drawable/ic_next_icon"
+                                android:layout_margin="@dimen/dp10"
+                                android:rotation="90"
+                                />
+
+                            <RelativeLayout
+                                android:id="@+id/view_set_price"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_below="@+id/iv_next_four">
+
+                            <TextView
+                                android:id="@+id/tv_range"
+                                style="@style/TextViewStyleSubTitleRegular"
+                                android:layout_centerHorizontal="true"
+                                android:textColor="@color/grey"
+                                android:text="R$ 0"/>
+
+                            <com.crystal.crystalrangeseekbar.widgets.CrystalSeekbar
+                                android:id="@+id/price_seek_bar"
+                                android:layout_below="@+id/tv_range"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:min_value="20"
+                                app:max_value="1000"
+                                app:steps="5"
+                                android:layout_marginBottom="20dp"
+                                app:bar_color="@color/grey_light"
+                                app:bar_highlight_color="@color/colorPrimary"
+                                app:left_thumb_color="@color/colorPrimary"
+                                app:data_type="_integer"/>
+
+
+                            <EditText
+                                android:id="@+id/et_price"
+                                style="@style/EditText_Regular"
+                                android:padding="10dp"
+                                android:ellipsize="end"
+                                android:singleLine="true"
+                                android:layout_marginRight="10sp"
+                                android:onClick="@{(v)->vm.onClick(v)}"
+                                android:background="@drawable/white_back_with_doted_border"
+                                android:layout_width="match_parent"
+                                android:textColor="@color/edit_text"
+                                android:hint="@string/value"
+                                android:inputType="number"
+                                android:gravity="center_vertical"
+                                android:layout_below="@+id/price_seek_bar"
+                                />
+
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:layout_below="@+id/view_set_price">
+
+                                <Switch
+                                    android:id="@+id/swt_negociation"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/dp44"/>
+
+                                <TextView
+                                    style="@style/TextViewStyleSubTitleRegular"
+                                    android:textColor="@color/grey"
+                                    android:text="@string/I_want_an_offer"/>
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rl_five"
+                            android:onClick="@{v->vm.onClick(v)}"
+                            android:foreground="?selectableItemBackground"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/back_round_corner2"
+                            android:padding="@dimen/dp10"
+                            android:layout_margin="@dimen/dp5"
+                            android:backgroundTint="@color/white"
+                            android:elevation="@dimen/dp2">
+
+                            <ImageView
+                                android:id="@+id/iv_five"
+                                android:layout_width="@dimen/dp24"
+                                android:layout_height="@dimen/dp24"
+                                android:src="@drawable/ic_description"
+                                android:layout_margin="@dimen/dp10"
+                                />
+
+                            <TextView
+                                android:layout_toRightOf="@+id/iv_five"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp44"
+                                style="@style/TextViewStyleSubTitleRegular"
+                                android:text="@string/set_title"
+                                android:gravity="center_vertical"
+                                android:textColor="@color/edit_text"
+                                android:layout_toLeftOf="@+id/iv_next_five"
+                                />
+
+                            <ImageView
+                                android:id="@+id/iv_next_five"
+                                android:layout_width="@dimen/dp24"
+                                android:layout_height="@dimen/dp24"
+                                android:layout_alignParentEnd="true"
+                                android:src="@drawable/ic_next_icon"
+                                android:layout_margin="@dimen/dp10"
+                                />
+
+                        </RelativeLayout>
+
+                        <Button
+                            android:id="@+id/btn_next"
+                            android:layout_below="@+id/cv_details"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp40"
+                            android:layout_margin="@dimen/dp20"
+                            android:layout_gravity="center_vertical"
+                            style="@style/RectangleButtonStyle"
+                            android:onClick="@{(v)->vm.onClick(v)}"
+                            android:text="@string/add_job"
+                            android:textColor="@color/grey_light"
+                            android:enabled="false"
+                            android:visibility="visible"
+                            android:foreground="?selectableItemBackground"
+                            android:textSize="@dimen/sp14" />
+
+                    </LinearLayout>
+
+                </ScrollView>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/spin_kit"
+            style="@style/SpinKitView.Large.ThreeBounce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="@{check?View.VISIBLE:View.GONE}"
+            app:SpinKit_Color="?textColorTheme" />
+
+    </RelativeLayout>
+
+</layout>

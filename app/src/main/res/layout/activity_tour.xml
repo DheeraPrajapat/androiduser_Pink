@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="check"
+            type="boolean" />
+
+        <variable
+            name="value"
+            type="String" />
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.ui.activity.tourpage.TourActivityVM" />
+    </data>
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp200"
+            android:layout_centerVertical="true"
+            />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp_tour"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never" />
+
+        <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+            android:layout_below="@+id/view"
+            android:id="@+id/tabDots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:dotsColor="@color/white"
+            app:dotsCornerRadius="5dp"
+            app:dotsSize="10dp"
+            app:dotsSpacing="4dp"
+            app:dotsWidthFactor="1.5"
+            android:layout_centerHorizontal="true"
+            app:selectedDotColor="@color/grey"
+            android:layout_marginTop="@dimen/dp20"
+            app:progressMode="true" />
+
+        <Button
+            android:id="@+id/b_start_signup"
+            style="@style/RectangleButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp45"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/dp40"
+            android:layout_marginTop="@dimen/dp40"
+            android:layout_marginEnd="@dimen/dp40"
+            android:layout_marginBottom="@dimen/dp40"
+            android:backgroundTint="@color/white"
+
+            android:foreground="?selectableItemBackground"
+            android:onClick="@{v->vm.onClick(v)}"
+            android:text="@{value}"
+            android:textColor="?textColorTheme"
+            android:textSize="@dimen/sp16" />
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,143 @@
+package com.marius.valeyou.ui.activity.signup;
+
+import com.marius.valeyou.data.beans.base.ApiResponse;
+import com.marius.valeyou.data.beans.base.SimpleApiResponse;
+import com.marius.valeyou.data.beans.signup.SignupData;
+import com.marius.valeyou.data.local.SharedPref;
+import com.marius.valeyou.data.remote.helper.NetworkErrorHandler;
+import com.marius.valeyou.data.remote.helper.Resource;
+import com.marius.valeyou.data.repo.WelcomeRepo;
+import com.marius.valeyou.di.base.viewmodel.BaseActivityViewModel;
+import com.marius.valeyou.util.event.SingleRequestEvent;
+import com.marius.valeyou.util.location.LiveLocationDetecter;
+
+import java.net.HttpURLConnection;
+import java.util.Map;
+
+import javax.inject.Inject;
+
+import io.reactivex.SingleObserver;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
+import retrofit2.HttpException;
+
+public class SignupActivityVM extends BaseActivityViewModel {
+
+    private final SharedPref sharedPref;
+    public final LiveLocationDetecter liveLocationDetecter;
+    private final NetworkErrorHandler networkErrorHandler;
+    private final WelcomeRepo welcomeRepo;
+    final SingleRequestEvent<SignupData> userBean = new SingleRequestEvent<>();
+    final SingleRequestEvent<SimpleApiResponse> sendOTPEvent = new SingleRequestEvent<>();
+    final SingleRequestEvent<SimpleApiResponse> verifyEmailEvent = new SingleRequestEvent<>();
+
+
+    @Inject
+    public SignupActivityVM(SharedPref sharedPref, LiveLocationDetecter liveLocationDetecter, NetworkErrorHandler networkErrorHandler, WelcomeRepo welcomeRepo) {
+
+        this.sharedPref = sharedPref;
+        this.liveLocationDetecter = liveLocationDetecter;
+        this.networkErrorHandler = networkErrorHandler;
+        this.welcomeRepo = welcomeRepo;
+    }
+
+    public void signup(Map<String, String> map, int device_type , int ngo) {
+        welcomeRepo.signupApi(map,device_type,ngo).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread()).subscribe(new SingleObserver<ApiResponse<SignupData>>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                compositeDisposable.add(d);
+                userBean.setValue(Resource.loading(null));
+            }
+
+            @Override
+            public void onSuccess(ApiResponse<SignupData> signupDataApiResponse) {
+                if (signupDataApiResponse.getStatus() == HttpURLConnection.HTTP_OK) {
+                    userBean.setValue(Resource.success(signupDataApiResponse.getData(), signupDataApiResponse.getMsg()));
+                } else {
+                    userBean.setValue(Resource.error(null, signupDataApiResponse.getMsg()));
+                }
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                if (e instanceof HttpException) {
+                    HttpException exception = (HttpException) e;
+                    if (exception.code() == 409){
+                        userBean.setValue(Resource.error(null, "Email or Phone Number Already Exist."));
+                    } else {
+                        userBean.setValue(Resource.error(null, networkErrorHandler.getErrMsg(e)));
+                    }
+                } else {
+                    userBean.setValue(Resource.error(null, networkErrorHandler.getErrMsg(e)));
+                }
+            }
+        });
+    }
+
+
+    public void sendOTP(String email){
+        welcomeRepo.sendOTP(email).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread()).subscribe(new SingleObserver<SimpleApiResponse>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                compositeDisposable.add(d);
+                sendOTPEvent.setValue(Resource.loading(null));
+            }
+
+            @Override
+            public void onSuccess(SimpleApiResponse response) {
+
+                if (response.getStatus() == HttpURLConnection.HTTP_OK) {
+
+                    sendOTPEvent.setValue(Resource.success(null, response.getMsg()));
+
+                } else {
+
+                    sendOTPEvent.setValue(Resource.error(null, response.getMsg()));
+
+                }
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+                sendOTPEvent.setValue(Resource.error(null, networkErrorHandler.getErrMsg(e)));
+
+            }
+        });
+    }
+
+    public void verifyEmail(String email,String otp){
+        welcomeRepo.verifyEmail(email,otp).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread()).subscribe(new SingleObserver<SimpleApiResponse>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                compositeDisposable.add(d);
+                verifyEmailEvent.setValue(Resource.loading(null));
+            }
+
+            @Override
+            public void onSuccess(SimpleApiResponse response) {
+
+                if (response.getStatus() == HttpURLConnection.HTTP_OK) {
+
+                    verifyEmailEvent.setValue(Resource.success(null, response.getMsg()));
+
+                } else {
+
+                    verifyEmailEvent.setValue(Resource.error(null, response.getMsg()));
+
+                }
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+                verifyEmailEvent.setValue(Resource.error(null, networkErrorHandler.getErrMsg(e)));
+
+            }
+        });
+    }
+}

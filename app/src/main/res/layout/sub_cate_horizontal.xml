@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<RelativeLayout
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/sub_cate_img"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_cars"
+        android:layout_marginTop="4dp"
+        android:padding="8dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sub_cate_img"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:text="Audi AB L"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:id="@+id/name"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:textSize="12dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cars"
+        android:textSize="10dp"
+        android:textColor="@color/black"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/name"
+        android:layout_marginBottom="1dp"
+        />
+
+</RelativeLayout>
+
+
+</RelativeLayout>

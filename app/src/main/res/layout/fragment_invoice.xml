@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="loading"
+            type="boolean" />
+
+        <variable
+            name="bean"
+            type="com.marius.valeyou.data.beans.respbean.JobDetailsBean" />
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.ui.fragment.myjob.jobdetails.invoice.InvoiceFragmentVM" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/back_gradient_view">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:layout_marginTop="@dimen/dp150"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp100"
+                android:background="@color/white"
+                android:layout_marginTop="@dimen/dp100"
+                android:rotation="-10"
+                android:layout_marginStart="-50dp"
+                android:layout_marginEnd="-50dp"
+                />
+
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp60"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginEnd="@dimen/dp10"
+            android:layout_marginBottom="@dimen/dp10"
+            app:cardCornerRadius="@dimen/dp10">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/dp10"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="80dp"
+                    android:layout_margin="10sp"
+                    app:cardCornerRadius="@dimen/dp10"
+                    android:layout_height="80dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    app:job_detail_image_src='@{bean.orderImages}'
+                   />
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp10"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:text='@{bean.title}'
+                        />
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:text='@{bean.city}'
+                        android:drawableLeft="@drawable/ic_miles_icon"
+                        android:textSize="@dimen/sp12"
+                        android:textColor="@color/edit_text"/>
+
+                    <TextView
+                        android:id="@+id/txtTime"
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:drawableLeft="@drawable/ic_calendar_icon"
+                        android:textSize="@dimen/sp12"
+                        android:textColor="@color/edit_text"/>
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:text='@{bean.description}'
+                        android:textSize="@dimen/sp12"
+                        android:textColor="@color/edit_text"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_one"
+            style="@style/TextViewStyleTitleMedium"
+            android:padding="@dimen/dp10"
+            android:textSize="@dimen/sp14"
+            android:text="@string/payment_information"
+            android:layout_below="@+id/cv_top"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp10"
+            android:layout_below="@+id/tv_one"
+            android:id="@+id/cv_two">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp10"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:text="@string/amount"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/grey"/>
+
+                    <TextView
+                        android:id="@+id/tv_end_price"
+                        style="@style/TextViewStyleTitleMedium"
+                        android:padding="@dimen/dp10"
+                        android:textSize="@dimen/sp14"
+                        android:textColor="@color/grey"
+                        android:layout_alignParentEnd="true"
+                        />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp1"
+                    android:background="@color/grey_light"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:text="@string/service_fee"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/grey"/>
+
+                    <TextView
+                        android:id="@+id/tv_service_fee"
+                        style="@style/TextViewStyleTitleMedium"
+                        android:padding="@dimen/dp10"
+                        android:textSize="@dimen/sp14"
+                        android:textColor="@color/grey"
+                        android:layout_alignParentEnd="true"
+                        />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp1"
+                    android:background="@color/grey_light"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:text="@string/total_amount"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/grey"/>
+
+                    <TextView
+                        android:id="@+id/tv_total"
+                        style="@style/TextViewStyleTitleMedium"
+                        android:padding="@dimen/dp10"
+                        android:textSize="@dimen/sp14"
+                        android:textColor="@color/grey"
+                        android:layout_alignParentEnd="true"
+                        />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_below="@+id/cv_two">
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp45"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                style="@style/RectangleButtonStyle"
+                android:onClick="@{(v)->vm.onClick(v)}"
+                android:text="@string/cancel"
+                android:layout_margin="@dimen/dp10"
+                android:background="@drawable/back_round_corner1"
+                android:backgroundTint="?textColorTheme"
+                android:foreground="?selectableItemBackground"
+                android:textSize="@dimen/sp14" />
+
+            <Button
+                android:id="@+id/btn_pay"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp45"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                style="@style/RectangleButtonStyle"
+                android:onClick="@{(v)->vm.onClick(v)}"
+                android:text="@string/pay"
+                android:layout_margin="@dimen/dp10"
+                android:textColor="@color/white"
+                android:foreground="?selectableItemBackground"
+                android:textSize="@dimen/sp14" />
+
+        </LinearLayout>
+
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/spin_kit"
+            style="@style/SpinKitView.Large.ThreeBounce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="@{loading?View.VISIBLE:View.GONE}"
+            app:SpinKit_Color="?textColorTheme" />
+
+    </RelativeLayout>
+
+</layout>

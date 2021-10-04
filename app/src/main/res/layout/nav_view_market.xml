@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="bean"
+            type="com.marius.valeyou.data.beans.signup.SignupData" />
+
+        <variable
+            name="profile"
+            type="String" />
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.localMarketModel.ui.activity.main.MainLocalMarketActivityVM" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:fitsSystemWindows="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp150"
+            android:background="@color/colorPrimary" />
+
+
+        <LinearLayout
+            android:id="@+id/llNav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp20"
+            android:layout_marginVertical="@dimen/dp10"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_profile"
+                android:layout_width="@dimen/dp76"
+                android:layout_height="@dimen/dp76"
+                android:padding="@dimen/dp1"
+                android:scaleType="centerCrop"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="@dimen/dp1"
+                app:profile_image="@{bean.image}" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/dp10">
+
+                <TextView
+                    android:id="@+id/tvName"
+                    style="@style/TextViewStyleTitleMedium"
+                     android:textColor="@color/white"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textSize="@dimen/sp16" />
+
+                <TextView
+                    style="@style/TextViewStyleSubTitleRegular"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:text="@{bean.email}"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textSize="@dimen/sp12" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/llNav"
+            app:cardCornerRadius="@dimen/dp50">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_drawer_items"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="@dimen/dp20" />
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</layout>

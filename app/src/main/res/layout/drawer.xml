@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:fresco="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main_RL"
+        android:focusableInTouchMode="true"
+        tools:context=".market_place.Drawer.Drawer">
+
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/drawerlayout_id">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:id="@+id/header"
+                    android:layout_marginStart="-15dp"
+                    android:background="@color/colorAccent">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:id="@+id/menu_option_id"
+                            android:src="@drawable/ic_menu_options_white"
+                            android:padding="14dp" />
+
+                        <com.facebook.drawee.view.SimpleDraweeView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:id="@+id/profile_pic"
+                            android:layout_marginLeft="48dp"
+                            android:src="@drawable/ic_profile_gray"
+                            android:padding="8dp"
+                            fresco:failureImage="@drawable/ic_profile_gray"
+                            fresco:placeholderImage="@drawable/ic_profile_gray"
+                            app:roundAsCircle="true" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/tv_id"
+                            android:layout_toRightOf="@+id/profile_pic"
+                            android:layout_centerVertical="true"
+                            android:gravity="center_vertical"
+                            android:text="Brazil"
+                            android:textColor="@color/white"
+                            style="@style/TextViewStyleTitleBold"
+                            android:textSize="16dp" />
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="match_parent"
+                            android:id="@+id/arrow_id"
+                            android:layout_toRightOf="@+id/tv_id"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:src="@drawable/ic_arrow_down"
+                            android:padding="4dp" />
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:id="@+id/iv2_id"
+                            android:src="@drawable/ic_like"
+                            android:padding="14dp"
+                            android:layout_toLeftOf="@+id/iv1_id"
+                            android:layout_alignParentRight="true" />
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:id="@+id/iv1_id"
+                            android:src="@drawable/ic_notification_white"
+                            android:padding="14dp"
+                            android:visibility="gone"
+                            android:layout_alignParentRight="true" />
+
+                    </RelativeLayout>
+
+                </androidx.appcompat.widget.Toolbar>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/fl_id"
+                    android:visibility="gone">
+
+                </FrameLayout>
+
+                <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/srl_id">
+
+                    <include layout="@layout/home" />
+
+
+                </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+            </LinearLayout>
+
+            <com.google.android.material.navigation.NavigationView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/nav_view_id"
+                android:background="@color/colorPrimary"
+                android:layout_gravity="start"
+                android:fitsSystemWindows="true"
+                app:itemIconTint="@color/gray">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/nav_body"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.navigation.NavigationView>
+
+        </androidx.drawerlayout.widget.DrawerLayout>
+        <!--</android.support.v4.widget.SwipeRefreshLayout>-->
+
+    </RelativeLayout>
+</layout>

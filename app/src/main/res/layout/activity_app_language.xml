@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="check"
+            type="boolean" />
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.ui.activity.languages.AppLanguageActivityVM" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iv_top"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp170"
+            android:src="@drawable/login_top_icon"
+            android:scaleType="fitXY"
+            />
+
+        <LinearLayout
+            android:id="@+id/top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp180">
+
+            <ImageView
+                android:layout_width="@dimen/dp120"
+                android:layout_height="@dimen/dp80"
+                android:src="@drawable/app_logo"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/dp40"
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_below="@+id/top_layout"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                style="@style/TextViewStyleSubTitleRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dp18"
+                android:layout_marginTop="@dimen/dp10"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:text="@string/choose_your_perefered_language"/>
+
+            <TextView
+                style="@style/TextViewStyleSubTitleRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dp15"
+                android:textAlignment="textStart"
+                android:layout_marginTop="@dimen/dp10"
+                android:textColor="@color/grey"
+                android:text="@string/select_your_language"/>
+
+
+            <LinearLayout
+                android:id="@+id/ll_engLang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/back_round_corner2"
+                android:layout_marginTop="@dimen/dp10"
+                android:onClick="@{(v)->vm.onClick(v)}"
+                android:padding="@dimen/dp15">
+
+                <com.marius.valeyou.util.glide.CircleImageView
+                    android:layout_width="@dimen/dp50"
+                    android:layout_height="@dimen/dp50"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/eng_flag"/>
+
+
+
+                <TextView
+                    style="@style/TextViewStyleSubTitleRegular"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="English"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dp20"/>
+
+
+                <ImageView
+                    android:id="@+id/tickImgEng"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_tick"
+                    android:padding="5dp"
+                    android:background="@drawable/green_circle"
+                    android:layout_gravity="center"/>
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_portLang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:onClick="@{(v)->vm.onClick(v)}"
+                android:background="@drawable/back_round_corner2"
+                android:layout_marginTop="@dimen/dp10"
+                android:padding="@dimen/dp15">
+
+                <com.marius.valeyou.util.glide.CircleImageView
+                    android:layout_width="@dimen/dp50"
+                    android:layout_height="@dimen/dp50"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/port"/>
+
+
+
+                <TextView
+                    style="@style/TextViewStyleSubTitleRegular"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Português"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dp20"/>
+
+
+                <ImageView
+                    android:id="@+id/tickImgPort"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_tick"
+                    android:padding="5dp"
+                    android:visibility="gone"
+                    android:background="@drawable/green_circle"
+                    android:layout_gravity="center"/>
+
+
+
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/save"
+                android:textColor="@color/white"
+                android:onClick="@{(v)->vm.onClick(v)}"
+                android:layout_marginTop="@dimen/dp40"
+                style="@style/RectangleButtonStyle"/>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>

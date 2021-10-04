@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="check"
+            type="boolean" />
+
+        <variable
+            name="bean"
+            type="com.marius.valeyou.data.beans.respbean.JobDetailsBean" />
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.ui.fragment.myjob.reschedule.RescheduleActivityVM" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/back_gradient_view">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp150"
+                android:background="@color/white" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp100"
+                android:background="@color/white"
+                android:layout_marginTop="@dimen/dp100"
+                android:rotation="-10"
+                android:layout_marginStart="-50dp"
+                android:layout_marginEnd="-50dp"
+                />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/rl_one"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/back_round_corner2"
+            android:padding="@dimen/dp10"
+            android:layout_marginTop="70dp"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/white"
+            android:elevation="@dimen/dp2">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/back_round_corner2"
+                android:padding="@dimen/dp10"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/white"
+                android:elevation="@dimen/dp2">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/iv_one"
+                    android:layout_width="@dimen/dp70"
+                    android:layout_height="@dimen/dp70"
+                    app:cardCornerRadius="@dimen/dp10"
+                    android:visibility="visible"
+                    android:layout_margin="@dimen/dp10">
+                    <ImageView
+                        android:id="@+id/job_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+
+                        />
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_toRightOf="@id/iv_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            style="@style/TextViewStyleSubTitleRegular"
+                            android:layout_marginTop="2dp"
+                            android:text='@{bean.title}'
+                            android:textSize="15dp"
+                            />
+
+                        <TextView
+                            android:layout_below="@+id/iv_one"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sfpro_bold"
+                            android:textColor="@color/black"
+                            android:layout_marginLeft="@dimen/dp10"
+                            android:textSize="18dp"
+                            />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:textSize="@dimen/sp12"
+                        android:textColor="@color/edit_text"
+                        android:layout_marginTop="@dimen/dp5"
+                        android:drawableLeft="@drawable/ic_miles_icon"
+                        android:drawablePadding="@dimen/dp5"
+                        android:text='@{bean.city}' />
+
+                    <TextView
+                        android:id="@+id/txtDate"
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:textSize="@dimen/sp12"
+                        android:textColor="@color/edit_text"
+                        android:layout_marginTop="@dimen/dp5"
+                        android:drawableLeft="@drawable/ic_calendar_icon"
+                        android:drawablePadding="@dimen/dp5"
+
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            style="@style/TextViewStyleSubTitleRegular"
+                            android:textColor="@color/edit_text"
+                            android:text="@string/price"/>
+
+                        <TextView
+                            android:id="@+id/price"
+                            style="@style/TextViewStyleSubTitleRegular"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:textColor="@color/green"
+                            android:text='@{bean.bidPrice==0?" : "+bean.endPrice:" : "+bean.bidPrice+""}'/>
+
+
+                        <ImageView
+                            android:id="@+id/iv_chat"
+                            android:layout_width="40dp"
+                            android:layout_gravity="right"
+                            android:padding="7dp"
+                            android:visibility="gone"
+                            android:onClick="@{(v)->vm.onClick(v)}"
+                            android:src="@drawable/ic_chat_sidemenu"
+                            android:background="?attr/selectableItemBackground"
+                            android:layout_height="40dp"/>
+
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/dp10"
+                android:layout_below="@+id/rl_one">
+
+                <TextView
+                    style="@style/TextViewStyleSubTitleRegular"
+                    android:padding="@dimen/dp2"
+                    android:textSize="@dimen/sp14"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/colorPrimary"
+                    android:text="@string/description"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/dp13"
+                    android:padding="5sp"
+                    android:text='@{bean.description}'
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/sfpro_regular"/>
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/select_date"
+                android:text="Select Date and Time"
+                android:background="@drawable/doted_border"
+                android:padding="@dimen/dp10"
+                android:onClick="@{(v)->vm.onClick(v)}"
+                android:layout_marginTop="@dimen/dp30"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+            <Button
+                android:id="@+id/rescheduleBtn"
+                android:layout_width="@dimen/dp200"
+                android:layout_height="wrap_content"
+                style="@style/RectangleButtonStyle"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp20"
+                android:text="Reschedule"
+                android:onClick="@{(v)->vm.onClick(v)}"
+                android:textColor="@color/white"
+                />
+
+        </LinearLayout>
+
+        <include android:id="@+id/header"
+            layout="@layout/toolbar_transparent"
+            app:vm="@{vm}"/>
+    </RelativeLayout>
+
+</layout>

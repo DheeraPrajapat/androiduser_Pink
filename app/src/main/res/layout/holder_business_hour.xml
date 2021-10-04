@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/dp5">
+
+        <TextView
+            style="@style/TextViewStyleSubTitleRegular"
+            android:padding="@dimen/dp10"
+            android:text="@{bean.day}"
+            android:textColor="@color/grey" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp5">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40">
+
+                <ImageView
+                    android:layout_width="@dimen/dp40"
+                    android:layout_height="@dimen/dp40"
+                    android:background="@color/divider" />
+
+                <TextView
+                    style="@style/TextViewStyleSubTitleRegular"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/dp10"
+                    android:text='@{bean.fromTime+" to "+bean.toTime}'
+                    android:textColor="@color/edit_text" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <data>
+
+        <variable
+            name="bean"
+            type="com.marius.valeyou.data.beans.respbean.ProviderBusinessHoursBean" />
+
+        <variable
+            name="callback"
+            type="com.marius.valeyou.di.base.adapter.SimpleRecyclerViewAdapter.SimpleCallback" />
+    </data>
+</layout>

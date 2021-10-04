@@ -1,0 +1,43 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: file('buildLibs/dependencies.gradle')
+apply from: file('buildLibs/config.gradle')
+
+buildscript {
+    apply from: file('buildLibs/buildscript.gradle')
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven {
+            url 'https://maven.fabric.io/public'
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.0.2'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.2.0'
+        projectDependencies.each {
+            add(it.configuration, it.dependency)
+        }
+        classpath ('com.google.firebase:firebase-plugins:1.1.0') {
+            exclude group: 'com.google.guava', module: 'guava-jdk5'
+        }
+    }
+}
+
+allprojects {
+    repositories {
+
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+
+        google()
+        jcenter()
+        mavenCentral()
+        maven {
+            url 'https://maven.google.com/'
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

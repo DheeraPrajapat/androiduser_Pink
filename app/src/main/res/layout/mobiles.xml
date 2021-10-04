@@ -1,0 +1,1223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fl_id"
+    android:background="@color/off_white">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:id="@+id/mbl_rl_id"
+                    android:background="@drawable/bottom_gray_line_white"
+                    android:layout_marginTop="100dp"
+                    >
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:id="@+id/iv_id"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_mobiles"
+                        android:layout_marginStart="15dp"
+                        />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rl_id"
+                        android:layout_toEndOf="@+id/iv_id"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tv_id"
+                            android:text="Mobiles"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:textSize="14dp"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_id"
+                            android:text="Used and Quikr Assured Mobiles"
+                            />
+
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_arrow_next"
+                        android:padding="18dp"
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:id="@+id/tablets_rl_id"
+                    android:background="@drawable/bottom_gray_line_white"
+                    >
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:id="@+id/iv1_id"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_mobiles"
+                        android:layout_marginStart="15dp"
+                        />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rl1_id"
+                        android:layout_toEndOf="@+id/iv1_id"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tv1_id"
+                            android:text="Tablets"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:textSize="14dp"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv1_id"
+                            android:text="ipads,Samsung,Asus Zenbal,iBall"
+                            />
+
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_arrow_next"
+                        android:padding="18dp"
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:id="@+id/acces_rl_id"
+                    android:background="@drawable/bottom_gray_line_white"
+                    >
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:id="@+id/iv2_id"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_mobiles"
+                        android:layout_marginStart="15dp"
+                        />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rl2_id"
+                        android:layout_toEndOf="@+id/iv2_id"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tv2_id"
+                            android:text="Accessories"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:textSize="14dp"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv2_id"
+                            android:text="Cases and Covers, Memory Cards"
+                            />
+
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_arrow_next"
+                        android:padding="18dp"
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:id="@+id/wear_rl_id"
+                    android:background="@drawable/bottom_gray_line_white"
+                    >
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:id="@+id/iv3_id"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_mobiles"
+                        android:layout_marginStart="15dp"
+                        />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rl3_id"
+                        android:layout_toEndOf="@+id/iv3_id"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tv3_id"
+                            android:text="Wearables"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:textSize="14dp"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv3_id"
+                            android:text="Smart Watches, Fitness Brands, VRs"
+                            />
+
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_arrow_next"
+                        android:padding="18dp"
+                        />
+
+                </RelativeLayout>
+
+
+
+
+
+
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:text="Popular Brands"
+                    android:textColor="@color/black"
+                    android:gravity="bottom"
+                    android:padding="15dp"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:weightSum="3">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginEnd="1dp"
+                        android:background="@color/white"
+                        >
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:id="@+id/apple_iv_id"
+                            android:src="@drawable/image_placeholder"
+                            android:padding="10dp"
+                            android:layout_centerHorizontal="true"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_alignParentBottom="true"
+                            android:paddingBottom="5dp"
+                            android:text="Apple"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:background="@color/white">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:id="@+id/moto_iv_id"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/image_placeholder"
+                            android:padding="10dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_alignParentBottom="true"
+                            android:paddingBottom="5dp"
+                            android:text="Motorola"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="1dp"
+                        android:background="@color/white">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:id="@+id/samsung_iv_id"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/image_placeholder"
+                            android:padding="10dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:paddingBottom="5dp"
+                            android:text="Samsung"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:weightSum="3">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginEnd="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:background="@color/white">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:id="@+id/micromax_iv_id"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/image_placeholder"
+                            android:padding="10dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:paddingBottom="5dp"
+                            android:text="Micromax"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:layout_marginEnd="1dp"
+                        android:layout_marginBottom="1dp">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:id="@+id/lenovo_iv_id"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/image_placeholder"
+                            android:padding="10dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:paddingBottom="5dp"
+                            android:text="Lenovo"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:layout_marginBottom="1dp">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:id="@+id/xiaomi_iv_id"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/image_placeholder"
+                            android:padding="10dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:paddingBottom="5dp"
+                            android:text="Xiaomi"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:id="@+id/ll5_id"
+                    android:visibility="gone"
+                    android:weightSum="3">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginBottom="1dp">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:id="@+id/karbonn_iv_id"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/image_placeholder"
+                            android:padding="10dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:paddingBottom="5dp"
+                            android:text="Kanbonn"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginBottom="1dp">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:id="@+id/intex_iv_id"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/image_placeholder"
+                            android:padding="10dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:paddingBottom="5dp"
+                            android:text="Intex"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginBottom="1dp">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:id="@+id/sony_iv_id"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/image_placeholder"
+                            android:padding="10dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:paddingBottom="5dp"
+                            android:text="Sony"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:id="@+id/ll6_id"
+                    android:weightSum="3"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginEnd="1dp"
+                        >
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:id="@+id/lg_iv_id"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/image_placeholder"
+                            android:padding="10dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:paddingBottom="5dp"
+                            android:text="LG"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:background="@color/white"
+                        android:layout_marginBottom="1dp">
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:id="@+id/vm_tv_id"
+                    android:text="View More"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:background="@drawable/bottom_gray_line_white"
+                    />
+
+
+
+
+
+
+
+
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@color/white"
+                    android:layout_marginTop="15dp"
+                    android:scrollbars="none"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:background="@drawable/bottom_gray_line_white">
+
+                        <RelativeLayout
+                            android:layout_width="250dp"
+                            android:layout_height="match_parent"
+                            android:id="@+id/quikrbazar_rl_id">
+
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:id="@+id/iv4_id"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="15dp"
+                                android:src="@drawable/ic_mobiles"
+                                />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@+id/iv4_id"
+                                android:layout_centerVertical="true"
+                                android:background="@drawable/right_gray_line"
+                                >
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/tv5_id"
+                                    android:paddingStart="15dp"
+                                    android:text="Sell Instantly"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:singleLine="true"
+                                    />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/tv6_id"
+                                    android:layout_below="@+id/tv5_id"
+                                    android:paddingStart="15dp"
+                                    android:text="Best Price for your phone."
+                                    android:textSize="12dp"
+                                    android:textColor="@color/black"
+                                    android:singleLine="true"
+                                    />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/tv8_id"
+                                    android:layout_below="@+id/tv6_id"
+                                    android:paddingLeft="15dp"
+                                    android:text="Doorstep pick-up and delivery"
+                                    android:textSize="12dp"
+                                    android:textColor="@color/black"
+                                    android:singleLine="true"
+                                    />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/tv7_id"
+                                    android:layout_below="@+id/tv8_id"
+                                    android:paddingLeft="15dp"
+                                    android:text="Click to know more"
+                                    android:textSize="12dp"
+                                    android:textColor="@color/black"
+                                    />
+
+                                <ImageView
+                                    android:layout_width="14dp"
+                                    android:layout_height="14dp"
+                                    android:layout_below="@+id/tv8_id"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_toEndOf="@+id/tv7_id"
+                                    android:src="@drawable/ic_arrow_right_blue"
+                                    />
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="250dp"
+                            android:layout_height="match_parent"
+                            android:id="@+id/sell_rl_id">
+
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:id="@+id/iv9_id"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="15dp"
+                                android:src="@drawable/ic_mobiles"
+                                />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@+id/iv9_id"
+                                android:layout_centerVertical="true"
+                                android:background="@drawable/right_gray_line"
+                                >
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/tv15_id"
+                                    android:paddingStart="15dp"
+                                    android:text="QuikrBazaar"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:singleLine="true"
+                                    />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/tv16_id"
+                                    android:layout_below="@+id/tv15_id"
+                                    android:paddingStart="15dp"
+                                    android:text="Door step pick-up and delivery "
+                                    android:textSize="12dp"
+                                    android:textColor="@color/black"
+                                    android:singleLine="true"
+                                    />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/tv18_id"
+                                    android:layout_below="@+id/tv16_id"
+                                    android:paddingLeft="15dp"
+                                    android:text="Secure online payment"
+                                    android:textSize="12dp"
+                                    android:textColor="@color/black"
+                                    android:singleLine="true"
+                                    />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/tv17_id"
+                                    android:layout_below="@+id/tv18_id"
+                                    android:paddingLeft="15dp"
+                                    android:text="Click to know more"
+                                    android:textSize="12dp"
+                                    android:textColor="@color/black"
+                                    />
+
+                                <ImageView
+                                    android:layout_width="14dp"
+                                    android:layout_height="14dp"
+                                    android:layout_below="@+id/tv18_id"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_toEndOf="@+id/tv17_id"
+                                    android:src="@drawable/ic_arrow_right_blue"
+                                    />
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="250dp"
+                            android:layout_height="match_parent"
+                            android:id="@+id/intercity_rl_id">
+
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:id="@+id/iv5_id"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="15dp"
+                                android:src="@drawable/ic_mobiles"
+                                />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@+id/iv5_id"
+                                android:layout_centerVertical="true"
+                                >
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/tv9_id"
+                                    android:paddingLeft="15dp"
+                                    android:text="InterCity"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:singleLine="true"
+                                    />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/tv10_id"
+                                    android:layout_below="@+id/tv9_id"
+                                    android:paddingLeft="15dp"
+                                    android:text="Buy Mobiles from any seller in any city"
+                                    android:textSize="12dp"
+                                    android:textColor="@color/black"
+                                    android:singleLine="true"
+                                    />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/tv11_id"
+                                    android:layout_below="@+id/tv10_id"
+                                    android:paddingLeft="15dp"
+                                    android:text="Doorstep pick-up and delivery across india"
+                                    android:textColor="@color/black"
+                                    android:textSize="12dp"
+                                    android:singleLine="true"
+                                    />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/tv12_id"
+                                    android:layout_below="@+id/tv11_id"
+                                    android:paddingLeft="15dp"
+                                    android:text="Click to know more"
+                                    android:textSize="12dp"
+                                    android:textColor="@color/black"
+                                    />
+
+                                <ImageView
+                                    android:layout_width="14dp"
+                                    android:layout_height="14dp"
+                                    android:layout_below="@+id/tv11_id"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_toEndOf="@+id/tv12_id"
+                                    android:src="@drawable/ic_arrow_right_blue"
+                                    />
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+
+
+
+
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:text="Choose by Price"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:gravity="bottom"
+                    android:padding="15dp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:id="@+id/tv13_id"
+                        android:background="@color/white"
+                        android:layout_marginEnd="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:layout_marginBottom="1dp"
+                        android:gravity="center"
+                        android:text="2,000 to 5,000"
+                        android:textColor="@color/black"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:layout_marginEnd="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:gravity="center"
+                        android:text="5,000 to 10,000"
+                        android:textColor="@color/black"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:layout_marginBottom="1dp"
+                        android:gravity="center"
+                        android:text="10,000 to 15,000"
+                        android:textColor="@color/black"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:weightSum="2"
+                    android:background="@drawable/bottom_gray_line">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:layout_marginEnd="1dp"
+                        android:gravity="center"
+                        android:text="15,000 to 20,000"
+                        android:textColor="@color/black"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:id="@+id/tv14_id"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        />
+
+                </LinearLayout>
+
+
+
+
+
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cv_id"
+                    android:layout_marginTop="15dp"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="0dp"
+                    app:cardBackgroundColor="@color/blue">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/ll_id"
+                        android:orientation="vertical"
+                        >
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="?attr/actionBarSize"
+                            android:text="Shop By Choice"
+                            android:textStyle="bold"
+                            android:textSize="14dp"
+                            android:textColor="@color/white"
+                            android:paddingLeft="15dp"
+                            android:gravity="bottom"
+                            android:paddingBottom="15dp"
+                            />
+
+                        <HorizontalScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fillViewport="true"
+                            android:scrollbars="none"
+                            android:paddingBottom="15dp"
+                            >
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:paddingStart="15dp"
+                                >
+
+                                <LinearLayout
+                                    android:layout_width="120dp"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/ll1_id"
+                                    android:background="@color/white">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical"
+                                            android:layout_centerInParent="true">
+
+                                            <ImageView
+                                                android:layout_width="80dp"
+                                                android:layout_height="80dp"
+                                                android:src="@drawable/image_placeholder"
+                                                android:layout_gravity="center_horizontal"
+                                                />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="4G ready"
+                                                android:textStyle="bold"
+                                                android:textAlignment="center"
+                                                android:textSize="12dp"
+                                                android:textColor="@color/black"
+                                                android:layout_marginTop="10dp"
+                                                android:layout_gravity="center_horizontal"
+                                                />
+
+                                        </LinearLayout>
+
+                                    </RelativeLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="120dp"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/ll2_id"
+                                    android:background="@color/white">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical"
+                                            android:layout_centerInParent="true">
+
+                                            <ImageView
+                                                android:layout_width="80dp"
+                                                android:layout_height="80dp"
+                                                android:src="@drawable/image_placeholder"
+                                                android:layout_gravity="center_horizontal"
+                                                />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="Selfie phones"
+                                                android:textStyle="bold"
+                                                android:textAlignment="center"
+                                                android:textSize="12dp"
+                                                android:textColor="@color/black"
+                                                android:layout_marginTop="10dp"
+                                                android:layout_gravity="center_horizontal"
+                                                />
+
+                                        </LinearLayout>
+
+                                    </RelativeLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="120dp"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/ll3_id"
+                                    android:background="@color/white">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical"
+                                            android:layout_centerInParent="true">
+
+                                            <ImageView
+                                                android:layout_width="80dp"
+                                                android:layout_height="80dp"
+                                                android:src="@drawable/image_placeholder"
+                                                android:layout_gravity="center_horizontal"
+                                                />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="Great battery life"
+                                                android:textStyle="bold"
+                                                android:textAlignment="center"
+                                                android:textSize="12dp"
+                                                android:textColor="@color/black"
+                                                android:layout_marginTop="10dp"
+                                                android:layout_gravity="center_horizontal"
+                                                />
+
+                                        </LinearLayout>
+
+                                    </RelativeLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="120dp"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/ll4_id"
+                                    android:background="@color/white">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical"
+                                            android:layout_centerInParent="true">
+
+                                            <ImageView
+                                                android:layout_width="80dp"
+                                                android:layout_height="80dp"
+                                                android:src="@drawable/image_placeholder"
+                                                android:layout_gravity="center_horizontal"
+                                                />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="High on speed"
+                                                android:textStyle="bold"
+                                                android:textAlignment="center"
+                                                android:textSize="12dp"
+                                                android:textColor="@color/black"
+                                                android:layout_marginTop="10dp"
+                                                android:layout_gravity="center_horizontal"
+                                                />
+
+                                        </LinearLayout>
+
+                                    </RelativeLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </HorizontalScrollView>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:padding="15dp"
+                    android:text="Need help? Call us at 0301-1234567 (9 AM - 9 PM)"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+</FrameLayout>

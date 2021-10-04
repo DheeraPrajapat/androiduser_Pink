@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="vm"
+            type="com.marius.valeyou.ui.fragment.more.profile.selectlanguage.SelectLanguageActivityVM" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/back_gradient_view"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <include android:id="@+id/header"
+                layout="@layout/toolbar_layout"
+                app:vm="@{vm}" />
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ll_top"
+            android:layout_marginTop="@dimen/dp40"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginEnd="@dimen/dp10"
+            android:layout_marginBottom="@dimen/dp10"
+            app:cardCornerRadius="@dimen/dp10">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextViewStyleSubTitleRegular"
+                    android:textColor="@color/grey"
+                    android:padding="@dimen/dp10"
+                    android:text="@string/add_language"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp1"
+                    android:background="@color/divider"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    style="@style/TextViewStyleSubTitleRegular"
+                    android:textColor="@color/grey"
+                    android:padding="@dimen/dp10"
+                    android:text="@string/select_language"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp5"
+                    app:cardCornerRadius="@dimen/dp10">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            style="@style/TextViewStyleSubTitleRegular"
+                            android:textColor="@color/grey"
+                            android:padding="@dimen/dp10"
+                            android:drawableRight="@drawable/ic_drop_down_iocn"
+                            android:text="@string/seacrh_for_language"/>
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_language"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/dp10"
+                            android:overScrollMode="never"/>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="@dimen/dp200"
+                                android:background="@color/white" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp100"
+                                android:layout_marginStart="-50dp"
+                                android:layout_marginTop="@dimen/dp150"
+                                android:layout_marginEnd="-50dp"
+                                android:background="@color/white"
+                                android:rotation="-10" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    style="@style/TextViewStyleSubTitleRegular"
+                    android:textColor="@color/grey"
+                    android:padding="@dimen/dp10"
+                    android:text="@string/proficiency"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp5"
+                    app:cardCornerRadius="@dimen/dp10">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            style="@style/TextViewStyleSubTitleRegular"
+                            android:textColor="@color/grey"
+                            android:padding="@dimen/dp10"
+                            android:drawableRight="@drawable/ic_drop_down_iocn"
+                            android:text="@string/select"/>
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_proficiency"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/dp10"
+                            android:overScrollMode="never"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/RectangleButtonStyle"
+                    android:text="@string/appbar_scrolling_view_behavior"
+                    android:textColor="@color/white"
+                    android:layout_margin="@dimen/dp5"
+                    android:layout_gravity="center_horizontal" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+</layout>

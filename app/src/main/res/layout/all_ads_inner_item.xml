@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:id="@+id/iv_id"
+        android:src="@drawable/placeholder_2"
+        fresco:placeholderImage="@drawable/placeholder_2"
+
+        android:layout_marginRight="4dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+
+        />
+
+</RelativeLayout>

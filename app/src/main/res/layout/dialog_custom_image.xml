@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="callback"
+            type="com.marius.valeyou.di.base.dialog.BaseCustomDialog.Listener" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp20"
+            android:padding="@dimen/dp10"
+            android:elevation="@dimen/dp2"
+            android:background="@drawable/back_round_corner2">
+
+            <TextView
+                style="@style/TextViewStyleSubTitleRegular"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/edit_text"
+                android:padding="@dimen/dp10"
+                android:text="@string/image_text"/>
+
+            <RelativeLayout
+                android:layout_width="@dimen/dp200"
+                android:layout_height="@dimen/dp180"
+                android:layout_centerInParent="true"
+                android:background="@drawable/back_round_corner7">
+
+                <ImageView
+                    android:id="@+id/iv_capture"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"/>
+
+                <ImageView
+                    android:id="@+id/iv_image"
+                    android:onClick="@{v->callback.onViewClick(v)}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_camera_icon" />
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40"
+                android:layout_gravity="center_vertical"
+                style="@style/RectangleButtonStyle"
+                android:onClick="@{(v)->callback.onViewClick(v)}"
+                android:text="@string/save"
+                android:layout_margin="@dimen/dp5"
+                android:textColor="@color/white"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/dp40"
+                android:foreground="?selectableItemBackground"
+                android:textSize="@dimen/sp14" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

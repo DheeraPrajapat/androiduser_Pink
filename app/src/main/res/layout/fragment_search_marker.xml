@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="check"
+            type="boolean" />
+
+        <variable
+            name="categoryBean"
+            type="com.marius.valeyou.localMarketModel.responseModel.MarketCategoryModel" />
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.localMarketModel.ui.fragment.home.HomeFragmentMarketVM" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+        <com.seatgeek.placesautocomplete.PlacesAutocompleteTextView
+            android:id="@+id/et_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp20"
+            android:layout_marginEnd="@dimen/dp10"
+            android:layout_toStartOf="@+id/imgCurrentLocation"
+            android:background="@drawable/corner_white"
+            android:imeOptions="actionDone"
+            android:paddingHorizontal="@dimen/dp16"
+            android:paddingVertical="@dimen/dp10"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp14"
+            app:pacv_adapterClass="com.marius.valeyou.util.TestPlacesAutocompleteAdapter"
+            app:pacv_clearEnabled="true"
+            app:pacv_googleMapsApiKey="AIzaSyA1QFn0_Ba7zVSEt8Sng528LXZuEn9JcMc"
+            app:pacv_languageCode="en"
+            app:pacv_resultType="no_type" />
+
+
+        <ImageView
+            android:id="@+id/imgCurrentLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:onClick="@{v->vm.onClick(v)}"
+            android:padding="@dimen/dp10"
+            android:src="@drawable/ic_my_location" />
+
+        <RelativeLayout
+            android:id="@+id/relSeek"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_address"
+            android:layout_marginTop="@dimen/dp10"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/txtRadius"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp10"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
+                android:text="Radius:10km"
+                android:textSize="@dimen/sp14" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtRadius">
+
+                <androidx.appcompat.widget.AppCompatSeekBar
+                    android:id="@+id/seekBar"
+                    android:layout_width="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp10"
+                    android:layout_toStartOf="@+id/txtDone"
+                    android:max="20" />
+
+                <TextView
+                    android:id="@+id/txtDone"
+                    android:layout_width="@dimen/dp90"
+                    android:layout_height="@dimen/dp30"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/dp6"
+                    android:background="@drawable/rounded_corners_shape"
+                    android:elevation="@dimen/dp4"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center"
+                    android:onClick="@{v->vm.onClick(v)}"
+                    android:text="Done"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp14" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+        <fragment
+            android:id="@+id/map_view"
+            class="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/relSeek" />
+
+    </RelativeLayout>
+
+</layout>

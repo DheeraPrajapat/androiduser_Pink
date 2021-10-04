@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/Chat_F"
+    >
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:id="@+id/tb_id"
+        android:layout_marginStart="-15dp"
+        android:background="@color/blue"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:id="@+id/back_id"
+                android:src="@drawable/ic_back_white"
+                android:padding="16dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/back_id"
+                android:gravity="center_vertical"
+                android:text="@string/user_name"
+                android:textSize="16dp"
+                android:id="@+id/user_name"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:singleLine="true"
+                />
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:padding="10dp"
+                android:visibility="gone"
+                android:src="@drawable/ic_info"
+                />
+
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/chatlist"
+
+            android:layout_below="@+id/tb_id"
+            android:layout_above="@+id/send_layout"
+           >
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/send_layout"
+        android:layout_alignParentBottom="true"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/send_msg"
+            android:layout_marginBottom="10dp"
+            android:layout_toLeftOf="@+id/uploadimagebtn"
+            android:background="@drawable/round_border_msg"
+            >
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_attachment"
+                android:id="@+id/select_camera"
+                android:visibility="gone"
+                />
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:hint="Message ..."
+                android:padding="2dp"
+                android:textSize="14dp"
+                android:backgroundTint="@color/full_transparent"
+                android:layout_marginRight="10dp"
+                android:id="@+id/msgedittext"
+                android:textColorHint="@color/black"
+                android:imeOptions="actionSend"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@+id/sendbtn"
+                android:layout_toRightOf="@+id/select_camera"
+                android:inputType="textCapSentences|textMultiLine"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sendbtn"
+                android:text="Send"
+                android:visibility="gone"
+                android:scaleType="fitXY"
+                android:textSize="16sp"
+                android:paddingRight="8dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                />
+
+
+
+
+
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/uploadimagebtn"
+            android:src="@drawable/ic_attachment"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+
+
+            />
+
+
+        <!--<ImageButton-->
+        <!--android:layout_width="40dp"-->
+        <!--android:layout_height="32dp"-->
+        <!--android:src="@drawable/ic_send"-->
+        <!--android:id="@+id/sendbtn_1"-->
+        <!--android:scaleType="fitXY"-->
+        <!--android:visibility="gone"-->
+        <!--android:paddingRight="8dp"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:background="@color/transparent" />-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/progress_bar"/>
+
+
+
+
+
+</RelativeLayout>

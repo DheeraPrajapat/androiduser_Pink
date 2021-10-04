@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <variable
+            name="bean"
+            type="com.marius.valeyou.data.beans.respbean.SubCategoryBean" />
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.ui.fragment.loadtype.StandardPickFragmentVM" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/back_gradient_view">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:layout_marginTop="@dimen/dp150"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp100"
+                android:background="@color/white"
+                android:layout_marginTop="@dimen/dp100"
+                android:rotation="-10"
+                android:layout_marginStart="-50dp"
+                android:layout_marginEnd="-50dp"
+                />
+
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp60"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginEnd="@dimen/dp10"
+            android:layout_marginBottom="@dimen/dp80"
+            app:cardCornerRadius="@dimen/dp10">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                android:fillViewport="true"
+                android:fitsSystemWindows="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_margin="@dimen/dp10">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_one"
+                        android:onClick="@{v->vm.onClick(v)}"
+                        android:foreground="?selectableItemBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/back_round_corner2"
+                        android:padding="@dimen/dp10"
+                        android:layout_margin="@dimen/dp5"
+                        android:backgroundTint="@color/white"
+                        android:elevation="@dimen/dp2">
+
+                        <ImageView
+                            android:id="@+id/iv_one"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_upcoming_truck"
+                            android:layout_margin="@dimen/dp10"
+                            />
+
+                        <TextView
+                            android:layout_toRightOf="@+id/iv_one"
+                            android:layout_width="match_parent"
+                            style="@style/TextViewStyleSubTitleRegular"
+                            android:text="Standard P/U truck load disposal fee applies"
+                            android:textColor="@color/grey"
+                            android:layout_centerVertical="true"
+                            />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_toRightOf="@+id/iv_one"
+                        android:layout_width="match_parent"
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:text="Add Job Description"
+                        android:layout_margin="@dimen/dp10"
+                        />
+
+                    <TextView
+                        android:layout_toRightOf="@+id/iv_one"
+                        android:layout_width="match_parent"
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,\n\nwhen an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.\n\nIt was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+                        android:padding="@dimen/dp10"
+                        android:textSize="@dimen/sp12"
+                        android:textColor="@color/edit_text"
+                        android:background="@drawable/back_round_corner2"
+                        android:backgroundTint="@color/white"
+                        android:elevation="@dimen/dp2"
+                        android:layout_margin="@dimen/dp5"
+                        />
+
+                    <Button
+                        android:id="@+id/btn_next"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp40"
+                        android:layout_gravity="center_vertical"
+                        style="@style/RectangleButtonStyle"
+                        android:onClick="@{(v)->vm.onClick(v)}"
+                        android:text="@string/next"
+                        android:layout_marginStart="@dimen/dp10"
+                        android:layout_marginEnd="@dimen/dp10"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:textColor="@color/white"
+                        android:foreground="?selectableItemBackground"
+                        android:textSize="@dimen/sp14" />
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</layout>

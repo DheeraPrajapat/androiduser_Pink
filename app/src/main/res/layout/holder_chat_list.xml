@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <variable
+            name="bean"
+            type="com.marius.valeyou.data.beans.chat.UsersModel" />
+
+        <variable
+            name="model"
+            type="com.marius.valeyou.ui.fragment.message.ChatUsersAdapter" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        app:cardCornerRadius="@dimen/dp10">
+
+
+    <LinearLayout
+        android:id="@+id/ll_items"
+        android:foreground="?selectableItemBackground"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:layout_width="@dimen/dp55"
+            android:layout_height="@dimen/dp55"
+            android:layout_margin="@dimen/dp10">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/dp55"
+                android:layout_height="@dimen/dp55"
+                app:cardElevation="0dp"
+                app:cardCornerRadius="@dimen/dp25">
+
+                <ImageView
+                    android:id="@+id/user_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:background="@color/grey_light" />
+
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_dot_icon"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/dp5"
+                android:layout_alignParentBottom="true"
+                app:tint="?textColorTheme" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_toLeftOf="@+id/time"
+             android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingEnd="@dimen/dp10"
+            android:gravity="center_vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/user_name"
+                    style="@style/TextViewStyleSubTitleRegular"
+                    android:text="Johan Petter"
+                    android:singleLine="true"
+
+                    android:textColor="@color/grey"
+                    android:includeFontPadding="false"
+                    />
+
+
+
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/message"
+                style="@style/TextViewStyleSubTitleRegular"
+                android:text="Hi Johan Petter, How are you?"
+                android:textSize="@dimen/sp11"
+                android:layout_marginTop="@dimen/dp3"
+                android:layout_marginBottom="@dimen/dp3"
+                android:textColor="@color/edit_text"
+                android:includeFontPadding="false"
+                />
+
+        </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_count"
+                android:layout_width="25dp"
+                android:layout_height="@dimen/dp25"
+                android:textColor="@color/white"
+                android:layout_alignParentEnd="true"
+                android:textSize="@dimen/sp12"
+                android:textAlignment="center"
+                android:layout_gravity="right"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="10"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/circle_shape"
+                android:includeFontPadding="false"
+                android:layout_centerVertical="true"
+                />
+
+            <TextView
+                android:id="@+id/time"
+                style="@style/TextViewStyleSubTitleRegular"
+                android:text="16:28"
+                android:textColor="@color/edit_text"
+                android:layout_alignParentEnd="true"
+                android:textSize="@dimen/sp11"
+                android:maxLines="2"
+                android:layout_alignParentBottom="true"
+                 android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:includeFontPadding="false"
+                android:layout_centerVertical="true"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="check"
+            type="boolean" />
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.localMarketModel.ui.activity.selectWorkAreaMap.SelectWorkAreaMapVM" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <fragment
+                        android:id="@+id/map_view"
+                        android:name="com.google.android.gms.maps.SupportMapFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/rl_top"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@color/colorPrimaryDark">
+
+                        <RelativeLayout
+                            android:id="@+id/toolbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/toolbar_height">
+
+                            <ImageView
+                                android:id="@+id/imgBack"
+                                android:layout_width="50dp"
+                                android:layout_height="@dimen/dp50"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="5dp"
+                                android:background="?selectableItemBackground"
+                                android:onClick="@{()->vm.onBack()}"
+                                android:padding="@dimen/dp15"
+                                android:src="@drawable/ic_left_arrow" />
+
+                            <TextView
+                                android:id="@+id/tv_title"
+                                style="@style/TextViewStyleTitleMedium"
+                                android:layout_width="@dimen/dp200"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/sfpro_medium"
+                                android:maxLines="1"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp18" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@id/imgBack"
+                                android:layout_toStartOf="@+id/saveBtn"
+                                android:background="@drawable/corner_white"
+                                android:paddingHorizontal="@dimen/dp2"
+                                android:layout_marginTop="@dimen/dp10"
+                                android:elevation="@dimen/dp5"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/iv_location"
+                                    android:layout_width="@dimen/dp30"
+                                    android:layout_height="match_parent"
+                                    android:onClick="@{v->vm.onClick(v)}"
+                                    android:padding="@dimen/dp1"
+                                    android:src="@drawable/places_ic_search"
+                                     />
+
+                                <com.seatgeek.placesautocomplete.PlacesAutocompleteTextView
+                                    android:id="@+id/et_address"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/corner_white"
+                                    android:maxLines="3"
+                                    android:paddingHorizontal="@dimen/dp16"
+                                    android:paddingVertical="@dimen/dp10"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sp14"
+                                    app:pacv_adapterClass="com.marius.valeyou.util.TestPlacesAutocompleteAdapter"
+                                    app:pacv_clearEnabled="true"
+                                    app:pacv_googleMapsApiKey="AIzaSyA1QFn0_Ba7zVSEt8Sng528LXZuEn9JcMc"
+                                    app:pacv_languageCode="en"
+                                    app:pacv_resultType="no_type" />
+
+
+                            </LinearLayout>
+
+
+                            <TextView
+                                android:id="@+id/saveBtn"
+                                style="@style/TextViewStyleTitleMedium"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerInParent="true"
+                                android:layout_marginEnd="5dp"
+                                android:background="?attr/selectableItemBackground"
+                                android:fontFamily="@font/sfpro_medium"
+                                android:onClick="@{v->vm.onClick(v)}"
+                                android:padding="@dimen/dp10"
+                                android:text="@string/save"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp18" />
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp20"
+                    android:elevation="@dimen/dp5"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/dp5">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingVertical="@dimen/dp10">
+
+                        <TextView
+                            style="@style/TextViewStyleTitleMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sfpro_medium"
+                            android:padding="@dimen/dp10"
+                            android:text="Select Radius"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/sp18" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <androidx.appcompat.widget.AppCompatSeekBar
+                                android:id="@+id/seekRadius"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toStartOf="@+id/txtRadius"
+                                android:max="200"
+                                android:maxWidth="15dp"
+                                android:maxHeight="15dp"
+                                android:minWidth="15dp"
+                                android:minHeight="15dp"
+                                android:paddingVertical="@dimen/dp10"
+                                android:thumbTint="@color/colorPrimary" />
+
+                            <TextView
+                                android:id="@+id/txtRadius"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:padding="@dimen/dp10"
+                                android:textAlignment="center"
+                                android:textColor="@color/black" />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/txtaddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/dp10"
+                            android:textAlignment="center"
+                            android:textColor="@color/black" />
+
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+        </FrameLayout>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</layout>

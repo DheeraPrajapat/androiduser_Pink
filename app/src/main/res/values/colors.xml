@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryTrans">#3224bef2</color>
+    <color name="colorPrimaryLight">#6F24BEF2</color>
+    <color name="colorPrimary">#f84042</color>
+    <color name="colorPrimaryDark">#f84042</color>
+    <color name="colorAccent">#f84042</color>
+    <color name="grey">#313131</color>
+    <color name="edit_text">#a6a6a6</color>
+    <color name="divider">#e2e2e2</color>
+    <color name="blue_dark">#1c5b7d </color>
+
+    <color name="white">#ffffff</color>
+    <color name="red">#ff45</color>
+    <color name="green">#0D9211</color>
+    <color name="yellow">#FDB537</color>
+    <color name="color_orange">#F87910</color>
+    <color name="black">#0A0A0A</color>
+    <color name="transparent">#50000000</color>
+     <color name="full_transparent">#00404040</color>
+
+    <!--<color name="blue">#0B66EB</color>-->
+    <color name="blue">#f84042</color>
+
+    <!--btm_color-->
+
+    <!-- card color -->
+
+
+    <!-- dialog background color -->
+
+
+    <!--<color name="red">#F44336</color>-->
+    <color name="red_drak">#c82525</color>
+    <color name="light_green">#aad9b9</color>
+    <color name="grey_light">#DEDEDE</color>
+    <color name="grey_light1">#F8F5F5</color>
+    <color name="white_trans">#16191818</color>
+    <color name="range_color">#4000BCD4</color>
+    <color name="transparance_whhite">#80FFFFFF</color>
+
+
+    <color name="color_selected">#f9f9f9</color>
+
+    <color name="opa_black">#99000000</color>
+
+    <color name="off_white">#f5f5f5</color>
+
+    <color name="dark_blue">#2075AE</color>
+
+    <color name="gray">#F5F5F5</color>
+    <!--<color name="gray">#CCD1D1</color>-->
+
+    <color name="opa_green">#9932CD32</color>
+
+    <color name="light_blue">#AED6F1</color>
+
+    <color name="dark_gray">#8E8E93</color>
+
+    <color name="silver">#DCDCDC</color>
+
+    <color name="bottom_background_color">#DEEAF3</color>
+    <color name="pageBgColor">#E4E4E4</color>
+    <color name="textColor">#848484</color>
+    <color name="textColorMarket">#676767</color>
+
+</resources>

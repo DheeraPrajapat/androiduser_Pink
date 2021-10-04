@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="facebook_app_id">971596306634352</string>
+    <!--<string name="fb_login_protocol_scheme">fb971596306634352</string>-->
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+
+
+    <string name="app_name">CAREEY</string>
+    <string name="error_found">Erro</string>
+    <string name="network_error">Erro de rede</string>
+    <string name="acc_drawer_open">Open</string>
+    <string name="acc_drawer_close">Close</string>
+
+    <!--filter-->
+    <string name="distance">Distância</string>
+    <string name="distance_any">Distância \nQualquer+</string>
+    <string name="apply">Aplique</string>
+    <string name="filter">Filtro</string>
+    <string name="sub_cats">Subcategorias</string>
+
+    <!--dashboard-->
+    <string name="view_on_map">Ver no mapa</string>
+    <string name="remotejob">Trabalhos remotos</string>
+    <string name="localjobs">Trabalhos locais</string>
+    <string name="what_are_you_looking_for">O que você está procurando?</string>
+
+
+    <!--home-->
+    <string name="list">Lista</string>
+    <string name="map">Mapa</string>
+    <string name="select_city">Selecione a cidade</string>
+    <string name="select_state">Selecione o estado</string>
+    <string name="deactivate_success">Sua conta está desativada! Faça login novamente para reativar.</string>
+
+
+    <!-- login signup -->
+    <string name="signup">Faça o seu cadastro</string>
+    <string name="don_t_have_an_account">Não tem uma conta?</string>
+    <string name="log_in">Login</string>
+    <string name="forgot_password"><u>Esqueceu a senha?</u></string>
+    <string name="forgot_password_title">Esqueceu a senha?</string>
+    <string name="remember_me">Lembre de mim</string>
+    <string name="password">Senha*</string>
+    <string name="email">Email*</string>
+    <string name="sign_up">Cadastre-se</string>
+    <string name="sign_up_btn_text">Entrar</string>
+    <string name="phone">telefone*</string>
+    <string name="submit">Enviar</string>
+    <string name="home">Casa</string>
+    <string name="mym">myM</string>
+    <string name="products">Produtos</string>
+    <string name="restaurant">Restaurante</string>
+    <string name="more">Mais</string>
+    <string name="sign_up_with">Inscreva-se com</string>
+    <string name="or">OU</string>
+    <string name="are_yoi_in_ong">Você é uma NGO?</string>
+    <string name="password_validate_text">A senha deve conter no mínimo 6 caracteres e pelo menos 1 minúscula, 1 maiúscula e 1 valor numérico</string>
+
+
+    <string name="edit_profile">Editar Perfil</string>
+    <string name="save">Salvar</string>
+    <string name="pay">Pagamento</string>
+    <string name="see_my_jobs">Veja meus empregos</string>
+    <string name="last_name">Último nome</string>
+    <string name="first_name">Primeiro nome</string>
+    <string name="deactivate_account">Desativar conta</string>
+    <string name="change_language">Mudar idioma</string>
+
+    <string name="delete_job_text">Tem certeza de que deseja excluir este trabalho?</string>
+    <string name="deactivate_description">Se você estiver desativando sua conta, certifique-se de que ainda tem acesso ao endereço de e-mail que usa para fazer o login. Dessa forma, você pode reativar facilmente sua conta fazendo login novamente.</string>
+    <string name="delete_description">Excluir sua conta removerá todas as suas informações de nosso banco de dados. Isto não pode ser desfeito.</string>
+    <string name="delete_account">Deletar conta</string>
+    <string name="delete_job">Apagar Trabalho</string>
+    <string name="select_category">Selecione a Categoria</string>
+    <string name="view_details">Ver detalhes</string>
+    <string name="policy">"Eu aceito o <a href='http://valeyou.com.br/privacy-policy'>Política de Privacidade</a> e <a href='http://valeyou.com.br/privacy-policy'>Termos e Condições.</a>"</string>
+    <string name="weak">Fraca</string>
+    <string name="medium">Média</string>
+    <string name="strong">Forte</string>
+    <string name="very_strong">Muito forte</string>
+
+    <string name="block_account">Bloquear conta</string>
+    <string name="block_text">Provedores bloqueados não podem ver suas atividades ou enviar mensagens para você.</string>
+
+
+    <string name="next">Próximo</string>
+    <string name="get_started">Vamos lá!</string>
+    <string name="welcome_back_guy">Seja bem-vindo!</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">Google</string>
+    <string name="experience_like_never_before">Experiência como nunca antes</string>
+    <string name="confirm_password">Confirme a Senha*</string>
+    <string name="recover_details">O código de redefinição foi enviado para seu e-mail. Por favor, insira o código e crie uma nova senha.</string>
+    <string name="code">Código</string>
+    <string name="change_password">Mude a sua senha</string>
+    <string name="change_password_btn_text">Confirmo alteração</string>
+    <string name="account">Conta</string>
+    <string name="my_services">Meus serviços</string>
+    <string name="ok">Está bem</string>
+    <string name="languages">línguas</string>
+    <string name="portfolio">Portfólio</string>
+    <string name="cancel">Voltar</string>
+    <string name="enter_number_of_hours">Insira o número de horas.</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="plz_wait">Por favor, espere</string>
+    <string name="otp_text">Código de verificação</string>
+
+    <string name="choose_your_perefered_language">Escolha o seu idioma de preferência</string>
+    <string name="select_your_language">Selecione seu idioma</string>
+
+
+    <string name="enter_first_name">Por favor insira o primeiro nome</string>
+    <string name="enter_last_name">Por favor insira o sobrenome</string>
+    <string name="enter_email">Por favor insira o email</string>
+    <string name="enter_phone_number">Por favor insira o número do telefone</string>
+    <string name="accept_privacy_policy">Aceite a política de privacidade</string>
+    <string name="enter_password">Por favor insira a senha</string>
+    <string name="both_password_must_be_matched">Ambas as senhas devem ser correspondidas</string>
+    <string name="enter_otp">Digite OTP</string>
+    <string name="enter_the_otp_you_recive_at">Digite o código que foi enviado para o e-mail cadastrado</string>
+    <string name="day">Dia</string>
+    <string name="resend_otp">Reenviar código</string>
+    <string name="verify">Verificar</string>
+    <string name="month">Mês</string>
+    <string name="year">Ano</string>
+    <string name="street">Rua</string>
+    <string name="zip_code">CEP</string>
+    <string name="description">Descrição</string>
+    <string name="plsease_select_atleast_one_category">Selecione pelo menos uma subcategoria.</string>
+    <string name="old_password">Senha antiga</string>
+    <string name="new_password">Nova senha</string>
+    <string name="conf_new_password">Digite novamente a nova senha</string>
+    <string name="old_password_dosent_match">A senha antiga não existe.</string>
+    <string name="we_are_here_to_help">Estamos aqui para ajudar!</string>
+    <string name="block">Quadra</string>
+    <string name="write_something_here">Escreva algo aqui</string>
+    <string name="you_unblocked">Você desbloqueou </string>
+    <string name="you_blocked">Você bloqueou </string>
+    <string name="unblock">"Desbloquear"</string>
+    <string name="you_blocked_this_user">Você bloqueou este usuárior</string>
+    <string name="your_have_blocked">Você bloqueou!</string>
+    <string name="blocked_you"> Bloqueou você</string>
+    <string name="privacy_policy">Política de Privacidade</string>
+    <string name="terms_and_conditions">Termos e Condições</string>
+    <string name="you_must_have_alteast_characters_pass">Você deve inserir pelo menos 6 caracteres</string>
+    <string name="your_password_is_weak">Sua senha é fraca.</string>
+    <string name="yes">sim</string>
+    <string name="no">No</string>
+    <string name="invalid_otp">OTP inválido</string>
+    <string name="incorrect_email_password">E-mail e senha incorretos</string>
+    <string name="rating">Avaliação</string>
+    <string name="state">Estado</string>
+    <string name="city">Cidade</string>
+    <string name="no_of_jobs">No. de empregos</string>
+    <string name="payments">Pagamentos</string>
+    <string name="notifications">Notificações</string>
+    <string name="select_language">Selecione o idioma</string>
+    <string name="blocked_contacts">Contatos bloqueados</string>
+    <string name="terms">Política de Privacidade / \nTermos e Condições</string>
+    <string name="help_support">Ajuda e suporte</string>
+    <string name="about_us">Sobre nós</string>
+    <string name="market_place">Mercado</string>
+    <string name="identity_verfication">Verificação de Identidade</string>
+    <string name="my_account">Minha conta</string>
+    <string name="logout_account">Sair</string>
+    <string name="viewprofile">Ver perfil</string>
+    <string name="welcome">Bem-vinda,</string>
+    <string name="no_data_found">Sem informação</string>
+    <string name="are_you_sure_you_want_to_logout_from_app">Tem certeza que deseja sair?</string>
+    <string name="messsage">Mensagens</string>
+    <string name="type_your_message">Digite sua mensagem</string>
+    <string name="date_of_birth">Data de nascimento</string>
+    <string name="address">Digite o seu endereço aqui</string>
+    <string name="apartment_number">Número do apartamento</string>
+    <string name="about_me">Sobre mim</string>
+    <string name="add_language">Adicionar idioma</string>
+    <string name="seacrh_for_language">Pesquisa por idioma</string>
+    <string name="proficiency">Competência</string>
+    <string name="select">Selecione</string>
+    <string name="add_profile_project">Adicionar Projeto de Perfil</string>
+    <string name="title">Título</string>
+    <string name="completion_date">Data de Conclusão (Opcional)</string>
+    <string name="upload_project_photo">Carregar foto do projeto</string>
+    <string name="choose_photo">Escolher Foto</string>
+    <string name="add_identity">Adicionar identidade</string>
+    <string name="edit_identity">Editar Identidade</string>
+    <string name="please_choose_image">Por favor escolha a imagem</string>
+    <string name="password_doesnt_match">senha não corresponde</string>
+    <string name="job_status">Status de trabalho : </string>
+    <string name="you_have_already_rated_this_job">Nota: Você já avaliou este trabalho</string>
+    <string name="please_write_review">Por favor, escreva um comentário.</string>
+    <string name="all_jobs">contratações</string>
+    <string name="upcomming">Próximas</string>
+    <string name="cancelled">Cancelled</string>
+    <string name="ongoing">Cancelada</string>
+    <string name="completed">Concluída</string>
+    <string name="invoice">Fatura</string>
+    <string name="payment_information">Informação de pagamento</string>
+    <string name="amount">Montante</string>
+    <string name="service_fee">Taxa de serviço</string>
+    <string name="total_amount">Valor total</string>
+    <string name="price">Preço : </string>
+    <string name="location">Localização</string>
+    <string name="category">Categoria</string>
+    <string name="no_bid_yet">Ainda sem lances</string>
+    <string name="job_Detail">Detalhes do trabalho</string>
+    <string name="accept">Aceitar</string>
+    <string name="reject">Rejeitar</string>
+    <string name="the_previous_provider_with_another_job">Este provedor está ocupado em outro trabalho</string>
+    <string name="job_Cancelled">Trabalho cancelado!</string>
+    <string name="click_on_saved_card_to_add_cvv">Clique no cartão salvo para adicionar o número CVV.</string>
+    <string name="car_number_not_valid">Número do cartão não é válido</string>
+    <string name="expire_date_not_valid">Data de expiração inválida</string>
+    <string name="cvv_not_valid">número cvv não é válido</string>
+    <string name="card_is_not_valid">cartão não é válido...</string>
+    <string name="payment_done">Pagamento efetuado!</string>
+    <string name="saved_cards">CARTÕES SALVOS</string>
+    <string name="your_payment_method">SUA FORMA DE PAGAMENTO</string>
+    <string name="add_new_card">Adicionar novo cartão</string>
+    <string name="card_number_not_valid">Número do cartão inválido</string>
+    <string name="holder_name">Nome do titular</string>
+    <string name="expiry">Validade</string>
+    <string name="enter_registere_email">Digite o email cadastrado</string>
+    <string name="my_jobs">Contratações</string>
+    <string name="favourites">Favoritos</string>
+    <string name="add_post">Postar trabalho</string>
+    <string name="no_language">Sem linguagem</string>
+    <string name="no_portfolio">Sem portfólio</string>
+    <string name="no_service">Sem Serviços</string>
+    <string name="certificate_and_awards">Certificados e prêmios</string>
+    <string name="no_certificate">Sem certificado</string>
+    <string name="reviews">Avaliações</string>
+    <string name="no_reviews">Sem comentários</string>
+    <string name="business_hours">Horário Comercial</string>
+    <string name="no_business_hours">Sem horário comercial</string>
+    <string name="hire_now">Contrate agora</string>
+    <string name="mark_as_read">marcar como Lido</string>
+    <string name="cancel_job">Cancelar Trabalho</string>
+    <string name="add_job">Adicionar Trabalho</string>
+    <string name="please_add_job_title">Adicione o cargo</string>
+    <string name="please_add_job_description">Adicione a descrição do trabalho</string>
+    <string name="please_set_a_valid_price">Defina um preço válido</string>
+    <string name="where">Endereço</string>
+    <string name="when">Quando?</string>
+    <string name="photo">foto</string>
+    <string name="estimated_price">Preço estimado</string>
+    <string name="value">Valor</string>
+    <string name="I_want_an_offer">Deixar aberto para negociação</string>
+    <string name="set_title">Definir Título</string>
+    <string name="enter_address">Insira o endereço</string>
+    <string name="enter_zip_code">Digite o código postal</string>
+    <string name="when_do_you_need_your_task_completed">Quando você precisa que sua tarefa seja concluída?</string>
+    <string name="now">AGORA</string>
+    <string name="need_some_deor_now">Precisa ser atendido agora</string>
+    <string name="schedule">CRONOGRAMA</string>
+    <string name="schedule_text">Agende o seu atendimento para outro dia</string>
+    <string name="image_text">Tire uma foto do trabalho \nTire quantas forem necessárias</string>
+    <string name="add_job_des">Adicionar descrição do trabalho</string>
+    <string name="job_title">Titulo do trabalho</string>
+    <string name="unauthorised">unauthorized</string>
+    <string name="confirmation">Confirmação</string>
+    <string name="are_you_sure_you_want_to_post_this_job">Tem certeza que deseja postar este trabalho?</string>
+    <string name="job_requested">Trabalho Solicitado</string>
+    <string name="booking_success_text">Uma reserva solicitada foi enviada a todos os Doers disponíveis!</string>
+    <string name="card">Adicionar cartão</string>
+    <string name="no_block_contacts">Nenhum contato bloqueado</string>
+    <string name="no_notification">Sem notificações</string>
+    <string name="no_job_found">Sem contratações</string>
+    <string name="no_favourite_found">Sem favoritos</string>
+    <string name="country">País</string>
+    <string name="pick_time">Escolha o horário</string>
+    <string name="enter_number_of_hours_to_hire_for">Insira por quantas horas deseja contratar ajuda?</string>
+    <string name="no_identity_added">Sem registro de identidade</string>
+    <string name="profile">Perfil</string>
+    <string name="name">Nome</string>
+    <string name="tour_text_one">Encontre um cuidador de confiança para sua família.</string>
+    <string name="tour_text_one_des">Contrate profissionais de limpeza do conforto da sua casa.</string>
+    <string name="tour_text_two_des">Agende consertos sem sair de casa</string>
+    <string name="tour_text_two">Encontre o melhor profissional para soluções de reparo.</string>
+    <string name="tour_text_three_des">Torne a sua vida mais fácil!</string>
+    <string name="tour_text_thre">Encontre tudo o que precisa em um só lugar.</string>
+
+
+    <string name="loading">Por favor, espere ...</string>
+    <string name="switching_to_app">Mudando para o Marketplace...</string>
+
+    <string name="select_loc">Select Location</string>
+
+
+    <!--New Strings -->
+
+
+    <string name="search">Pesquisa</string>
+    <string name="click_here_to_complete_this_job">Clique para completar este trabalho</string>
+    <string name="add_and_view_ratings">Ver classificação</string>
+    <string name="accept_bid_text">Tem certeza de que deseja aceitar este lance?</string>
+    <string name="are_you_sure_you_agree_with_the_reschedule_job">Tem certeza de que concorda com o reagendamento?</string>
+    <string name="hire_another">Tem certeza de que deseja contratar outro provedor para este trabalho? \n \n <font color='red'>Nota </font> : Isso também removerá atividades anteriores e a solicitação ficará visível para todos os provedores próximos.</string>
+    <string name="additional_cost">Custo extra</string>
+    <string name="reschdeule_job">Reprogramar trabalho</string>
+    <string name="closed">Fechados</string>
+    <string name="cheepest">Mais barato primeiro</string>
+    <string name="expensive">Caro Primeiro</string>
+    <string name="street_number">Número da rua</string>
+    <string name="please_enter_price">Insira o preço</string>
+    <string name="update_price">Atualizar preço</string>
+    <string name="update">Atualizar</string>
+
+    <string name="suggest_time">Sugestão de tempo</string>
+    <string name="hire_another_txt">Contratar outro</string>
+
+    <string name="exit">SAÍDA</string>
+    <string name="are_you_sure_you_want_to_exit_from_applciation">Tem certeza de que deseja sair do aplicativo?</string>
+    <string name="services">Services</string>
+    <string name="local_market">Local Market</string>
+    <string name="create_ad">Create Ad</string>
+    <string name="preview">Preview</string>
+    <string name="all_category">All Category</string>
+    <string name="buy_rent_product">Buy/Rent Product</string>
+    <string name="settings_help">Settings Help</string>
+    <string name="logout">Logout</string>
+    <string name="commercial">Commercial</string>
+    <string name="private_text">Private</string>
+    <string name="sell">Sell</string>
+    <string name="buy">Buy</string>
+    <string name="clear_history">Clear History</string>
+    <string name="want_to_buy_or_sell_product">Want to buy or sell product?</string>
+    <string name="edit">Edit</string>
+    <string name="update_ad">Update ad</string>
+    <string name="are_you_sure_you_want_to_delete_this_post">Are you sure you want to delete this post?</string>
+    <string name="search_location">Search Location</string>
+    <string name="opps_no_ads_around_you">Opps!! No ads around you.</string>
+    <string name="return_to_main_menu">Return to main menu</string>
+    <string name="my_products">My products</string>
+    <string name="create_a_shop_profile">Create a shop profile</string>
+    <string name="my_shop">My shop</string>
+    <string name="searched_keyword">Searched Keyword</string>
+    <string name="please_fill_all_fields">Please fill all fields.</string>
+
+</resources>

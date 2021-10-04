@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.di.base.viewmodel.BaseActivityViewModel" />
+
+        <variable
+            name="search"
+            type="boolean" />
+
+        <variable
+            name="rightText"
+            type="boolean" />
+
+        <variable
+            name="rightImage"
+            type="boolean" />
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/colorPrimaryDark">
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/txtRight"
+            android:layout_toEndOf="@+id/imgBack"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="start"
+            android:paddingStart="@dimen/dp10"
+            android:paddingEnd="@dimen/dp4"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp16" />
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="@dimen/toolbar_height"
+            android:layout_height="match_parent"
+            android:background="?selectableItemBackground"
+            android:onClick="@{()->vm.onBack()}"
+            android:padding="@dimen/dp15"
+            android:src="@drawable/ic_back_white" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/dp10"
+            android:layout_toStartOf="@+id/imgMessage"
+            android:layout_toEndOf="@+id/imgBack"
+            android:visibility="@{search?View.VISIBLE:View.GONE}"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="10dp">
+
+            <EditText
+                android:id="@+id/edtSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawableStart="@drawable/places_ic_search"
+                android:fontFamily="@font/poppins_medium"
+                android:imeOptions="actionDone"
+                android:paddingHorizontal="@dimen/dp10"
+                android:paddingVertical="@dimen/dp4"
+                android:singleLine="true" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/txtRight"
+            style="@style/TextViewStyleTitleMedium"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/dp10"
+            android:fontFamily="@font/poppins_medium"
+            android:onClick="@{v->vm.onClick(v)}"
+            android:padding="@dimen/dp10"
+            android:text="@string/edit_profile"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp14"
+            android:visibility="@{rightText?View.VISIBLE:View.GONE}" />
+
+        <RelativeLayout
+            android:id="@+id/imgMessage"
+            android:layout_width="@dimen/dp24"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:layout_toLeftOf="@+id/imgLocation"
+            android:onClick="@{v->vm.onClick(v)}">
+
+            <ImageView
+                android:layout_width="@dimen/dp20"
+                android:layout_height="@dimen/dp40"
+                android:background="?selectableItemBackground"
+                android:paddingVertical="@dimen/dp12"
+                android:src="@drawable/ic_message_icon"
+                app:tint="@color/white" />
+
+            <RelativeLayout
+                android:id="@+id/rlNotificationCount"
+                android:layout_width="@dimen/dp14"
+                android:layout_height="@dimen/dp14"
+                android:layout_alignParentEnd="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/circle_shape_red"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tvCount"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="1dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/dp6" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imgLocation"
+            android:layout_width="@dimen/dp40"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="?selectableItemBackground"
+            android:onClick="@{v->vm.onClick(v)}"
+            android:paddingVertical="@dimen/dp10"
+            android:paddingStart="@dimen/dp5"
+            android:paddingEnd="@dimen/dp10"
+            android:src="@drawable/ic_map_pin"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/imgToolRight"
+            android:layout_width="@dimen/dp50"
+            android:layout_height="match_parent"
+            android:verticalScrollbarPosition="right"
+            android:layout_alignParentEnd="true"
+             android:layout_centerVertical="true"
+            android:background="?selectableItemBackgroundBorderless"
+            android:onClick="@{v->vm.onClick(v)}"
+            android:padding="@dimen/sp14"
+            android:visibility="gone"
+            android:src="@drawable/ic_menu_dots"
+            app:tint="@color/white" />
+
+
+        <!--<ImageView
+            android:id="@+id/imgToolRight"
+            android:layout_width="@dimen/dp40"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="?selectableItemBackgroundBorderless"
+            android:onClick="@{v->vm.onClick(v)}"
+            android:paddingVertical="@dimen/dp10"
+            android:paddingStart="@dimen/dp5"
+            android:paddingEnd="@dimen/dp10"
+            android:src="@drawable/ic_notification_icon"
+            android:visibility="@{rightImage?View.VISIBLE:View.GONE}"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/tv_badge"
+            android:layout_width="@dimen/dp16"
+            android:layout_height="@dimen/dp16"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/dp22"
+            android:layout_marginEnd="@dimen/dp6"
+            android:background="@drawable/badge_shape"
+            android:gravity="center"
+            android:padding="1dp"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp6"
+            android:visibility="@{rightImage?View.VISIBLE:View.GONE}" />-->
+
+    </RelativeLayout>
+
+</layout>
+

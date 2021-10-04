@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".market_place.Drawer.MyAccount.ChangePass">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:id="@+id/tb_id"
+        android:layout_marginStart="-15dp"
+        android:background="@color/blue"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:id="@+id/back_id"
+                android:src="@drawable/ic_back_white"
+                android:padding="16dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+               android:layout_centerInParent="true"
+                android:gravity="center_vertical"
+                android:text="Change Password"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:singleLine="true"
+                />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose a new password for your account. This password will replace the old one."
+        android:padding="15dp"
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bottom_gray_line_white"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="vertical"
+            android:background="@drawable/bottom_gray_line"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            >
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/curr_pass_til_id"
+                android:paddingBottom="5dp"
+                android:layout_gravity="bottom"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/current_password"
+                    android:background="@android:color/transparent"
+                    android:hint="Current Password"
+                    android:inputType="textPassword"
+                    android:textSize="14dp"
+                    android:textColorHint="@color/black"
+                    android:gravity="bottom"
+                    android:paddingBottom="5dp"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="vertical"
+            android:background="@drawable/bottom_gray_line"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            >
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/new_pass_til_id"
+                android:paddingBottom="5dp"
+                android:layout_gravity="bottom"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/new_password"
+                    android:background="@android:color/transparent"
+                    android:hint="New Password"
+                    android:textSize="14dp"
+                    android:inputType="textPassword"
+                    android:textColorHint="@color/black"
+                    android:gravity="bottom"
+                    android:paddingBottom="5dp"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="vertical"
+            android:background="@drawable/bottom_gray_line"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            >
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/con_new_pass_til_id"
+                android:paddingBottom="5dp"
+                android:layout_gravity="bottom"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/confirm_password"
+                    android:background="@android:color/transparent"
+                    android:hint="Confirm Password"
+                    android:textSize="14dp"
+                    android:inputType="textPassword"
+                    android:textColorHint="@color/black"
+                    android:gravity="bottom"
+                    android:paddingBottom="5dp"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:id="@+id/change_pass"
+            android:layout_margin="15dp"
+            app:cardCornerRadius="4dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/changepass_tv_id"
+                android:background="@color/colorAccent"
+                android:text="Change Password"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textStyle="bold"/>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="15dp"
+        android:visibility="gone"
+        android:background="@color/white">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkbox_id"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/checkbox_id"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:text="I don't know my password"
+            android:textColor="@color/black"
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>

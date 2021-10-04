@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login_Register.Phone_Verification">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:id="@+id/tb_id"
+        android:layout_marginStart="-15dp"
+        android:background="@color/blue">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:id="@+id/back_id"
+                android:src="@drawable/ic_back_white"
+                android:padding="14dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_centerInParent="true"
+                android:text="Verification"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/tb_id"
+        android:padding="15dp"
+        >
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Verify your mobile number"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            />
+
+
+
+        <TextView
+            android:id="@+id/edit_num_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Enter "
+            android:textSize="14dp"
+            android:paddingBottom="15dp"
+            />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:weightSum="4"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            >
+
+
+            <LinearLayout
+                android:id="@+id/ll1_id"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="@drawable/bottom_gray_line"
+                android:layout_marginRight="8dp">
+
+                <EditText
+                    android:id="@+id/et1_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:inputType="numberDecimal"
+                    android:textSize="18dp"
+                    android:textAlignment="center"
+                    android:cursorVisible="true"
+                    android:maxLength="1"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll2_id"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="@drawable/bottom_gray_line"
+                android:layout_marginRight="8dp">
+
+                <EditText
+                    android:id="@+id/et2_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:inputType="numberDecimal"
+                    android:textSize="18dp"
+                    android:textAlignment="center"
+                    android:cursorVisible="true"
+                    android:maxLength="1"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll3_id"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="@drawable/bottom_gray_line"
+                android:layout_marginRight="8dp">
+
+                <EditText
+                    android:id="@+id/et3_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:inputType="numberDecimal"
+                    android:textSize="18dp"
+                    android:textAlignment="center"
+                    android:cursorVisible="true"
+                    android:maxLength="1"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll4_id"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="@drawable/bottom_gray_line">
+
+                <EditText
+                    android:id="@+id/et4_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:inputType="numberDecimal"
+                    android:textSize="18dp"
+                    android:textAlignment="center"
+                    android:cursorVisible="true"
+                    android:maxLength="1"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+        <RelativeLayout
+            android:id="@+id/rl1_id"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="20dp"
+            android:visibility="gone">
+
+
+            <TextView
+                android:id="@+id/tv1_id"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:textSize="16dp"
+                android:gravity="center_vertical"
+                />
+
+
+            <TextView
+                android:id="@+id/tv2_id"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:textSize="16dp"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical"
+                />
+
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:id="@+id/rl2_id"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="20dp"
+            >
+
+
+            <TextView
+                android:id="@+id/tv3_id"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@+id/or_id"
+                android:background="@drawable/bottom_gray_line"
+                android:text="Resend Code"
+                android:textSize="16dp"
+                android:gravity="center"
+                />
+
+
+            <TextView
+                android:id="@+id/or_id"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="or"
+                android:textSize="16dp"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                />
+
+
+            <TextView
+                android:id="@+id/tv4_id"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/or_id"
+                android:background="@drawable/bottom_gray_line"
+                android:text="Call Me"
+                android:textSize="16dp"
+                android:gravity="center"
+                />
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

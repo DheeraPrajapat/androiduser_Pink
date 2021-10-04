@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="callback"
+            type="com.marius.valeyou.di.base.dialog.BaseCustomDialog.Listener" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp20"
+            android:paddingVertical="@dimen/dp10"
+            app:cardCornerRadius="@dimen/dp10">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp10"
+                android:elevation="@dimen/dp2">
+
+                <TextView
+                    android:id="@+id/txtTitle"
+                    android:layout_marginTop="@dimen/dp5"
+                    style="@style/TextViewStyleSubTitleRegular"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:textColor="@color/grey"
+                    android:text="@string/want_to_buy_or_sell_product"/>
+
+                <LinearLayout
+                    android:layout_below="@+id/txtTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:weightSum="2"
+                    android:layout_marginBottom="@dimen/dp10">
+
+                    <Button
+                        android:id="@+id/b_cancel"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp40"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        style="@style/RectangleButtonStyle"
+                        android:onClick="@{(v)->callback.onViewClick(v)}"
+                        android:text="@string/sell"
+                        android:layout_margin="@dimen/dp5"
+                        android:textColor="@color/black"
+                        android:backgroundTint="@color/colorPrimaryTrans"
+                        android:textSize="@dimen/sp14" />
+
+                    <Button
+                        android:id="@+id/btn_submit"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp40"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        style="@style/RectangleButtonStyle"
+                        android:onClick="@{(v)->callback.onViewClick(v)}"
+                        android:text="@string/buy"
+                        android:textColor="@color/white"
+                        android:layout_margin="@dimen/dp5"
+                        android:backgroundTint="@color/colorPrimary"
+                        android:textSize="@dimen/sp14" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</layout>

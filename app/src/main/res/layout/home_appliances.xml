@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".market_place.Drawer.Home.Electronics.HomeAppliances">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:id="@+id/tb_id"
+        android:layout_marginStart="-15dp"
+        android:background="@color/blue"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:id="@+id/back_id"
+                android:src="@drawable/ic_back_white"
+                android:padding="16dp"
+                tools:ignore="ContentDescription"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/tv_id"
+                android:layout_toEndOf="@+id/back_id"
+                android:gravity="center_vertical"
+                android:text="Home Appliances"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_id"
+                android:background="@android:color/transparent"
+                android:layout_toStartOf="@+id/cross_id"
+                android:layout_toEndOf="@+id/back_id"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"
+                android:hint="Search: Eg. Refrigerator"
+                android:textColorHint="@color/white"
+                android:textSize="14dp"
+                android:singleLine="true"
+                android:visibility="gone"
+                tools:ignore="Autofill,TextFields"
+                />
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:id="@+id/cross_id"
+                android:src="@drawable/ic_cross_white"
+                android:visibility="gone"
+                android:padding="18dp"
+                android:layout_alignParentEnd="true"
+                tools:ignore="ContentDescription"
+                />
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:id="@+id/search_id"
+                android:src="@drawable/ic_search_white"
+                android:visibility="visible"
+                android:padding="16dp"
+                android:layout_alignParentEnd="true"
+                tools:ignore="ContentDescription"
+                />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:text="Popular"
+                android:textStyle="bold"
+                android:textSize="14dp"
+                android:paddingStart="15dp"
+                android:gravity="center_vertical"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bottom_gray_line_white"
+                android:text="Refrigerators"
+                android:textSize="14dp"
+                android:gravity="center_vertical"
+                android:paddingStart="15dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bottom_gray_line_white"
+                android:text="Washing Machine"
+                android:textSize="14dp"
+                android:gravity="center_vertical"
+                android:paddingStart="15dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bottom_gray_line_white"
+                android:text="Air Conditioners"
+                android:textSize="14dp"
+                android:gravity="center_vertical"
+                android:paddingStart="15dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bottom_gray_line_white"
+                android:text="Air Coolers"
+                android:textSize="14dp"
+                android:gravity="center_vertical"
+                android:paddingStart="15dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:text="Others"
+                android:textStyle="bold"
+                android:textSize="14dp"
+                android:paddingStart="15dp"
+                android:gravity="center_vertical"
+                />
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/lv_id"
+                android:dividerHeight="-1dp"
+                android:background="@color/white"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

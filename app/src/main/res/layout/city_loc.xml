@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".market_place.Drawer.Home.City_Listt.City_loc">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:id="@+id/tb_id"
+        android:layout_marginStart="-15dp"
+        android:background="@color/blue"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:id="@+id/back_id"
+                android:src="@drawable/ic_back_white"
+                android:layout_centerVertical="true"
+                android:padding="16dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_id"
+                android:background="@android:color/transparent"
+                android:layout_toLeftOf="@+id/cross_id"
+                android:layout_toRightOf="@+id/back_id"
+                android:visibility="gone"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"
+                android:hint="@string/search"
+                android:textColorHint="@color/white"
+                android:singleLine="true"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/tb_title_id"
+                android:layout_centerInParent="true"
+                android:gravity="center_vertical"
+                android:text="@string/select_loc"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:singleLine="true"
+                />
+
+
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:id="@+id/cross_id"
+                android:src="@drawable/ic_cross_white"
+                android:visibility="invisible"
+                android:padding="18dp"
+                android:layout_alignParentRight="true"
+                />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:visibility="gone"
+                android:background="@color/white">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Use Current Location"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:paddingLeft="15dp"
+                    />
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_location_gray"
+                    android:padding="14dp"
+                    />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:gravity="bottom"
+                android:padding="15dp"
+                android:text="@string/country"
+                android:textColor="@color/black"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@color/white">
+
+
+            <TextView
+                android:id="@+id/country_name"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="Country Name"
+                android:drawablePadding="24dp"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_arrow_next"
+                    android:padding="14dp"
+                    />
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:gravity="bottom"
+                android:padding="15dp"
+                android:text="Popular City"
+                android:textColor="@color/black"
+                />
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/popular_lv_id"
+                android:background="@color/white"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:gravity="bottom"
+                android:padding="15dp"
+                android:text="Other Cities"
+                android:visibility="gone"
+                android:textColor="@color/black"
+                />
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/other_lv_id"
+                android:visibility="gone"
+                android:background="@color/white"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

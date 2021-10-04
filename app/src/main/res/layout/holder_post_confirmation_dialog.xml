@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="callback"
+            type="com.marius.valeyou.di.base.dialog.BaseCustomDialog.Listener" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp200"
+            android:layout_margin="@dimen/dp20"
+            android:padding="@dimen/dp10"
+            android:background="@drawable/back_round_corner2"
+            android:elevation="@dimen/dp2">
+
+            <ImageView
+                android:id="@+id/iv_cancel"
+                android:layout_width="@dimen/dp30"
+                android:layout_height="@dimen/dp30"
+                android:src="@drawable/ic_cancel_icon"
+                android:onClick="@{v->callback.onViewClick(v)}"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:layout_below="@+id/iv_cancel"
+                style="@style/TextViewStyleSubTitleRegular"
+                android:layout_centerHorizontal="true"
+                android:text="@string/confirmation"/>
+
+            <TextView
+                style="@style/TextViewStyleSubTitleRegular"
+                android:layout_centerInParent="true"
+                android:textColor="@color/edit_text"
+                android:text="@string/are_you_sure_you_want_to_post_this_job"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                >
+                <Button
+                    android:id="@+id/btn_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_gravity="center_vertical"
+                    style="@style/RectangleButtonStyle"
+                    android:onClick="@{(v)->callback.onViewClick(v)}"
+                    android:text="@string/yes"
+                    android:layout_margin="@dimen/dp10"
+                    android:textColor="@color/white"
+                    android:layout_alignParentBottom="true"
+                    android:foreground="?selectableItemBackground"
+                    android:textSize="@dimen/sp14" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

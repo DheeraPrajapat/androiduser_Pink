@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="vm"
+            type="com.marius.valeyou.ui.fragment.myjob.jobdetails.invoice.pyment.carddetails.paymentsuccess.PaymentSuccessActivityVM" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/back_gradient_view">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:layout_marginTop="@dimen/dp150"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp100"
+                android:background="@color/white"
+                android:layout_marginTop="@dimen/dp100"
+                android:rotation="-10"
+                android:layout_marginStart="-50dp"
+                android:layout_marginEnd="-50dp"
+                />
+
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp60"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginEnd="@dimen/dp10"
+            android:layout_marginBottom="@dimen/dp10"
+            app:cardCornerRadius="@dimen/dp10">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/dp30"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_thank_u_icon"/>
+
+                <TextView
+                    style="@style/TextViewStyleSubTitleRegular"
+                    android:textColor="@color/colorPrimary"
+                    android:padding="@dimen/dp10"
+                    android:layout_marginTop="@dimen/dp20"
+                    android:gravity="center"
+                    android:text="Payment has been sucessfully completed."/>
+
+
+                <TextView
+                    android:id="@+id/text_two"
+                    style="@style/TextViewStyleSubTitleRegular"
+                    android:textColor="@color/grey_light"
+                    android:padding="@dimen/dp10"
+                    android:layout_marginTop="@dimen/dp20"
+                    android:gravity="center"
+                    android:text="You will notified once the Doer has\naccepted your request!"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btn_my_jobs"
+            android:layout_below="@+id/cv_top"
+            android:layout_width="@dimen/dp150"
+            android:layout_height="@dimen/dp45"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_vertical"
+            style="@style/RectangleButtonStyle"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:text="@string/see_my_jobs"
+            android:layout_margin="@dimen/dp20"
+            android:textColor="@color/white"
+            android:foreground="?selectableItemBackground"
+            android:textSize="@dimen/sp14" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include android:id="@+id/header"
+                layout="@layout/toolbar_layout"
+                app:vm="@{vm}"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>

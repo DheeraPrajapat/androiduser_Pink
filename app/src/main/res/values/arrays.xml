@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="job_type">
+        <item name="one">All Jobs</item>
+        <item name="two">Upcoming</item>
+        <item name="three">Canceled</item>
+        <item name="four">Ongoing</item>
+        <item name="five">Completed</item>
+        <item name ="six">Closed</item>
+        <item name ="seven">Cheepest First</item>
+        <item name ="eight">Expensive First</item>
+    </array>
+
+
+    <string-array name="array_app_config">
+        <item>app_header_actionBar_color</item>
+        <item>app_header_bg_color</item>
+        <item>mobile_slider</item>
+        <item>contact_us_email</item>
+        <item>contact_us_phone_number</item>
+        <item>contact_us_facebook</item>
+        <item>contact_us_twiter</item>
+        <item>contact_us_twiter</item>
+        <item>contact_us_linkdin</item>
+        <item>contact_us_instagram</item>
+        <item>app_header_statusBar_color</item>
+        <item>privacy_policy</item>
+        <item>terms_conditions</item>
+        <item>admob_banner_300x250</item>
+        <item>facebook_banner_ad</item>
+        <item>facebook_banner_ad</item>
+
+    </string-array>
+
+</resources>

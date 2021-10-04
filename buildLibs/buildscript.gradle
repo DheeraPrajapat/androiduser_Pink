@@ -1,0 +1,13 @@
+ext {
+    def projectLibs = [
+            gradle: [group: 'com.android.tools.build', name: 'gradle', version: '3.6.1'],
+            google: [group: 'com.google.gms', name: 'google-services', version: '4.3.0'],
+     ]
+
+    projectDependencies = [
+            [configuration: "classpath", dependency: projectLibs.gradle],
+            [configuration: "classpath", dependency: projectLibs.google],
+          //  [configuration: "classpath", dependency: projectLibs.fabric]
+
+    ]
+}

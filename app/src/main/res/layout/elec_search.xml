@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".market_place.Drawer.Home.Electronics.Elec_Search">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:id="@+id/tb_id"
+        android:layout_marginStart="-15dp"
+        android:background="@color/blue"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:id="@+id/back_id"
+                android:src="@drawable/ic_back_white"
+                android:padding="16dp"
+                tools:ignore="ContentDescription" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_id"
+                android:background="@android:color/transparent"
+                android:layout_toStartOf="@+id/cross_id"
+                android:layout_toEndOf="@+id/back_id"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"
+                android:hint="Search: Eg. Refrigerator"
+                android:textColorHint="@color/white"
+                android:singleLine="true"
+                tools:ignore="Autofill,TextFields" />
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:id="@+id/cross_id"
+                android:src="@drawable/ic_cross_white"
+                android:visibility="invisible"
+                android:padding="18dp"
+                android:layout_alignParentEnd="true"
+                tools:ignore="ContentDescription" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:text="Main Category"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lv_id"
+        android:dividerHeight="-1dp"
+        android:divider="@color/white"
+        android:background="@color/white"
+        android:scrollbars="none"
+        />
+
+</LinearLayout>

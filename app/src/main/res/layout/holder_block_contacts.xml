@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <variable
+            name="bean"
+            type="com.marius.valeyou.data.beans.block.BlockModel" />
+
+        <variable
+            name="callback"
+            type="com.marius.valeyou.di.base.adapter.SimpleRecyclerViewAdapter.SimpleCallback" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_click"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp10"
+        android:foreground="?selectableItemBackground"
+        app:cardCornerRadius="@dimen/dp10">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp10">
+
+            <com.marius.valeyou.util.glide.CircleImageView
+                android:layout_width="@dimen/dp70"
+                android:layout_height="@dimen/dp70"
+                android:src="@drawable/placeholder"
+                android:layout_gravity="center"
+                app:profile_image='@{bean.provider.image}'
+               />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_gravity="center_vertical">
+
+                <TextView
+                    style="@style/TextViewStyleTitleMedium"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/sp18"
+                    android:text='@{bean.provider.first_name+" "+bean.provider.last_name}'
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/unblockBtn"
+                    style="@style/TextViewStyleTitleMedium"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/sp13"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:text="Unblock"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    android:onClick="@{v->callback.onItemClick(v,bean)}"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:background="@drawable/button_shape_block"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

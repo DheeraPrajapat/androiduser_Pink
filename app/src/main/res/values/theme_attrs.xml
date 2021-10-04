@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- multi theme -->
+    <attr name="colorPrimaryTheme" format="reference"/>
+    <attr name="colorPrimaryDarkTheme" format="reference"/>
+    <attr name="colorAccentTheme" format="reference"/>
+    <attr name="toolBarTextColor" format="reference"/>
+    <attr name="toolBarBackgroundColor" format="reference"/>
+    <attr name="windowBackgroundColor" format="reference"/>
+
+    <attr name="buttonTextColor" format="reference"/>
+    <attr name="buttonBackgroundColor" format="reference"/>
+    <attr name="splashTextColor" format="reference"/>
+    <attr name="textColorTheme" format="reference"/>
+    <attr name="textColorNavUnSelectTheme" format="reference"/>
+</resources>

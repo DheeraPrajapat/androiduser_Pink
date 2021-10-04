@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+
+        <variable
+            name="bean"
+            type="com.marius.valeyou.data.beans.base.MoreBean" />
+
+        <variable
+            name="callback"
+            type="com.marius.valeyou.di.base.adapter.SimpleRecyclerViewAdapter.SimpleCallback" />
+    </data>
+    <LinearLayout
+        android:id="@+id/ll_items"
+        android:onClick="@{v->callback.onItemClick(v,bean)}"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{bean.name}"
+            android:padding="@dimen/dp10"
+            style="@style/TextViewStyleSubTitleRegular"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+</layout>

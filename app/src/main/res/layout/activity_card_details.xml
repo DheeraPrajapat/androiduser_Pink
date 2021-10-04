@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="vm"
+            type="com.marius.valeyou.ui.fragment.myjob.jobdetails.invoice.pyment.carddetails.PaymentCardDetailsVM" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/back_gradient_view">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:layout_marginTop="@dimen/dp150"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp100"
+                android:background="@color/white"
+                android:layout_marginTop="@dimen/dp100"
+                android:rotation="-10"
+                android:layout_marginStart="-50dp"
+                android:layout_marginEnd="-50dp"
+                />
+
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp60"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginEnd="@dimen/dp10"
+            app:cardBackgroundColor="@color/grey_light"
+            android:layout_marginBottom="@dimen/dp10"
+            app:cardCornerRadius="@dimen/dp10">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    style="@style/TextViewStyleSubTitleRegular"
+                    android:text="@string/card"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:textColor="@color/grey"
+                    android:padding="@dimen/dp10" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/white"
+                    android:padding="@dimen/dp10">
+
+                    <EditText
+                        android:id="@+id/et_holder_name"
+                        android:layout_width="match_parent"
+                        style="@style/EditText_Regular"
+                        android:hint="@string/holder_name"
+                        android:padding="@dimen/dp10"
+                        android:inputType="text"
+                        android:textColor="@color/grey_light"
+                        android:background="@drawable/back_round_corner1"
+                        android:layout_marginStart="@dimen/dp10"
+                        android:layout_marginEnd="@dimen/dp10"
+                        android:backgroundTint="@color/grey_light"/>
+
+                    <EditText
+                        android:id="@+id/et_card_number"
+                        android:layout_width="match_parent"
+                        style="@style/EditText_Regular"
+                        android:hint="xxxx xxxx xxxx xxxx"
+                        android:padding="@dimen/dp10"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:inputType="number"
+                        android:textColor="@color/grey_light"
+                        android:background="@drawable/back_round_corner1"
+                        android:layout_marginStart="@dimen/dp10"
+                        android:layout_marginEnd="@dimen/dp10"
+                        android:backgroundTint="@color/grey_light"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:text="@string/expiry"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:textColor="@color/grey_light"
+                        android:padding="@dimen/dp10" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginStart="@dimen/dp10"
+                        android:layout_marginEnd="@dimen/dp10"
+                        android:weightSum="7">
+                        <EditText
+                            android:id="@+id/et_month"
+                            android:onClick="@{v->vm.onClick(v)}"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="@dimen/dp40"
+                            style="@style/EditText_Regular"
+                            android:text=""
+                            android:focusable="false"
+                            android:inputType="number"
+                            android:singleLine="true"
+                            android:gravity="center_vertical"
+                            android:padding="@dimen/dp10"
+                            android:textColor="@color/grey_light"
+                            android:layout_marginEnd="@dimen/dp5"
+                            android:hint="@string/month"
+                            android:drawableRight="@drawable/ic_arrow_drop_down"
+                            android:background="@drawable/back_round_corner1"
+                            android:backgroundTint="@color/grey_light"/>
+
+                        <EditText
+                            android:id="@+id/et_year"
+                            android:onClick="@{v->vm.onClick(v)}"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/dp40"
+                            android:layout_weight="3"
+                            style="@style/EditText_Regular"
+                            android:text=""
+                            android:focusable="false"
+                            android:inputType="number"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="@dimen/dp5"
+                            android:layout_marginEnd="@dimen/dp5"
+                            android:padding="@dimen/dp10"
+                            android:hint="@string/year"
+                            android:textColor="@color/grey_light"
+                            android:background="@drawable/back_round_corner1"
+                            android:backgroundTint="@color/grey_light"/>
+
+                        <EditText
+                            android:id="@+id/et_cvv"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/dp40"
+                            android:layout_weight="2"
+                            style="@style/EditText_Regular"
+                            android:text=""
+                            android:gravity="center_vertical"
+                            android:hint="CVV"
+                            android:inputType="number"
+                            android:drawableRight="@drawable/ic_cvv_icon"
+                            android:layout_marginStart="@dimen/dp5"
+                            android:padding="@dimen/dp10"
+                            android:textColor="@color/grey_light"
+                            android:background="@drawable/back_round_corner1"
+                            android:backgroundTint="@color/grey_light"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_below="@+id/cv_top">
+
+            <Button
+                android:id="@+id/btn_cancel"
+                style="@style/RectangleButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="@dimen/dp10"
+                android:layout_weight="1"
+                android:background="@drawable/back_round_corner1"
+                android:backgroundTint="?textColorTheme"
+                android:foreground="?selectableItemBackground"
+                android:onClick="@{(v)->vm.onClick(v)}"
+                android:text="@string/cancel"
+                android:textSize="@dimen/sp14" />
+
+            <Button
+                android:id="@+id/btn_pay"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp45"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                style="@style/RectangleButtonStyle"
+                android:onClick="@{(v)->vm.onClick(v)}"
+                android:text="@string/save"
+                android:layout_margin="@dimen/dp10"
+                android:textColor="@color/white"
+                android:foreground="?selectableItemBackground"
+                android:textSize="@dimen/sp14" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include android:id="@+id/header"
+                layout="@layout/toolbar_layout"
+                app:vm="@{vm}"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>

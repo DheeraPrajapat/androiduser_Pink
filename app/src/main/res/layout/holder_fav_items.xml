@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <variable
+            name="bean"
+            type="com.marius.valeyou.data.beans.respbean.FavoriteListBean" />
+
+        <variable
+            name="callback"
+            type="com.marius.valeyou.di.base.adapter.SimpleRecyclerViewAdapter.SimpleCallback" />
+    </data>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rl_fav"
+            android:layout_width="match_parent"
+            android:onClick="@{v->callback.onItemClick(v,bean)}"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/dp10"
+                android:layout_marginStart="@dimen/dp20"
+                android:layout_marginTop="@dimen/dp30"
+                android:layout_marginEnd="@dimen/dp10"
+                android:layout_marginBottom="@dimen/dp5">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="@dimen/dp70"
+                        android:layout_height="@dimen/dp70"
+                        app:cardCornerRadius="@dimen/dp10"
+                        app:cardElevation="@dimen/dp2"
+                        android:layout_margin="@dimen/dp10"
+                        android:id="@+id/img">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            app:provider_image="@{bean.providerImage}" />
+
+                    </androidx.cardview.widget.CardView>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dp5">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/TextViewStyleSubTitleRegular"
+                                android:text='@{bean.providerfirstName+" "+bean.providerlastName}'
+                                />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <RatingBar
+                                    android:id="@+id/myRatingBar"
+                                    style="?android:attr/ratingBarStyleSmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:numStars="5"
+                                    android:rating='@{bean.avg_rating+""}'
+                                    android:theme="@style/RatingBar"
+                                    android:layout_gravity="center_vertical"
+                                    android:isIndicator="true" />
+
+                                <TextView
+                                    style="@style/TextViewStyleSubTitleRegular"
+                                    android:text='@{bean.avg_rating + ""}'
+                                    android:textSize="@dimen/sp10"
+                                    android:layout_gravity="center_vertical"
+                                    android:textColor="@color/edit_text"
+                                    />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/TextViewStyleSubTitleRegular"
+                            android:text="@{bean.description}"
+                            android:layout_marginStart="@dimen/dp10"
+                            android:textSize="@dimen/sp11"
+                            android:textColor="@color/edit_text"
+                            android:padding="@dimen/dp5"
+                            android:layout_marginTop="@dimen/dp50"
+                            />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="@dimen/dp10"
+                            android:layout_marginTop="@dimen/dp10"
+                            android:layout_marginEnd="14dp"
+                            android:layout_marginBottom="@dimen/dp10"
+                            android:src="@drawable/ic_fav_icon" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

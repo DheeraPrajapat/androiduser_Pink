@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.ui.activity.categorytitle.CategoryTitleActivityVM" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/back_gradient_view">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <include android:id="@+id/header"
+                layout="@layout/toolbar_layout"
+                app:vm="@{vm}"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:layout_marginTop="@dimen/dp150"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp100"
+                android:background="@color/white"
+                android:layout_marginTop="@dimen/dp100"
+                android:rotation="-10"
+                android:layout_marginStart="-50dp"
+                android:layout_marginEnd="-50dp"
+                />
+
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp60"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginEnd="@dimen/dp10"
+            android:layout_marginBottom="@dimen/dp40"
+            app:cardCornerRadius="@dimen/dp10">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/btn_next"
+                    android:padding="@dimen/dp10"
+                    android:orientation="vertical">
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:text="@string/job_title"
+                        android:layout_marginStart="@dimen/dp10"
+                        android:layout_marginTop="@dimen/dp10"/>
+
+                    <EditText
+                        android:id="@+id/et_title"
+                        style="@style/EditText_Regular"
+                        android:background="@drawable/back_round_corner2"
+                        android:padding="@dimen/dp10"
+                        android:textColor="@color/edit_text"
+                        android:inputType="text"
+                        android:elevation="@dimen/dp1"
+                        android:layout_margin="@dimen/dp5"/>
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:text="@string/description"
+                        android:layout_marginStart="@dimen/dp10"
+                        android:layout_marginTop="@dimen/dp10"/>
+
+                    <EditText
+                        android:id="@+id/et_description"
+                        android:minHeight="@dimen/dp100"
+                        style="@style/EditText_Regular"
+                        android:background="@drawable/back_round_corner2"
+                        android:padding="@dimen/dp10"
+                        android:textColor="@color/edit_text"
+                        android:gravity="top"
+                        android:elevation="@dimen/dp1"
+                        android:layout_margin="@dimen/dp5"/>
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:text="Estimated Time"
+                        android:visibility="gone"
+                        android:layout_marginStart="@dimen/dp10"
+                        android:layout_marginTop="@dimen/dp10"/>
+
+                    <EditText
+                        android:id="@+id/et_hour"
+                        style="@style/EditText_Regular"
+                        android:background="@drawable/back_round_corner2"
+                        android:padding="@dimen/dp10"
+                        android:textColor="@color/edit_text"
+                        android:hint="hour"
+                        android:inputType="number"
+                        android:gravity="top"
+                        android:visibility="gone"
+                        android:elevation="@dimen/dp1"
+                        android:layout_margin="@dimen/dp5"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_submit"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_margin="@dimen/dp20"
+                    android:layout_gravity="center_vertical"
+                    style="@style/RectangleButtonStyle"
+                    android:onClick="@{(v)->vm.onClick(v)}"
+                    android:text="@string/submit"
+                    android:textColor="@color/white"
+                    android:foreground="?selectableItemBackground"
+                    android:textSize="@dimen/sp14" />
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</layout>

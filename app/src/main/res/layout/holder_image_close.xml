@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="bean"
+            type="com.marius.valeyou.localMarketModel.responseModel.marketHome.PostImage" />
+
+        <variable
+            name="callback"
+            type="com.marius.valeyou.di.base.adapter.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/relImage"
+        android:layout_width="@dimen/dp100"
+        android:layout_height="@dimen/dp100"
+        android:layout_margin="@dimen/dp3"
+        android:onClick="@{v->callback.onItemClick(v,bean)}">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            app:profile_image="@{bean.image}" />
+
+
+        <ImageView
+            android:id="@+id/imgCancel"
+            android:layout_width="@dimen/dp40"
+            android:layout_height="@dimen/dp40"
+            android:layout_alignParentEnd="true"
+            android:onClick="@{v->callback.onItemClick(v,bean)}"
+            android:paddingStart="@dimen/dp10"
+            android:paddingEnd="@dimen/dp1"
+            android:paddingBottom="@dimen/dp10"
+            android:src="@drawable/ic_cancel" />
+
+    </RelativeLayout>
+
+</layout>

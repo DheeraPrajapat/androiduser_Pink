@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginTop="-2dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/top"
+        android:background="@color/gray"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv1_id"
+            android:layout_toLeftOf="@+id/tv2_id"
+            android:text="Recommended Ads"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:paddingLeft="15dp"
+            android:paddingBottom="10dp"
+            android:layout_alignParentBottom="true"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/tv2_id"
+            android:layout_alignParentRight="true"
+            android:text="MORE"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/dark_blue"
+            android:gravity="bottom"
+            android:paddingBottom="10dp"
+            android:paddingRight="15dp"
+            />
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_below="@+id/top"
+        android:layout_height="wrap_content"
+        android:id="@+id/rv1_id"
+        android:background="@drawable/bottom_gray_line_white"
+        />
+
+    <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="5dp"-->
+        <!--android:layout_below="@+id/rv1_id"-->
+        <!--android:background="@drawable/toolbar_shadow"-->
+        <!--/>-->
+
+</RelativeLayout>

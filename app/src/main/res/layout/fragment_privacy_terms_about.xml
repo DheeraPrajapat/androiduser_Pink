@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".localMarketModel.ui.fragment.privacyTermsAbout.PrivacyTermsAboutFragment">
+
+    <data>
+
+        <variable
+            name="ptext"
+            type="String" />
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.localMarketModel.ui.fragment.privacyTermsAbout.PrivacyTermsAboutFragmentVM" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:fitsSystemWindows="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp15"
+            android:background="@color/colorPrimaryDark" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/rounded_corners_shape"
+            android:backgroundTint="@color/white"
+            android:paddingHorizontal="@dimen/dp10"
+            android:paddingTop="@dimen/dp60">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_privay_text"
+                    style="@style/TextViewStyleSubTitleRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:htmlText='@{ptext}'
+                    android:padding="@dimen/dp15"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/sp12" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+</layout>

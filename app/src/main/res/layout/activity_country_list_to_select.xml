@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Drawer.Home.Country_list.Country_list_to_select">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:id="@+id/tb_id"
+        android:layout_marginStart="-15dp"
+        android:background="@color/blue"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:id="@+id/back_id"
+                android:src="@drawable/ic_back_white"
+                android:padding="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Country"
+                android:layout_toRightOf="@+id/back_id"
+                android:layout_centerVertical="true"
+                android:textSize="20sp"
+                android:id="@+id/tb_title_id"
+
+                android:textColor="@color/white"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_id"
+                android:visibility="gone"
+                android:background="@android:color/transparent"
+                android:layout_toLeftOf="@+id/cross_id"
+                android:layout_toRightOf="@+id/back_id"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"
+                android:hint="@string/search_country"
+
+                android:textColorHint="@color/white"
+                android:singleLine="true"
+                />
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:id="@+id/cross_id"
+                android:src="@drawable/ic_cross_white"
+                android:visibility="invisible"
+                android:padding="18dp"
+                android:layout_alignParentRight="true"
+                />
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:id="@+id/search"
+                android:src="@drawable/ic_search_white"
+
+                android:padding="15dp"
+                android:layout_alignParentRight="true"
+                />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:id="@+id/tv_id"
+        android:text="Select Category"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:visibility="gone"
+        android:textSize="14dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:id="@+id/fl_id">
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/country_adp"
+            />
+    </FrameLayout>
+
+
+
+</LinearLayout>

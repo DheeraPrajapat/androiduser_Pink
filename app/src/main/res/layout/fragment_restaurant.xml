@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <!--
+                <variable
+                    name="icon"
+                    type="com.techwin.rehearsal.data.icon.HomeIconBean" />-->
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.ui.fragment.restaurant.RestaurantFragmentVM" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_height"
+            android:background="@drawable/back_gradient_view">
+
+            <ImageView
+                android:id="@+id/imgBack"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:background="?selectableItemBackground"
+                android:padding="@dimen/dp15"
+                android:visibility="gone"
+                android:src="@drawable/ic_back" />
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+            <!-- android:fillViewport="false"-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextViewStyleTitleMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Restaurant is in progress!"
+                    android:textColor="?textColorTheme"
+                    android:textSize="@dimen/sp18" />
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+</layout>

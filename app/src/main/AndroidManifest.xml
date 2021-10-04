@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.marius.valeyou">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:name=".di.base.MyApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:logo="@mipmap/ic_launcher"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning,UnusedAttribute"
+        tools:replace="android:allowBackup,android:icon,android:theme">
+        <activity android:name=".ui.activity.post_detail_sub.SubMapActivity"></activity>
+        <activity
+            android:name=".PostDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".localMarketModel.ui.activity.other_user_profile.OtherUserProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".localMarketModel.ui.activity.searched.SearchedActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".localMarketModel.ui.activity.createShopProfile.CreateShopProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".localMarketModel.ui.fragment.message.chatview.MessagingActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".localMarketModel.ui.activity.allCategory.AllCategoryActivity" />
+        <activity android:name=".localMarketModel.ui.activity.changePassword.ChangePasswordActivity" />
+        <activity android:name=".localMarketModel.ui.activity.editProfile.EditProfile2Activity" />
+        <activity
+            android:name=".ui.activity.login.LoginChooseActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.fragment.myjob.detail.attachments.AttachmentsActivity" />
+        <activity android:name=".ui.fragment.myjob.ViewImageActivity" />
+        <activity android:name=".ui.fragment.myjob.detail.uploaded_work.UploadedWorkActivity" />
+        <activity android:name=".ui.fragment.myjob.detail.additionalcost.AdditionalCostActivity" />
+        <activity android:name=".ui.fragment.myjob.reschedule.RescheduleActivity" />
+        <activity android:name=".ui.fragment.myjob.detail.JobDetailActivity" />
+        <activity android:name=".ui.activity.languages.AppLanguageActivity" />
+        <activity android:name=".ui.activity.block.BlockActivity" />
+        <activity android:name=".ui.activity.identityverfication.IdentityVerificationActivity" />
+        <activity android:name=".ui.activity.LocationActivity" />
+        <activity android:name=".ui.fragment.more.profile.addidentity.AddIdentityActivity" />
+        <!--
+<activity
+            android:name=".localMarketModel.ui.activity.main.MainLocalMarketActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        -->
+        <activity
+            android:name=".ui.activity.welcome.WelcomeActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".localMarketModel.ui.activity.main.MainLocalMarketActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.RatingActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".util.permission.PermissionsActivity"
+            android:theme="@style/Permissions.TransparentTheme" />
+        <activity
+            android:name=".ui.activity.login.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.activity.signup.SignupActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.activity.forgot.ForgotPasswordActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.activity.main.MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.activity.tourpage.TourActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.activity.forgot.recoverpass.RecoverPasswordActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.activity.notification.NotificationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.fragment.more.profile.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.fragment.more.profile.editprofile.EditProfileActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.fragment.loadtype.removaljob.where.WhereActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.fragment.loadtype.removaljob.when.WhenActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.fragment.myjob.jobdetails.invoice.pyment.PaymentActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.fragment.myjob.jobdetails.invoice.pyment.carddetails.PaymentCardDetails"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.fragment.myjob.jobdetails.invoice.pyment.carddetails.paymentsuccess.PaymentSuccessActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.fragment.message.chatview.ChatActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.fragment.more.changepassword.ChangePasswordFragment"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.fragment.more.helpnsupport.faq.FAQActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.fragment.more.profile.selectlanguage.SelectLanguageActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.fragment.more.profile.addportfolio.AddPortfolioActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.activity.selectcategory.SelectCategoryActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.fragment.loadtype.removaljob.JunkRemovalJobFragment"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.activity.provider_profile.ProviderProfileActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+        <activity
+            android:name=".ui.fragment.loadtype.removaljob.whentype.WhenTypeActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.activity.categorytitle.CategoryTitleActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.activity.PayPerHourActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+       <!-- <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDV_Ik-g8KxKqALt9v0VmO3v8_NZkahW8A" />-->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDUGFkhMRQUCfOCWR_-bZG9lKTLxWzyQzc" /> <!-- AIzaSyAVCxVlSSX_XqiOFlc8Ao5i_YYdHrQF6Fs -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".market_place.Login_Register.Phone_Verification"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".market_place.Drawer.Home.Country_list.Country_list_to_select"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name="com.facebook.ads.AudienceNetworkActivity"
+            android:hardwareAccelerated="true" />
+        <!--
+<provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"></meta-data>
+        </provider>
+        -->
+        <activity
+            android:name=".market_place.Chat_pkg.Chat_Inbox.Chat_Inbox"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".market_place.Chat_pkg.Chat"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".market_place.Splashscreen.SplashScreen"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".market_place.Login_Register.Login"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".market_place.Login_Register.Register"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".market_place.Drawer.Drawer"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".market_place.Drawer.Home.Search.Search"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".market_place.Drawer.Home.City_Listt.City_loc"
+            android:theme="@style/AppTheme1"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".market_place.Drawer.Home.Shortlisted"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".market_place.Drawer.OrdersPayments"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".market_place.Drawer.MyAds.MyAds"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".market_place.Drawer.Msgs_Notifications.MessagesNotifications"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".market_place.Drawer.Cash_Blnce"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".market_place.Drawer.ForBusiness"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".market_place.Drawer.App_Settigs.AppSettings"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".market_place.Drawer.ContactUs"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".market_place.Drawer.Msgs_Notifications.Alert_Info"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".market_place.Drawer.MyAccount.MyAccount"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".market_place.Drawer.MyAccount.UserProfile"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".market_place.Drawer.MyAccount.OffersMade"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".market_place.Drawer.Home.PostAd.PostFreeAd"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".market_place.Drawer.MyAccount.EditProfile"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".market_place.Drawer.MyAccount.ChangePass"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".market_place.Drawer.Home.All_Ads.Filter"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".market_place.Drawer.Home.All_Ads.Post_Ads_Details.Post_Ads_Details"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".market_place.Drawer.Home.All_Ads.Post_Ads_Details.AskQuestion"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".market_place.Drawer.Home.All_Ads.Post_Ads_Details.Make_Offer_Chat"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".market_place.Drawer.App_Settigs.Lang_Setting"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".market_place.Drawer.Home.Electronics.Elec_Search"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".market_place.Drawer.Home.Electronics.HomeAppliances"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name="com.soundcloud.android.crop.CropImageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".localMarketModel.ui.activity.selectWorkAreaMap.SelectWorkAreaMapActivity"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name=".market_place.Chat_pkg.Videos.Chat_Send_file_Service"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="startservice" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".di.fcm.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/admob_app_id" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+    </application>
+
+</manifest>

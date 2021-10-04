@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <variable
+            name="bean"
+            type="com.marius.valeyou.data.beans.respbean.SubCategoryBean" />
+
+        <variable
+            name="callback"
+            type="com.marius.valeyou.di.base.adapter.SimpleRecyclerViewAdapter.SimpleCallback" />
+    </data>
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rl_one"
+            android:onClick="@{v->callback.onItemClick(v,bean)}"
+            android:foreground="?selectableItemBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/back_round_corner2"
+            android:layout_margin="@dimen/dp5"
+            android:backgroundTint="@color/white"
+            android:elevation="@dimen/dp2">
+
+            <ImageView
+                android:id="@+id/iv_one"
+                android:layout_width="@dimen/dp50"
+                android:layout_height="@dimen/dp40"
+                app:image_url="@{bean.image}"
+                android:layout_margin="@dimen/dp10" />
+
+            <TextView
+                android:layout_toRightOf="@+id/iv_one"
+                android:layout_width="match_parent"
+                style="@style/TextViewStyleSubTitleRegular"
+                android:text="@{bean.name}"
+                android:textColor="@color/grey"
+                android:layout_centerVertical="true"
+                android:drawableRight="@drawable/ic_next_icon" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

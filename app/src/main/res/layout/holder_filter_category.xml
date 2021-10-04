@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="bean"
+            type="com.marius.valeyou.data.beans.base.MoreBean" />
+        <variable
+            name="callback"
+            type="com.marius.valeyou.di.base.adapter.SimpleRecyclerViewAdapter.SimpleCallback" />
+    </data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/dp1"
+        android:layout_marginBottom="@dimen/dp1">
+        <LinearLayout
+            android:id="@+id/ll_cat"
+            android:onClick="@{v->callback.onItemClick(v,bean)}"
+            android:foreground="?selectableItemBackground"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp50"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="@dimen/dp5"
+                android:layout_height="match_parent"
+                android:background="@{bean.image==1?@color/colorPrimary:@color/white}"/>
+
+            <TextView
+                style="@style/TextViewStyleSubTitleRegular"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/dp10"
+                android:text="@{bean.name}"
+                android:textColor="@color/grey"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

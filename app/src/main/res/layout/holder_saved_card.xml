@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="bean"
+            type="com.marius.valeyou.data.beans.respbean.GetCardBean" />
+
+        <variable
+            name="callback"
+            type="com.marius.valeyou.di.base.adapter.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+        <import type="android.view.View"/>
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp10"
+        app:cardCornerRadius="@dimen/dp25">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/card_select"
+        android:orientation="horizontal"
+        android:layout_width="0dp"
+        android:layout_weight=".9"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="@dimen/dp1">
+
+        <RadioButton
+                android:id="@+id/rb_select"
+                android:layout_width="@dimen/dp26"
+                android:layout_height="@dimen/dp20"
+                android:layout_gravity="center"
+                android:buttonTint="@color/colorPrimary"
+                android:padding="@dimen/dp5"
+                />
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight=".85"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/dp10">
+
+            <TextView
+                style="@style/TextViewStyleSubTitleRegular"
+                android:textSize="@dimen/sp12"
+                android:textColor="@color/grey"
+                android:text="@{bean.name}"/>
+
+            <TextView
+                style="@style/TextViewStyleSubTitleRegular"
+                android:textSize="@dimen/sp12"
+                android:textColor="@color/grey"
+                app:card_number="@{bean.cardNumber}"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_delete"
+            android:layout_width="0dp"
+            android:layout_weight=".15"
+            android:gravity="center"
+            android:padding="2dp"
+            android:clickable="true"
+            android:background="@color/red_drak"
+            android:layout_margin="@dimen/dp10"
+            android:layout_marginRight="5sp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="@dimen/dp20"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_delete_icon"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

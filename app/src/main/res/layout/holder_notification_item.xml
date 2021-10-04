@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="bean"
+            type="com.marius.valeyou.data.beans.respbean.GetNotificationList" />
+
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_read"
+            style="@style/TextViewStyleSubTitleRegular"
+            android:text="@string/mark_as_read"
+            android:foreground="?selectableItemBackground"
+            android:visibility='@{bean.isSeen==1?View.GONE:View.VISIBLE}'
+            android:layout_alignParentEnd="true"
+            android:padding="@dimen/dp10"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_items"
+            android:layout_below="@+id/tv_read"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="?selectableItemBackground"
+            android:layout_marginBottom="@dimen/dp5">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background='@{bean.isSeen==0?@color/white:@color/grey_light1}'
+                android:orientation="vertical">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="@dimen/dp60"
+                    android:layout_height="@dimen/dp60"
+                    app:cardCornerRadius="@dimen/dp30"
+                    android:layout_margin="@dimen/dp10">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/grey_light"
+                        android:scaleType="centerCrop"
+                        app:profile_url="@{bean.providerImage}"
+                        />
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/dp5"
+                    android:layout_gravity="center"
+                    android:paddingBottom="@dimen/dp5"
+                    android:paddingEnd="@dimen/dp10">
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:text='@{bean.firstName+" "+bean.lastName}'
+                        android:textColor="@color/black"
+                        />
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:text="@{bean.message}"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/sp12"
+                        />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:visibility='@{bean.type == 12?View.VISIBLE:View.GONE}'
+                android:layout_gravity="right"
+                >
+
+                <Button
+                    android:id="@+id/suggestTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp5"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:backgroundTint="@color/light_green"
+                    android:text="@string/suggest_time"/>
+
+                <Button
+                    android:id="@+id/hireBtn"
+                    android:textAllCaps="false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp5"
+                    android:backgroundTint="@color/cardview_light_background"
+                    android:text="@string/hire_another_txt"/>
+
+                <Button
+                    android:id="@+id/yesBtn"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:text="Agree"/>
+
+            </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+</layout>

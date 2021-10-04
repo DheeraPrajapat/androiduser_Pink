@@ -1,0 +1,277 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <!--<item name="colorPrimary">?colorPrimaryTheme</item>
+        <item name="colorAccent">?colorAccentTheme</item>
+        <item name="colorPrimaryDark">?colorPrimaryDarkTheme</item>-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:windowContentTransitions">true</item>
+
+    </style>
+
+    <style name="AppTheme1" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <style name="AppTheme.Blue" parent="AppTheme">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimaryTheme">@color/colorPrimaryBlue</item>
+        <item name="colorAccentTheme">@color/colorAccentBlue</item>
+        <item name="colorPrimaryDarkTheme">@color/colorPrimaryDarkBlue</item>
+        <item name="splashTextColor">@color/colorPrimaryBlue</item>
+        <item name="textColorTheme">@color/colorPrimaryBlue</item>
+        <item name="textColorNavUnSelectTheme">@color/colorTextGreyBlue</item>
+
+    </style>
+
+
+    <style name="AppTheme.Yellow" parent="AppTheme">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimaryTheme">@color/colorPrimaryYellow</item>
+        <item name="colorAccentTheme">@color/colorAccentYellow</item>
+        <item name="colorPrimaryDarkTheme">@color/colorPrimaryDarkYellow</item>
+        <item name="splashTextColor">@color/colorPrimaryYellow</item>
+        <item name="textColorTheme">@color/colorPrimaryYellow</item>
+        <item name="textColorNavUnSelectTheme">@color/colorTextGreyYellow</item>
+
+    </style>
+
+
+    <!-- for text -->
+
+
+    <!--***************************button*********************-->
+
+
+    <!-- &lt;!&ndash;#################radioseletor#######################&ndash;&gt;
+    <style name="TopRadioSelector" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:background">@drawable/selector_radio</item>
+        <item name="android:button">@null</item>
+        <item name="android:fontFamily">@font/muller_regular</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">@dimen/dp10</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@drawable/selector_text_black</item>
+        <item name="android:textSize">@dimen/sp11</item>
+    </style>
+
+    <style name="RecRadioSelector" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:background">@drawable/custom_radio_selector</item>
+        <item name="android:button">@null</item>
+        <item name="android:fontFamily">@font/muller_regular</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/dp10</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@drawable/selector_text_black</item>
+        <item name="android:textSize">@dimen/sp11</item>
+    </style>-->
+
+
+    <!-- &lt;!&ndash;ratingbar&ndash;&gt;
+     <style name="RatingBar" parent="Base.Widget.AppCompat.RatingBar.Small">
+         <item name="colorControlNormal">#818181</item>
+         <item name="colorControlActivated">#f9b557</item>
+     </style>
+
+     <style name="MySeekBar" parent="Widget.AppCompat.SeekBar">
+         <item name="android:progressBackgroundTint">@color/dim_black</item>
+         <item name="android:progressTint">@color/colorPrimary</item>
+         <item name="android:colorControlActivated">@color/white</item>
+     </style>
+ -->
+
+
+    <!--*********************dialog*****************************-->
+    <style name="Dialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@style/Dialog.Window</item>
+
+    </style>
+
+    <style name="Dialog.Window" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/zoom_normal</item>
+        <item name="android:windowExitAnimation">@anim/zoom_out</item>
+    </style>
+
+    <!--*********************************************************-->
+    <!-- <style name="popupstyle" parent="Widget.AppCompat.PopupMenu">
+         <item name="android:textColor">@android:color/black</item>
+         <item name="android:itemBackground">@color/white</item>
+         <item name="android:fontFamily">@font/muller_regular</item>
+         <item name="android:textSize">@dimen/sp16</item>
+     </style>-->
+
+
+    <!--******************chatting*******************************-->
+    <!--
+
+      <style name="Chat_message" parent="android:Widget.TextView">
+          <item name="android:textSize">@dimen/sp14</item>
+          <item name="android:fontFamily">@font/muller_regular</item>
+          <item name="android:layout_width">wrap_content</item>
+          <item name="android:layout_height">wrap_content</item>
+          <item name="android:textColor">@color/grey</item>
+      </style>
+
+      <style name="Chat_time" parent="android:Widget.TextView">
+          <item name="android:textSize">@dimen/sp10</item>
+          <item name="android:fontFamily">@font/muller_thin</item>
+          <item name="android:layout_width">wrap_content</item>
+          <item name="android:layout_height">wrap_content</item>
+
+      </style>
+  -->
+    <!--*****************************floactiongaction********************************-->
+
+    <style name="EditText_Regular" parent="android:Widget.EditText">
+        <item name="android:textSize">@dimen/sp14</item>
+        <item name="android:fontFamily">@font/sfpro_regular</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:paddingTop">@dimen/dp10</item>
+        <item name="android:paddingBottom">@dimen/dp10</item>
+        <item name="android:layout_height">wrap_content</item>
+
+    </style>
+
+    <style name="TextViewLarge" parent="android:Widget.TextView">
+        <item name="android:textSize">@dimen/sp30</item>
+        <item name="android:fontFamily">@font/mohave_bold</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:lines">1</item>
+    </style>
+
+    <style name="TextViewMedium" parent="android:Widget.TextView">
+        <item name="android:textSize">@dimen/sp20</item>
+        <item name="android:fontFamily">@font/sfpro_bold</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:lines">1</item>
+    </style>
+
+    <style name="TextViewRegular" parent="android:Widget.TextView">
+        <item name="android:textSize">@dimen/sp25</item>
+        <item name="android:fontFamily">@font/mohave_regular</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:lines">1</item>
+    </style>
+
+
+    <style name="TextViewStyleTitleBold" parent="android:Widget.TextView">
+        <item name="android:textSize">@dimen/sp18</item>
+        <item name="android:fontFamily">@font/sfpro_bold</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">?textColorTheme</item>
+
+    </style>
+
+    <style name="TextViewStyleTitleMedium" parent="android:Widget.TextView">
+        <item name="android:textSize">@dimen/sp16</item>
+        <item name="android:fontFamily">@font/sfpro_medium</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">?textColorTheme</item>
+
+    </style>
+
+    <style name="TextViewStyleSubTitleRegular" parent="android:Widget.TextView">
+        <item name="android:textSize">@dimen/sp14</item>
+        <item name="android:fontFamily">@font/sfpro_regular</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">?textColorTheme</item>
+
+    </style>
+
+    <style name="CheckBoxStyle" parent="android:Widget.CompoundButton.CheckBox">
+        <item name="android:textSize">@dimen/sp12</item>
+        <item name="android:fontFamily">@font/sfpro_regular</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">?textColorTheme</item>
+    </style>
+
+    <style name="RectangleButtonStyle" parent="android:Widget.Button">
+        <item name="android:textSize">@dimen/sp12</item>
+        <item name="android:fontFamily">@font/sfpro_regular</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/back_gradient_view_one</item>
+        <!--<item name="android:background">@drawable/btn_shape</item>-->
+        <item name="android:textColor">?textColorTheme</item>
+    </style>
+
+
+    <style name="BnvTextStyleSelected">
+        <item name="android:fontFamily">@font/sfpro_regular</item>
+        <item name="android:textSize">@dimen/sp12</item>
+        <item name="android:textColor">?textColorTheme</item>
+    </style>
+
+    <style name="BnvTextStyleunSelected">
+        <item name="android:fontFamily">@font/sfpro_regular</item>
+        <item name="android:textSize">@dimen/sp10</item>
+        <item name="android:textColor">?textColorNavUnSelectTheme</item>
+    </style>
+
+
+    <style name="Permissions.TransparentTheme" parent="@android:style/Theme.Material.Light.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+
+    <style name="TextLabel" parent="AppTheme">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">@color/edit_text</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorAccent">@color/white</item>
+        <item name="colorControlNormal">@color/grey</item>
+        <item name="colorControlActivated">@color/grey</item>
+    </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/grey_light</item>
+        <item name="colorControlActivated">@color/yellow</item>
+    </style>
+
+    <style name="Dialog1" parent="Dialog.Window">
+        <item name="android:windowAnimationStyle">@style/Dialog1.Window</item>
+    </style>
+
+    <style name="Dialog1.Window" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/zoom_normal</item>
+        <item name="android:windowExitAnimation">@anim/zoom_out</item>
+    </style>
+
+    <style name="SeekBarColor" parent="Widget.AppCompat.SeekBar">
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+
+    <style name="AlertDialogCustom" parent="Theme.AppCompat.Light.Dialog.Alert"/>
+
+    <style name="MyCheckBox" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/colorPrimaryTrans</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+    </style>
+</resources>

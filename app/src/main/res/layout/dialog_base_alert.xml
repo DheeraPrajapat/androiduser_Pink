@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="message"
+            type="String" />
+
+        <variable
+            name="ok"
+            type="String" />
+
+        <variable
+            name="cancel"
+            type="String" />
+
+        <variable
+            name="callback"
+            type="com.marius.valeyou.di.base.dialog.BaseAlertDialog.ClickListener"/>
+ <!--           type="allclubdi.base.dialog.BaseAlertDialog.ClickListener" />-->
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            style="@style/TextViewMedium"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/dp15"
+            android:paddingTop="@dimen/dp10"
+            android:paddingRight="@dimen/dp15"
+            android:layout_centerHorizontal="true"
+            android:text="@{title}"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp20" />
+
+        <TextView
+            android:id="@+id/tv_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginRight="@dimen/dp15"
+            android:layout_marginBottom="@dimen/dp10"
+            style="@style/TextViewMedium"
+            android:text="@{message}"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/sp16" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_message"
+            android:layout_toLeftOf="@+id/tv_cancel"
+            style="@style/TextViewMedium"
+            android:onClick="@{()->callback.onOkClick()}"
+            android:padding="@dimen/dp15"
+            android:text="@{ok}"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp18" />
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_message"
+            android:layout_alignParentRight="true"
+            style="@style/TextViewMedium"
+            android:onClick="@{()->callback.onCancelClick()}"
+            android:padding="@dimen/dp15"
+            android:text="@{cancel}"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp18" />
+
+
+    </RelativeLayout>
+</layout>

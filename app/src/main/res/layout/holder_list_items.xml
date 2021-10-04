@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <variable
+            name="bean"
+            type="com.marius.valeyou.data.beans.respbean.ProviderNearMe" />
+
+        <variable
+            name="callback"
+            type="com.marius.valeyou.di.base.adapter.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_items"
+        android:onClick="@{v->callback.onItemClick(v,bean)}"
+        android:foreground="?selectableItemBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        android:layout_marginStart="@dimen/dp10"
+        android:layout_marginEnd="@dimen/dp10"
+        android:layout_marginTop="@dimen/dp5"
+        android:layout_marginBottom="@dimen/dp5"
+        app:cardCornerRadius="@dimen/dp10">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/dp50"
+                android:layout_height="@dimen/dp50"
+                app:cardCornerRadius="@dimen/dp10"
+                android:layout_margin="@dimen/dp10">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    app:provider_image="@{bean.image}"/>
+
+
+
+            </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/dp5"
+                android:layout_marginBottom="@dimen/dp5">
+
+                <TextView
+                    style="@style/TextViewStyleSubTitleRegular"
+                    android:text='@{bean.firstName + " " + bean.lastName}'
+                    android:textColor="@color/grey"
+                    />
+                <TextView
+                    style="@style/TextViewStyleSubTitleRegular"
+                    android:text='@{bean.profession}'
+                    android:visibility="gone"
+                    android:textColor="@color/colorPrimary"
+                    />
+
+                <TextView
+                    style="@style/TextViewStyleSubTitleRegular"
+                    android:text="@{bean.description}"
+                    android:textSize="@dimen/sp10"
+                    android:maxLines="3"
+                    android:ellipsize="end"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/dp3"
+                    android:layout_marginBottom="@dimen/dp3"
+                    android:textColor="@color/edit_text"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:text='@{bean.distance + " KM Away"}'
+                        android:textSize="@dimen/sp10"
+                        android:layout_alignParentEnd="true"
+                        android:drawableLeft="@drawable/ic_profile_sidemenu_icon"
+                        android:drawablePadding="@dimen/dp5"
+                        android:textColor="@color/edit_text"
+                        android:layout_marginEnd="@dimen/dp10" />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <RatingBar
+                            android:id="@+id/myRatingBar"
+                            style="?android:attr/ratingBarStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:numStars="5"
+                            android:rating='@{bean.rating+""}'
+                            android:theme="@style/RatingBar"
+                            android:layout_gravity="center_vertical"
+                            android:isIndicator="true" />
+
+                        <TextView
+                            style="@style/TextViewStyleSubTitleRegular"
+                            android:text='@{"("+bean.rating+")"}'
+                            android:textSize="@dimen/sp10"
+                            android:layout_gravity="center"
+                            android:textColor="@color/edit_text"
+                            />
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

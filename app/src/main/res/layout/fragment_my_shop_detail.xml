@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="bean"
+            type="com.marius.valeyou.localMarketModel.responseModel.marketHome.ShopProfile" />
+
+        <variable
+            name="profile"
+            type="String" />
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.localMarketModel.ui.fragment.myShop.MyShopDetailFragmentVM" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:fitsSystemWindows="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp50"
+            android:background="@color/colorPrimary" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp35"
+            android:background="@drawable/rounded_corners_shape"
+            android:backgroundTint="@color/white"
+            android:fillViewport="true"
+            android:paddingHorizontal="@dimen/dp10"
+            android:paddingTop="@dimen/dp45">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp10">
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Company Name"
+                        android:textColor="@color/textColorMarket" />
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text='@{bean.capitalize(bean.companyName)}'
+                        android:textColor="@color/textColorMarket" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="@dimen/dp10"
+                    android:background="@color/grey_light"
+                    android:visibility="visible" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Registration Number"
+                        android:textColor="@color/textColorMarket" />
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text='@{bean.capitalize(bean.registerNumber)}'
+                        android:textColor="@color/textColorMarket" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="@dimen/dp10"
+                    android:background="@color/grey_light" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Shipping"
+                        android:textColor="@color/textColorMarket" />
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text='@{bean.capitalize(bean.shipping)}'
+                        android:textColor="@color/textColorMarket" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="@dimen/dp10"
+                    android:background="@color/grey_light" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txtLocation"
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Address"
+                        android:textColor="@color/textColorMarket" />
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/dp10"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:layout_toEndOf="@+id/txtLocation"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="end|center_vertical"
+                        android:text='@{bean.address}'
+                        android:textColor="@color/textColorMarket" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="@dimen/dp10"
+                    android:background="@color/grey_light" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/category"
+                        android:textColor="@color/textColorMarket" />
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text='@{bean.category}'
+                        android:textColor="@color/textColorMarket" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="@dimen/dp10"
+                    android:background="@color/grey_light" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/phone"
+                        android:textColor="@color/textColorMarket" />
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text='@{bean.country_code+" "+bean.phone}'
+                        android:textColor="@color/textColorMarket" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="@dimen/dp10"
+                    android:background="@color/grey_light" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:paddingVertical="@dimen/dp10"
+                    android:text="Business hours"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp14" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvBusinessTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_profile1"
+            android:layout_width="@dimen/dp70"
+            android:layout_height="@dimen/dp70"
+            android:layout_marginStart="@dimen/dp20"
+            android:layout_marginEnd="@dimen/dp2"
+            android:padding="@dimen/dp1"
+            android:scaleType="centerCrop"
+            app:civ_border_color="@color/grey_light"
+            app:civ_border_width="@dimen/dp1"
+            app:profile_image='@{bean.marketShopImages.size()>0?bean.marketShopImages.get(0).image:""}' />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_profile2"
+            android:layout_width="@dimen/dp70"
+            android:layout_height="@dimen/dp70"
+            android:layout_centerHorizontal="true"
+            android:padding="@dimen/dp1"
+            android:scaleType="centerCrop"
+            app:civ_border_color="@color/grey_light"
+            app:civ_border_width="@dimen/dp1"
+            app:profile_image='@{bean.marketShopImages.size()>1?bean.marketShopImages.get(1).image:""}' />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_profile3"
+            android:layout_width="@dimen/dp70"
+            android:layout_height="@dimen/dp70"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/dp2"
+            android:layout_marginEnd="@dimen/dp20"
+            android:padding="@dimen/dp1"
+            android:scaleType="centerCrop"
+            app:civ_border_color="@color/grey_light"
+            app:civ_border_width="@dimen/dp1"
+            app:profile_image='@{bean.marketShopImages.size()>2?bean.marketShopImages.get(2).image:""}' />
+
+    </RelativeLayout>
+
+</layout>

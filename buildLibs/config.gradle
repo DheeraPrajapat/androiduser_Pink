@@ -1,0 +1,19 @@
+ext {
+    toolVersions = [
+            gradlePlugin: '3.2.1',
+            android     : [
+                    compileSdk: 28,
+            ]
+    ]
+
+    config = [
+            app: [
+                    applicationId: "com.marius.valeyou",
+                    compileSdk   : 28,
+                    minSdk       : 21,
+                    targetSdk    : 28,
+                    versionCode  : 1,
+                    versionName  : '1.0'
+            ]
+    ]
+}

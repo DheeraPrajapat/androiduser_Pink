@@ -1,0 +1,234 @@
+ext {
+    def libVersions = [
+            androidx         : '1.0.0',
+            multidex         : "2.0.1",
+            lifecycle        : '2.1.0',
+            room             : '1.1.1',
+            retrofit2        : '2.5.0',
+            okhttp3          : '3.12.0',
+            rxjava2          : '2.2.7',
+            rxandroid2       : '2.1.1',
+            dagger2          : '2.19',
+            glide            : '4.9.0',
+            espresso         : '2.2.2',
+            jUnit            : '4.12',
+            firebaseMessaging: '20.1.0',
+            firebaseCore     : '15.0.0',
+            firebaseAnalitics: '17.4.4',
+            crashversion     : '2.9.7',
+            mlkit            : '18.0.2',
+            lottieVersion    : '2.7.0',
+            facebookversion  : '4.39.0',
+            facebookAccKit   : '4.+',
+            playbase         : '16.0.1',
+            shimmer          : '0.1.0',
+            pslocation       : '16.0.0',
+            place            : '1.0.0',
+            stetho           : '1.5.0',
+            exoplayer        : '2.7.3',
+            socket           : '0.9.0',
+            picker           : '1.0.8',
+            work             : '1.0.0-rc02',
+            assist           : '0.3.2'
+
+
+    ]
+
+    def supportAnnotationsExclude = {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+    def socketExclude = {
+        exclude group: 'org.json', module: 'json'
+    }
+    def glideExclude = {
+        exclude group: "com.android.support"
+    }
+
+    def workExclude = {
+        exclude group: 'com.google.guava'
+        exclude module: 'guava'
+    }
+
+
+    coreLibs = [
+
+            androidx    : [
+                    appCompat: [group: 'androidx.appcompat', name: 'appcompat', version: libVersions.androidx],
+                    multidex : [group: 'androidx.multidex', name: 'multidex', version: libVersions.multidex],
+                    desgin   : [group: 'com.google.android.material', name: 'material', version: libVersions.androidx]
+            ],
+
+            worker      : [core: [group: 'android.arch.work', name: 'work-runtime', version: libVersions.work]],
+
+            socket      : [core: [group: 'io.socket', name: 'socket.io-client', version: libVersions.socket]],
+
+
+            exoplayer   : [core: [group: 'com.google.android.exoplayer', name: 'exoplayer-core', version: libVersions.exoplayer],
+                           dash: [group: 'com.google.android.exoplayer', name: 'exoplayer-dash', version: libVersions.exoplayer],
+                           rtmp: [group: 'com.google.android.exoplayer', name: 'extension-rtmp', version: libVersions.exoplayer],
+                           ui  : [group: 'com.google.android.exoplayer', name: 'exoplayer-ui', version: libVersions.exoplayer]
+
+            ],
+
+            playservices: [playbase: [group: 'com.google.android.gms', name: 'play-services-auth', version: libVersions.playbase],
+                           location: [group: 'com.google.android.gms', name: 'play-services-location', version: libVersions.pslocation],
+                           loPlace : [group: 'com.google.android.gms', name: 'play-services-places', version: libVersions.pslocation],
+                           place   : [group: 'com.google.android.libraries.places', name: 'places', version: libVersions.place],
+                           map     : [group: 'com.google.android.gms', name: 'play-services-maps', version: libVersions.pslocation],
+
+            ],
+            firebase    : [
+                    messaging: [group: 'com.google.firebase', name: 'firebase-messaging', version: libVersions.firebaseMessaging],
+                    core     : [group: 'com.google.firebase', name: 'firebase-core', version: libVersions.firebaseCore],
+                    crash    : [group: 'com.crashlytics.sdk.android', name: 'crashlytics', version: libVersions.crashversion],
+                    ml_kit   : [group: 'com.google.firebase', name: 'firebase-ml-vision', version: libVersions.mlkit],
+                    analitics: [group: 'com.google.firebase', name: 'firebase-analytics', version: libVersions.firebaseAnalitics]
+
+
+            ],
+            facebook    : [
+                    facebookAccKit: [group: 'com.facebook.android', name: 'account-kit-sdk', version: libVersions.facebookAccKit],
+                    login         : [group: 'com.facebook.android', name: 'facebook-android-sdk', version: libVersions.facebookversion],
+                    shimmer       : [group: 'com.facebook.shimmer', name: 'shimmer', version: libVersions.shimmer, ext: 'aar']
+
+            ],
+
+            dagger2     : [
+                    dagger2               : [group: 'com.google.dagger', name: 'dagger', version: libVersions.dagger2],
+                    dagger2Compiler       : [group: 'com.google.dagger', name: 'dagger-compiler', version: libVersions.dagger2],
+                    dagger2Android        : [group: 'com.google.dagger', name: 'dagger-android-support', version: libVersions.dagger2],
+                    dagger2AndroidCompiler: [group: 'com.google.dagger', name: 'dagger-android-processor', version: libVersions.dagger2],
+
+            ],
+            retrofit2   : [
+                    retrofit2              : [group: 'com.squareup.retrofit2', name: 'retrofit', version: libVersions.retrofit2],
+                    retrofit2mock          : [group: 'com.squareup.retrofit2', name: 'retrofit-mock', version: libVersions.retrofit2],
+                    retrofit2AdapterRxJava2: [group: 'com.squareup.retrofit2', name: 'adapter-rxjava2', version: libVersions.retrofit2],
+                    retrofit2ConverterGson : [group: 'com.squareup.retrofit2', name: 'converter-gson', version: libVersions.retrofit2]
+            ],
+            okhttp3     : [
+                    loggingIntercepter: [group: 'com.squareup.okhttp3', name: 'logging-interceptor', version: libVersions.okhttp3]
+            ],
+            rx          : [
+                    rxjava2   : [group: 'io.reactivex.rxjava2', name: 'rxjava', version: libVersions.rxjava2],
+                    rxandroid2: [group: 'io.reactivex.rxjava2', name: 'rxandroid', version: libVersions.rxandroid2]
+
+            ],
+            room        : [
+                    room        : [group: 'android.arch.persistence.room', name: 'runtime', version: libVersions.room],
+                    roomRxJava  : [group: 'android.arch.persistence.room', name: 'rxjava2', version: libVersions.room],
+                    roomCompiler: [group: 'android.arch.persistence.room', name: 'compiler', version: libVersions.room]
+            ],
+            lifeCycle   : [
+                    lifeCycleExtensions: [group: 'androidx.lifecycle', name: 'lifecycle-extensions', version: libVersions.lifecycle],
+                    lifeCycleCompiler  : [group: 'androidx.lifecycle', name: 'lifecycle-common-java8', version: libVersions.lifecycle],
+                    lifeCycleRuntime   : [group: 'androidx.lifecycle', name: 'lifecycle-runtime', version: libVersions.lifecycle],
+
+            ],
+            media       : [
+                    glide        : [group: 'com.github.bumptech.glide', name: 'glide', version: libVersions.glide],
+                    glideCompiler: [group: 'com.github.bumptech.glide', name: 'compiler', version: libVersions.glide]
+            ],
+            utilities   : [
+                    stetho: [group: 'com.facebook.stetho', name: 'stetho', version: libVersions.stetho],
+                    helper: [group: 'com.facebook.stetho', name: 'stetho-okhttp3', version: libVersions.stetho]
+
+            ],
+            animation   : [lottie: [group: 'com.airbnb.android', name: 'lottie', version: libVersions.lottieVersion]],
+
+            test        : [
+                    jUnit   : [group: 'junit', name: 'junit', version: libVersions.jUnit],
+                    espresso: [group: 'com.android.support.test.espresso', name: 'espresso-core', version: libVersions.espresso]
+            ]
+    ]
+
+    coreDependencies = [
+            [configuration: "implementation", dependency: fileTree(dir: 'libs', include: ['*.jar'])],
+            /* exoplayer libs*/
+            //   [configuration: "implementation", dependency: coreLibs.exoplayer.core],
+            // [configuration: "implementation", dependency: coreLibs.exoplayer.dash],
+            //  [configuration: "implementation", dependency: coreLibs.exoplayer.rtmp],
+            // [configuration: "implementation", dependency: coreLibs.exoplayer.ui],
+
+            /* google libs*/
+            [configuration: "implementation", dependency: coreLibs.playservices.playbase],
+            [configuration: "implementation", dependency: coreLibs.playservices.location],
+            [configuration: "implementation", dependency: coreLibs.playservices.loPlace],
+            [configuration: "implementation", dependency: coreLibs.playservices.place],
+            [configuration: "implementation", dependency: coreLibs.playservices.map],
+
+            // androidx
+            [configuration: "implementation", dependency: coreLibs.androidx.appCompat],
+            [configuration: "implementation", dependency: coreLibs.androidx.multidex],
+            [configuration: "implementation", dependency: coreLibs.androidx.desgin],
+
+            //firebase
+            [configuration: "implementation", dependency: coreLibs.firebase.core],
+            [configuration: "implementation", dependency: coreLibs.firebase.analitics],
+            [configuration: "implementation", dependency: coreLibs.firebase.messaging],
+            // [configuration: "implementation", dependency: coreLibs.firebase.crash],
+            //  [configuration: "implementation", dependency: coreLibs.firebase.ml_kit],
+            // dagger2
+            [configuration: "implementation", dependency: coreLibs.dagger2.dagger2],
+            [configuration: "annotationProcessor", dependency: coreLibs.dagger2.dagger2Compiler],
+            [configuration: "implementation", dependency: coreLibs.dagger2.dagger2Android],
+            [configuration: "annotationProcessor", dependency: coreLibs.dagger2.dagger2AndroidCompiler],
+
+
+            // retrofit2
+            [configuration: "implementation", dependency: coreLibs.retrofit2.retrofit2],
+            [configuration: "implementation", dependency: coreLibs.retrofit2.retrofit2AdapterRxJava2],
+            [configuration: "implementation", dependency: coreLibs.retrofit2.retrofit2ConverterGson],
+            // okhttp3
+            [configuration: "implementation", dependency: coreLibs.okhttp3.loggingIntercepter],
+
+            // facebook
+            //  [configuration: "implementation", dependency: coreLibs.facebook.facebookAccKit],
+            //  [configuration: "implementation", dependency: coreLibs.facebook.login],
+            [configuration: "implementation", dependency: coreLibs.facebook.shimmer],
+            // rx
+            [configuration: "implementation", dependency: coreLibs.rx.rxjava2],
+            [configuration: "implementation", dependency: coreLibs.rx.rxandroid2],
+
+            // room
+            [configuration: "annotationProcessor", dependency: coreLibs.room.roomCompiler],
+            [configuration: "implementation", dependency: coreLibs.room.room],
+            // [configuration: "implementation", dependency: coreLibs.room.roomRxJava],
+            // lifecycle
+            [configuration: "implementation", dependency: coreLibs.lifeCycle.lifeCycleCompiler],
+            [configuration: "implementation", dependency: coreLibs.lifeCycle.lifeCycleExtensions],
+            [configuration: "implementation", dependency: coreLibs.lifeCycle.lifeCycleRuntime],
+            // media
+            [configuration: "implementation", dependency: coreLibs.media.glide, options: glideExclude],
+            [configuration: "annotationProcessor", dependency: coreLibs.media.glideCompiler],
+            [configuration: "testImplementation", dependency: coreLibs.test.jUnit],
+            [configuration: "androidTestImplementation", dependency: coreLibs.test.espresso, options: supportAnnotationsExclude],
+            // utilities
+            //   [configuration: "implementation", dependency: coreLibs.utilities.stetho],
+            //   [configuration: "implementation", dependency: coreLibs.utilities.helper],
+
+            // animation
+            [configuration: "implementation", dependency: coreLibs.animation.lottie],
+            //socket
+            //    [configuration: "implementation", dependency: coreLibs.socket.core, options: socketExclude],
+
+            //worker
+            // [configuration: "implementation", dependency: coreLibs.worker.core]
+            //  [configuration: "implementation", dependency: coreLibs.worker.core, options: workExclude]
+    ]
+
+    /*-------------------------------------------------------------Modules---------------------------------------------------------------------*/
+
+    //appModules
+
+    def plugins = [
+            android: 'com.android.application',
+            fabric : 'io.fabric',
+            google : 'com.google.gms.google-services'
+    ]
+
+    TopLevelPlugins = [plugins.android, /*plugins.fabric*/]
+    BottomLevelPlugins = [plugins.google]
+
+
+}

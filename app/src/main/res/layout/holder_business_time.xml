@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="callback"
+            type="com.marius.valeyou.di.base.adapter.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+        <variable
+            name="bean"
+            type="com.marius.valeyou.localMarketModel.responseModel.BusinessTimeModel" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_business_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp5"
+        android:foreground="?selectableItemBackground"
+        android:onClick="@{v->callback.onItemClick(v,bean)}"
+        app:cardCornerRadius="@dimen/dp5">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp15">
+
+            <TextView
+                android:id="@+id/txtDay"
+                style="@style/TextViewStyleSubTitleRegular"
+                android:layout_width="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@{bean.day}"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/txtStartTime"
+                style="@style/TextViewStyleSubTitleRegular"
+                android:layout_width="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/txtEndTime"
+                android:layout_toEndOf="@+id/txtDay"
+                android:onClick="@{v->callback.onItemClick(v,bean)}"
+                android:gravity="center"
+                android:text="@{bean.start_time}"
+                android:textColor="@color/black" />
+
+
+            <TextView
+                android:id="@+id/txtEndTime"
+                style="@style/TextViewStyleSubTitleRegular"
+                android:layout_width="wrap_content"
+                android:onClick="@{v->callback.onItemClick(v,bean)}"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="@{bean.end_time}"
+                android:textColor="@color/black" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

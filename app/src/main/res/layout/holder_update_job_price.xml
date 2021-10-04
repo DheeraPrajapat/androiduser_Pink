@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="callback"
+            type="com.marius.valeyou.di.base.dialog.BaseCustomDialog.Listener" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp40"
+            app:cardCornerRadius="@dimen/dp10">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp10"
+                android:elevation="@dimen/dp2">
+
+                <TextView
+                    android:id="@+id/tv_one"
+                    style="@style/TextViewStyleSubTitleRegular"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"
+                    android:text="@string/update_price"/>
+
+                <EditText
+                    android:id="@+id/bid_price"
+                    android:layout_below="@+id/tv_one"
+                    android:layout_marginTop="@dimen/dp20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:hint="Job Price"
+                    android:inputType="number"
+                    android:background="@drawable/doted_border"
+                    android:textColor="@color/grey"
+                    android:textSize="15sp"
+                    />
+
+
+
+                <LinearLayout
+                    android:layout_below="@+id/bid_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp20"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginBottom="@dimen/dp10">
+
+                    <Button
+                        android:id="@+id/btn_cancel"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp40"
+                        android:layout_marginLeft="@dimen/dp30"
+                        android:layout_marginRight="30sp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:onClick="@{(v)->callback.onViewClick(v)}"
+                        android:text="@string/no"
+                        android:background="@drawable/edit_white_solid"
+                        android:layout_margin="@dimen/dp5"
+                        android:textColor="@color/black"
+                        android:foreground="?selectableItemBackground"
+                        android:textSize="@dimen/sp14" />
+
+                    <Button
+                        android:id="@+id/btn_update"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp40"
+                        android:layout_marginLeft="@dimen/dp30"
+                        android:layout_marginRight="30sp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:layout_gravity="center_vertical"
+                        android:onClick="@{(v)->callback.onViewClick(v)}"
+                        android:text="@string/update"
+                        android:layout_margin="@dimen/dp5"
+                        android:textColor="@color/white"
+                        android:foreground="?selectableItemBackground"
+                        android:textSize="@dimen/sp14" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</layout>

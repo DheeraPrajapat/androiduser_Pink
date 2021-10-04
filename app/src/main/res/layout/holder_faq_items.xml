@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="bean"
+            type="com.marius.valeyou.data.beans.respbean.FaqBean" />
+        <variable
+            name="callback"
+            type="com.marius.valeyou.di.base.adapter.SimpleRecyclerViewAdapter.SimpleCallback" />
+    </data>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_item"
+        android:onClick="@{v->callback.onItemClick(v,bean)}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp5"
+        app:cardCornerRadius="@dimen/dp5">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp10">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_toLeftOf="@+id/iv_arrow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/TextViewStyleTitleMedium"
+                    android:layout_centerVertical="true"
+                    android:text="@{bean.question}"/>
+
+                <ImageView
+                    android:id="@+id/iv_arrow"
+                    android:layout_width="@dimen/dp24"
+                    android:layout_height="@dimen/dp24"
+                    android:padding="@dimen/dp5"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:rotation="@{bean.check?0:-90}"
+                    android:src="@drawable/ic_drop_down_iocn"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp5"
+                android:text="@{bean.answer}"
+                style="@style/TextViewStyleSubTitleRegular"
+                android:visibility="@{bean.check?View.VISIBLE:View.GONE}"
+                android:textColor="@color/grey"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

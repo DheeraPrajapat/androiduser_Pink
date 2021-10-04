@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="callback"
+            type="com.marius.valeyou.di.base.adapter.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+        <variable
+            name="bean"
+            type="com.marius.valeyou.localMarketModel.responseModel.MarketCategoryModel.Datum" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/holderItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp10"
+        android:layout_marginVertical="@dimen/dp4"
+        android:onClick="@{v->callback.onItemClick(v,bean)}"
+        app:cardBackgroundColor="@color/colorPrimaryDark"
+        app:cardCornerRadius="@dimen/dp10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp10"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/dp50"
+                android:layout_height="@dimen/dp50"
+                android:layout_marginHorizontal="@dimen/dp10"
+                android:scaleType="fitXY"
+                app:profile_image="@{bean.icon}" />
+
+            <TextView
+                style="@style/TextViewStyleSubTitleRegular"
+                android:layout_width="match_parent"
+                android:paddingVertical="@dimen/dp20"
+                android:text="@{bean.name}"
+                android:textColor="@color/textColor" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

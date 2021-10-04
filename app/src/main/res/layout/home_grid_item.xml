@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="false"
+    android:focusable="false"
+    android:focusableInTouchMode="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ll_id"
+        android:orientation="vertical"
+        android:clickable="false"
+
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:clickable="false">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+
+                android:layout_centerInParent="true"
+                android:clickable="false">
+
+                <!--<ImageView-->
+                    <!--android:layout_width="50dp"-->
+                    <!--android:layout_height="50dp"-->
+                    <!--android:id="@+id/iv_id"-->
+                    <!--android:padding="8dp"-->
+                    <!--android:src="@drawable/round"-->
+                    <!--android:layout_gravity="center_horizontal"-->
+                    <!--android:clickable="false"-->
+                    <!--/>-->
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/iv_id"
+                    android:padding="8dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/round"
+                    fresco:failureImage="@drawable/round"
+                    fresco:placeholderImage="@drawable/round"
+                    />
+
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_id"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Quikr Assured"
+                    android:textAlignment="center"
+                    android:textSize="10dp"
+                    android:textColor="@color/black"
+                    android:maxLines="2"
+
+                    android:clickable="false"
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

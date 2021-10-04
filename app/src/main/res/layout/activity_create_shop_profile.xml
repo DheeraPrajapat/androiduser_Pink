@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="check"
+            type="boolean" />
+
+        <variable
+            name="bean"
+            type="com.marius.valeyou.localMarketModel.responseModel.marketHome.ShopProfile" />
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.localMarketModel.ui.activity.createShopProfile.CreateShopProfileActivityVM" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/pageBgColor"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@color/colorPrimaryDark">
+
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:text="@string/create_a_shop_profile"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp16" />
+
+            <ImageView
+                android:id="@+id/imgBack"
+                android:layout_width="@dimen/toolbar_height"
+                android:layout_height="match_parent"
+                android:background="?selectableItemBackground"
+                android:onClick="@{()->vm.onBack()}"
+                android:padding="@dimen/dp15"
+                android:src="@drawable/ic_back_white" />
+
+        </RelativeLayout>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/dp10">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvAddImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/dp6"
+                    android:paddingVertical="@dimen/dp10"
+                    android:text="Company Name"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp14" />
+
+                <EditText
+                    android:id="@+id/edtCompanyName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/corner_white"
+                    android:checked="true"
+                    android:inputType="textCapWords"
+                    android:text="@{bean.capitalize(bean.companyName)}"
+                    android:paddingHorizontal="@dimen/dp16"
+                    android:paddingVertical="@dimen/dp10"
+                     android:textColor="@color/black"
+                    android:textSize="@dimen/sp14" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/dp6"
+                    android:paddingVertical="@dimen/dp10"
+                    android:text="Company Registration Number"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp14" />
+
+                <EditText
+                    android:id="@+id/edtRegistration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/corner_white"
+                    android:checked="true"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 "
+                    android:paddingHorizontal="@dimen/dp16"
+                    android:paddingVertical="@dimen/dp10"
+                    android:inputType="textCapWords"
+                    android:text="@{bean.capitalize(bean.registerNumber)}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp14" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/dp6"
+                    android:paddingVertical="@dimen/dp10"
+                    android:text="Shipping"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp14" />
+
+                <EditText
+                    android:id="@+id/edtShipping"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/corner_white"
+                    android:checked="true"
+                    android:inputType="textCapWords"
+                    android:paddingHorizontal="@dimen/dp16"
+                    android:paddingVertical="@dimen/dp10"
+                    android:text="@{bean.capitalize(bean.shipping)}"
+                     android:textColor="@color/black"
+                    android:textSize="@dimen/sp14" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:paddingVertical="@dimen/dp10"
+                        android:text="@string/address"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/sp14" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.seatgeek.placesautocomplete.PlacesAutocompleteTextView
+                            android:id="@+id/et_address"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/corner_white"
+                            android:maxLines="3"
+                            android:paddingHorizontal="@dimen/dp16"
+                            android:paddingVertical="@dimen/dp10"
+                            android:text="@{bean.address}"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp14"
+                            app:pacv_adapterClass="com.marius.valeyou.util.TestPlacesAutocompleteAdapter"
+                            app:pacv_clearEnabled="true"
+                            app:pacv_googleMapsApiKey="AIzaSyA1QFn0_Ba7zVSEt8Sng528LXZuEn9JcMc"
+                            app:pacv_languageCode="en"
+                            app:pacv_resultType="no_type" />
+
+
+                        <ImageView
+                            android:id="@+id/iv_location"
+                            android:layout_width="@dimen/dp30"
+                            android:layout_height="match_parent"
+                            android:onClick="@{v->vm.onClick(v)}"
+                            android:padding="@dimen/dp1"
+                            android:src="@drawable/ic_miles_icon"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/dp6"
+                    android:paddingVertical="@dimen/dp10"
+                    android:text="Category"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp14" />
+
+
+                <TextView
+                    android:id="@+id/txtCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/corner_white"
+                    android:checked="true"
+                    android:onClick="@{v->vm.onClick(v)}"
+                    android:paddingHorizontal="@dimen/dp16"
+                    android:paddingVertical="@dimen/dp10"
+                    android:text="@{bean.category}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp14"
+                    app:drawableEndCompat="@drawable/ic_arrow" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/dp6"
+                    android:paddingVertical="@dimen/dp10"
+                    android:text="Business hours"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp14" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvBusinessTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="5">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.9"
+                        android:checked="true"
+                        android:gravity="start"
+                        android:paddingHorizontal="@dimen/dp6"
+                        android:paddingVertical="@dimen/dp10"
+                        android:text="Country code"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp14" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3.1"
+                        android:checked="true"
+                        android:gravity="start"
+                        android:paddingHorizontal="@dimen/dp6"
+                        android:paddingVertical="@dimen/dp10"
+                        android:text="Phone no."
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp14" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="5">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="3dp"
+                        android:layout_weight="1.5">
+
+                        <EditText
+                            android:id="@+id/edtPrePhone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/corner_white"
+                            android:checked="true"
+                            android:gravity="center"
+                            android:inputType="phone"
+                            android:maxLength="3"
+                            android:text="@{bean.country_code}"
+                            android:paddingHorizontal="@dimen/dp16"
+                            android:paddingVertical="@dimen/dp10"
+                             android:textColor="@color/black"
+                            android:textSize="@dimen/sp14" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:layout_weight="3.5">
+
+                        <EditText
+                            android:id="@+id/edtPhone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/corner_white"
+                            android:checked="true"
+                            android:inputType="number"
+                            android:maxLength="9"
+                            android:paddingHorizontal="@dimen/dp16"
+                            android:paddingVertical="@dimen/dp10"
+                            android:text="@{bean.phone}"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp14" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+
+
+                <Button
+                    android:id="@+id/btnCreate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp30"
+                    android:layout_marginVertical="@dimen/dp10"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:onClick="@{v->vm.onClick(v)}"
+                    android:paddingVertical="@dimen/dp10"
+                    android:text="Create"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp14" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+</layout>

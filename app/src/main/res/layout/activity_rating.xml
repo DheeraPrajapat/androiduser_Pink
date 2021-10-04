@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="check"
+            type="boolean" />
+
+        <variable
+            name="bean"
+            type="com.marius.valeyou.data.beans.respbean.JobDetailsBean" />
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.ui.RatingActivityVM" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp50"
+                android:background="@color/colorPrimary">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="?selectableItemBackground"
+                    android:onClick="@{()->vm.onBack()}"
+                    android:padding="@dimen/dp15"
+                    android:src="@drawable/ic_back_icon"
+                    android:tint="@color/white" />
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    style="@style/TextViewStyleTitleMedium"
+                    android:layout_gravity="center"
+                    android:text="Detail"
+                    android:textColor="@color/white" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/back_gradient_view"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/dp150"
+                        android:background="@color/white" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp100"
+                        android:layout_marginStart="-50dp"
+                        android:layout_marginTop="@dimen/dp100"
+                        android:layout_marginEnd="-50dp"
+                        android:background="@color/white"
+                        android:rotation="-10" />
+
+                </RelativeLayout>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/iv_logo"
+                    android:layout_marginStart="@dimen/sp20"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:layout_marginEnd="@dimen/dp20"
+                    android:layout_marginBottom="@dimen/dp10"
+                    app:cardCornerRadius="@dimen/dp10">
+
+                    <androidx.core.widget.NestedScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <RelativeLayout
+                                    android:id="@+id/rl_one"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/dp5"
+                                    android:background="@drawable/back_round_corner2"
+                                    android:backgroundTint="@color/white"
+                                    android:elevation="@dimen/dp2"
+                                    android:padding="@dimen/dp10">
+
+                                    <androidx.cardview.widget.CardView
+                                        android:id="@+id/iv_one"
+                                        android:layout_width="@dimen/dp70"
+                                        android:layout_height="@dimen/dp70"
+                                        android:layout_margin="@dimen/dp10"
+                                        android:visibility="visible"
+                                        app:cardCornerRadius="@dimen/dp10">
+
+                                        <ImageView
+                                            android:id="@+id/job_image"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:scaleType="fitXY" />
+
+                                    </androidx.cardview.widget.CardView>
+
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_toRightOf="@id/iv_one"
+                                        android:orientation="vertical">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:id="@+id/title"
+                                                style="@style/TextViewStyleSubTitleRegular"
+                                                android:layout_width="0dp"
+                                                android:layout_marginTop="2dp"
+                                                android:layout_weight="1"
+                                                android:text='@{bean.title}'
+                                                android:textSize="15dp" />
+
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:id="@+id/location"
+                                            style="@style/TextViewStyleSubTitleRegular"
+                                            android:drawableLeft="@drawable/ic_miles_icon"
+                                            android:drawablePadding="@dimen/dp5"
+                                            android:text='@{bean.city}'
+                                            android:textColor="@color/edit_text"
+                                            android:textSize="@dimen/sp12" />
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical">
+
+
+                                            <TextView
+                                                android:id="@+id/startDate"
+                                                style="@style/TextViewStyleSubTitleRegular"
+                                                android:drawableLeft="@drawable/ic_calendar_icon"
+                                                android:drawablePadding="@dimen/dp5"
+                                                android:textColor="@color/edit_text"
+                                                android:textSize="@dimen/sp12" />
+
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                style="@style/TextViewStyleSubTitleRegular"
+                                                android:text="@string/job_status"
+                                                android:textColor="@color/edit_text" />
+
+                                            <TextView
+                                                android:id="@+id/statusText"
+                                                style="@style/TextViewStyleSubTitleRegular"
+                                                android:layout_marginStart="@dimen/dp5"
+                                                android:textSize="@dimen/dp10"
+                                                android:job_status='@{bean.status}'
+                                                android:textColor="@color/green" />
+                                        </LinearLayout>
+
+
+                                    </LinearLayout>
+
+
+                                </RelativeLayout>
+
+
+                            </FrameLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp20"
+                                android:layout_marginTop="10sp"
+                                android:fontFamily="@font/sfpro_regular"
+                                android:text="@string/description"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp20"
+                                android:fontFamily="@font/sfpro_regular"
+                                android:text='@{bean.description}' />
+
+
+                            <TextView
+                                android:id="@+id/already_rated"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20sp"
+                                android:layout_marginTop="20dp"
+                                android:gravity="center"
+                                android:text="@string/you_have_already_rated_this_job"
+                                android:visibility="gone" />
+
+
+                            <TextView
+                                android:id="@+id/btn_invoice"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp40"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginTop="@dimen/dp20"
+                                android:foreground="?selectableItemBackground"
+                                android:gravity="center_horizontal"
+                                android:onClick="@{(v)->vm.onClick(v)}"
+                                android:paddingLeft="@dimen/dp20"
+                                android:paddingRight="20dp"
+                                android:text="View Invoice"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/sp14"
+                                android:visibility="gone" />
+
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cv_user_rating"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:visibility="gone"
+                                app:cardCornerRadius="@dimen/dp10">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:padding="@dimen/dp10">
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="60dp">
+
+                                        <com.marius.valeyou.util.glide.CircleImageView
+                                           android:id="@+id/uImage"
+                                            android:layout_width="50dp"
+                                            android:layout_height="50dp"
+                                            android:src="@drawable/placeholder" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:layout_marginLeft="10dp"
+                                        android:orientation="vertical">>
+
+                                        <TextView
+                                            android:id="@+id/provider_name"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Sanjeev Sharma"
+                                            android:textColor="@color/black" />
+
+                                        <TextView
+                                            android:id="@+id/provider_rate_des"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:textSize="12dp" />
+
+
+                                        <RatingBar
+                                            android:id="@+id/user_rating"
+                                            style="@style/Widget.AppCompat.RatingBar.Small"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp" />
+
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cv_my_rating"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:visibility="gone"
+                                app:cardCornerRadius="@dimen/dp10">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:padding="@dimen/dp10">
+
+                                    <LinearLayout
+                                        android:layout_width="@dimen/dp50"
+                                        android:layout_height="60dp">
+
+                                        <com.marius.valeyou.util.glide.CircleImageView
+                                           android:id="@+id/myImage"
+                                            android:layout_width="50dp"
+                                            android:layout_height="50dp"
+                                            android:src="@drawable/placeholder" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:layout_marginLeft="10dp"
+                                        android:orientation="vertical">>
+
+                                        <TextView
+                                            android:id="@+id/me"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="My Review"
+                                            android:textColor="@color/black" />
+
+                                        <TextView
+                                            android:id="@+id/my_rate_des"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:textSize="12dp" />
+
+
+                                        <RatingBar
+                                            android:id="@+id/my_rating"
+                                            style="@style/Widget.AppCompat.RatingBar.Small"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp" />
+
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+
+                            <LinearLayout
+                                android:id="@+id/ll_rating"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="10dp"
+                                android:visibility="gone">
+
+
+                                <com.marius.valeyou.util.glide.CircleImageView
+                                    android:id="@+id/user_image"
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/placeholder" />
+
+                                <TextView
+                                    android:id="@+id/tvName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="@dimen/dp10"
+                                    android:text='@{bean.provider.firstName+" "+bean.provider.lastName}'
+                                    android:textColor="@color/black"
+                                    android:textSize="15dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:text="Job Completed"
+                                    android:textSize="12dp" />
+
+                                <RatingBar
+                                    android:id="@+id/rb_rating"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="5dp" />
+
+
+                                <EditText
+                                    android:id="@+id/et_description"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="130dp"
+                                    android:layout_marginTop="@dimen/dp15"
+                                    android:background="@drawable/edittext_skyblue_stroke"
+                                    android:gravity="left|top"
+                                    android:hint="Write a Review"
+                                    android:padding="10sp"
+                                    android:textAlignment="textStart"
+                                    android:textColor="@color/black" />
+
+
+                                <Button
+                                    android:id="@+id/btn_submit"
+                                    style="@style/RectangleButtonStyle"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/dp40"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginTop="@dimen/dp20"
+                                    android:foreground="?selectableItemBackground"
+                                    android:onClick="@{(v)->vm.onClick(v)}"
+                                    android:text="Submit"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/sp14" />
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                    </androidx.core.widget.NestedScrollView>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+</layout>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+
+        <variable
+            name="type"
+            type="Integer" />
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.ui.fragment.home.HomeFragmentVM" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_one"
+            android:padding="@dimen/dp10"
+            style="@style/TextViewStyleSubTitleRegular"
+            android:text="@string/rating"
+            android:textColor="@color/grey"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/dp70"
+            android:gravity="center"
+            android:layout_below="@+id/tv_one">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="@dimen/dp50"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:weightSum="4">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:text="5"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:text="4"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:text="3"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:text="2"/>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextViewStyleSubTitleRegular"
+                    android:text="Any"
+                    android:layout_alignParentBottom="true"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center_horizontal"
+                    android:weightSum="4">
+                    <View
+                        android:id="@+id/view_one"
+                        android:onClick="@{v->vm.onClick(v)}"
+                        android:layout_width="@dimen/dp15"
+                        android:layout_height="@dimen/dp15"
+                        android:background="@drawable/circle_black"
+                        android:backgroundTint="@{type==1?@color/color_orange:@color/colorPrimary}"/>
+
+                    <View
+                        android:layout_width="@dimen/dp3"
+                        android:layout_height="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_marginTop="@dimen/dp3"
+                        android:layout_marginBottom="@dimen/dp3"
+                        android:layout_weight="1"/>
+                    <View
+                        android:id="@+id/view_two"
+                        android:onClick="@{v->vm.onClick(v)}"
+                        android:layout_width="@dimen/dp15"
+                        android:layout_height="@dimen/dp15"
+                        android:background="@drawable/circle_black"
+                        android:backgroundTint="@{type==2?@color/color_orange:@color/colorPrimary}"/>
+                    <View
+                        android:layout_width="@dimen/dp3"
+                        android:layout_height="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_marginTop="@dimen/dp3"
+                        android:layout_marginBottom="@dimen/dp3"
+                        android:layout_weight="1"/>
+                    <View
+                        android:id="@+id/view_three"
+                        android:onClick="@{v->vm.onClick(v)}"
+                        android:layout_width="@dimen/dp15"
+                        android:layout_height="@dimen/dp15"
+                        android:background="@drawable/circle_black"
+                        android:backgroundTint="@{type==3?@color/color_orange:@color/colorPrimary}"/>
+                    <View
+                        android:layout_width="@dimen/dp3"
+                        android:layout_height="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_marginTop="@dimen/dp3"
+                        android:layout_marginBottom="@dimen/dp3"
+                        android:layout_weight="1"/>
+                    <View
+                        android:id="@+id/view_four"
+                        android:onClick="@{v->vm.onClick(v)}"
+                        android:layout_width="@dimen/dp15"
+                        android:layout_height="@dimen/dp15"
+                        android:background="@drawable/circle_black"
+                        android:backgroundTint="@{type==4?@color/color_orange:@color/colorPrimary}"/>
+                    <View
+                        android:layout_width="@dimen/dp3"
+                        android:layout_height="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_marginTop="@dimen/dp3"
+                        android:layout_marginBottom="@dimen/dp3"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view_five"
+                    android:onClick="@{v->vm.onClick(v)}"
+                    android:layout_width="@dimen/dp24"
+                    android:layout_height="@dimen/dp24"
+                    android:background="@drawable/circle_black"
+                    android:backgroundTint="@{type==5?@color/color_orange:@color/colorPrimary}"
+                    android:layout_alignParentBottom="true"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

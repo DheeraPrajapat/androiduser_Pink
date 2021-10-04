@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="callback"
+            type="com.marius.valeyou.di.base.dialog.BaseCustomDialog.Listener" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp25"
+            app:cardCornerRadius="@dimen/dp10">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp10"
+                android:elevation="@dimen/dp2">
+
+                <TextView
+                    android:id="@+id/tv_one"
+                    android:layout_below="@+id/iv_cancel"
+                    style="@style/TextViewStyleSubTitleRegular"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="@dimen/dp20"
+                    android:text="@string/exit"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_two"
+                    android:layout_below="@+id/tv_one"
+                    android:layout_marginTop="@dimen/dp10"
+                    style="@style/TextViewStyleSubTitleRegular"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:textSize="@dimen/dp15"
+                    android:text="@string/are_you_sure_you_want_to_exit_from_applciation"
+                    android:textColor="@color/grey"
+                    />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="@dimen/dp5"
+                    android:layout_below="@+id/tv_two"
+                    android:layout_margin="@dimen/dp10"
+                    android:elevation="@dimen/dp5">
+
+                    <!--  <EditText
+                          style="@style/EditText_Regular"
+                          android:background="@android:color/transparent"
+                          android:textColor="@color/grey"
+                          android:inputType="numberDecimal"
+                          android:padding="@dimen/dp10"
+                          android:hint="" />-->
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_below="@+id/cv_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginBottom="@dimen/dp10">
+
+                    <Button
+                        android:id="@+id/btn_cancel"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp40"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        style="@style/RectangleButtonStyle"
+                        android:onClick="@{(v)->callback.onViewClick(v)}"
+                        android:text="@string/cancel"
+                        android:layout_margin="@dimen/dp5"
+                        android:textColor="?textColorTheme"
+                        android:background="@drawable/back_round_corner7"
+                        android:backgroundTint="?textColorTheme"
+                        android:foreground="?selectableItemBackground"
+                        android:textSize="@dimen/sp14" />
+
+                    <Button
+                        android:id="@+id/btn_submit"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp40"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        style="@style/RectangleButtonStyle"
+                        android:onClick="@{(v)->callback.onViewClick(v)}"
+                        android:text="Yes"
+                        android:layout_margin="@dimen/dp5"
+                        android:textColor="@color/white"
+                        android:foreground="?selectableItemBackground"
+                        android:backgroundTint="@color/red_drak"
+                        android:textSize="@dimen/sp14" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</layout>

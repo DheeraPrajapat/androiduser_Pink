@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".market_place.Drawer.Home.All_Ads.Post_Ads_Details.Make_Offer_Chat">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:id="@+id/tb_id"
+        android:background="@color/blue"
+        android:layout_marginStart="-15dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:id="@+id/cross_id"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_cross_white"
+                android:padding="16dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_id"
+                android:layout_toRightOf="@+id/cross_id"
+                android:layout_centerVertical="true"
+                android:text="Make Offer"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:background="@drawable/bottom_gray_line">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/iv_id"
+                android:src="@drawable/image_placeholder"
+                android:scaleType="centerCrop"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:orientation="vertical"
+                android:layout_toRightOf="@+id/iv_id"
+                android:layout_centerVertical="true">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lenovo vibe k5 plus 3gb ram 16 gb internal 1 month old"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Listed price 4500"
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quote your price to initiate chat and negotiation"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="vertical"
+            android:background="@drawable/bottom_gray_line"
+            android:layout_marginTop="10dp"
+            >
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/price_til_id"
+                android:paddingBottom="5dp"
+                android:layout_gravity="bottom"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/price_tie_id"
+                    android:background="@android:color/transparent"
+                    android:hint="Your Price"
+                    android:textSize="14dp"
+                    android:textColorHint="@color/black"
+                    android:gravity="bottom"
+                    android:paddingBottom="5dp"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="vertical"
+            android:background="@drawable/bottom_gray_line"
+            android:layout_marginTop="10dp"
+            >
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/email_til_id"
+                android:paddingBottom="5dp"
+                android:layout_gravity="bottom"
+                android:textColorHint="@color/black"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/email_tie_id"
+                    android:background="@android:color/transparent"
+                    android:hint="Email"
+                    android:text="Username@gmail.com"
+                    android:textSize="14dp"
+                    android:gravity="bottom"
+                    android:paddingBottom="5dp"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="vertical"
+            android:background="@drawable/bottom_gray_line"
+            android:layout_marginTop="10dp"
+            >
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/mbl_til_id"
+                android:paddingBottom="5dp"
+                android:textColorHint="@color/black"
+                android:layout_gravity="bottom"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/mbl_tie_id"
+                    android:background="@android:color/transparent"
+                    android:hint="Mobile Number"
+                    android:textSize="14dp"
+                    android:textColorHint="@color/black"
+                    android:gravity="bottom"
+                    android:inputType="number"
+                    android:paddingBottom="5dp"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="vertical"
+            android:background="@drawable/bottom_gray_line"
+            android:layout_marginTop="10dp"
+            >
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/pin_til_id"
+                android:paddingBottom="5dp"
+                android:layout_gravity="bottom"
+                android:textColorHint="@color/black"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/pin_tie_id"
+                    android:background="@android:color/transparent"
+                    android:hint="Pincode"
+                    android:textColorHint="@color/black"
+                    android:textSize="14dp"
+                    android:inputType="number"
+                    android:gravity="bottom"
+                    android:paddingBottom="5dp"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv1_id"
+            android:layout_marginTop="30dp"
+            android:text="By proceeding you agree to our Terms of Use and Privacy Policy"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/round_corner"
+            android:layout_marginTop="10dp"
+            android:text="Make an Offer"
+            android:textSize="14dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+</LinearLayout>

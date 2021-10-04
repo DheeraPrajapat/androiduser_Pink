@@ -1,0 +1,809 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="fav"
+            type="Integer" />
+
+        <variable
+            name="check"
+            type="boolean" />
+
+        <variable
+            name="type"
+            type="String" />
+
+        <variable
+            name="profile"
+            type="com.marius.valeyou.data.beans.respbean.ProviderDetails" />
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.ui.activity.provider_profile.ProviderProfileActivityVM" />
+    </data>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:fillViewport="true"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/back_gradient_view"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/profile_image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp250"
+                android:scaleType="centerCrop"
+                android:layout_below="@+id/ll_top"
+                app:profile_image="@{profile.image}"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/profile_image"
+                android:layout_marginBottom="-10dp"
+                android:padding="10dp"
+                >
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_corners_shape"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:layout_gravity="center"
+                            android:textColor="@color/white"
+                            android:layout_margin="10dp"
+                            android:paddingTop="@dimen/dp5"
+                            android:paddingBottom="@dimen/dp5"
+                            android:text='@{"Total Jobs : "+profile.totalprovidedservices}'
+                            />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+                        <RatingBar
+                            android:id="@+id/myRatingBar"
+                            style="?android:attr/ratingBarStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:isIndicator="true"
+                            android:numStars="5"
+                            android:rating='@{profile.average_rating+""}'
+                            android:theme="@style/RatingBar" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:text='@{"("+profile.average_rating+")"}'/>
+
+                        </LinearLayout>
+
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/dp15">
+
+                            <TextView
+                                style="@style/TextViewStyleSubTitleRegular"
+                                android:text="@string/name"
+                                android:textColor="@color/edit_text"
+                                />
+
+                            <TextView
+                                style="@style/TextViewStyleSubTitleRegular"
+                                android:text='@{profile.firstName+" "+profile.lastName}'
+                                android:textColor="@color/edit_text"
+                                android:layout_alignParentEnd="true"
+                                />
+
+                        </RelativeLayout>
+
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp1"
+                            android:background="@color/grey_light"/>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="@dimen/dp15">
+
+                            <TextView
+                                style="@style/TextViewStyleSubTitleRegular"
+                                android:text="@string/description" />
+
+                            <TextView
+                                style="@style/TextViewStyleSubTitleRegular"
+                                android:text="@{profile.description}"
+                                android:textColor="@color/edit_text"
+                                android:layout_marginTop="@dimen/dp7"
+                                android:textSize="@dimen/sp12"
+                                />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp1"
+                            android:background="@color/grey_light"/>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/dp15">
+
+                            <TextView
+                                style="@style/TextViewStyleSubTitleRegular"
+                                android:text="@string/distance"
+                                android:textColor="@color/edit_text"
+                                />
+
+                            <TextView
+                                style="@style/TextViewStyleSubTitleRegular"
+                                android:text='@{profile.distance +" KM away"}'
+                                android:textColor="@color/edit_text"
+                                android:layout_alignParentEnd="true"
+                                />
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp1"
+                            android:background="@color/grey_light"/>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:padding="@dimen/dp15">
+
+                            <TextView
+                                style="@style/TextViewStyleSubTitleRegular"
+                                android:text="Email"
+                                android:textColor="@color/edit_text"
+                                />
+
+                            <TextView
+                                style="@style/TextViewStyleSubTitleRegular"
+                                android:text="@{profile.email}"
+                                android:textColor="@color/edit_text"
+                                android:layout_alignParentEnd="true"
+                                />
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp1"
+                            android:visibility="gone"
+                            android:background="@color/grey_light"/>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:padding="@dimen/dp15">
+
+                            <TextView
+                                style="@style/TextViewStyleSubTitleRegular"
+                                android:text="Phone Number"
+                                android:textColor="@color/edit_text"
+                                />
+
+                            <TextView
+                                style="@style/TextViewStyleSubTitleRegular"
+                                android:text="@{profile.phone}"
+                                android:textColor="@color/edit_text"
+                                android:layout_alignParentEnd="true"
+                                />
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp1"
+                            android:visibility="gone"
+                            android:background="@color/grey_light"/>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/dp15">
+
+                            <TextView
+                               android:layout_width="wrap_content"
+                                android:text="@string/category"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/edit_text"
+                                />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:textAlignment="textEnd"
+                                android:minLines="1"
+                                android:maxLines="3"
+                                android:layout_marginLeft="@dimen/dp10"
+                                android:ellipsize="end"
+                                android:layout_height="wrap_content"
+                                android:text="@{profile.category_name}"
+                                android:textColor="@color/edit_text"
+                                android:layout_alignParentEnd="true"
+                                />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp1"
+                            android:background="@color/grey_light"/>
+
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:padding="@dimen/dp15">
+
+                            <TextView
+                                style="@style/TextViewStyleSubTitleRegular"
+                                android:text="Address"
+                                android:textColor="@color/edit_text"
+                                />
+
+                            <TextView
+                                style="@style/TextViewStyleSubTitleRegular"
+                                android:text='@{profile.address}'
+                                android:textColor="@color/edit_text"
+                                android:layout_alignParentEnd="true"
+                                />
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp1"
+                            android:background="@color/grey_light"/>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/dp1">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:id="@+id/rl_language"
+                                    android:onClick="@{v->vm.onClick(v)}"
+                                    android:layout_width="match_parent"
+                                    android:clickable="true"
+                                    android:padding="5dp"
+                                    android:foreground="?attr/selectableItemBackground"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_toLeftOf="@+id/iv_one"
+                                        style="@style/TextViewStyleSubTitleRegular"
+                                        android:text="@string/languages"
+                                        android:padding="@dimen/dp10"
+                                        android:textColor="@color/grey"/>
+
+                                    <ImageView
+                                        android:id="@+id/iv_one"
+                                        android:layout_width="@dimen/dp24"
+                                        android:layout_height="@dimen/dp24"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_centerVertical="true"
+                                        android:padding="@dimen/dp5"
+                                        android:rotation='@{type.equalsIgnoreCase("2")?0:-90}'
+                                        android:src="@drawable/ic_drop_down_iocn"/>
+
+                                </RelativeLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/ll_language"
+                                    android:layout_width="match_parent"
+                                    android:visibility="visible"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/tv_no_language"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="@string/no_language"/>
+
+                                    <androidx.recyclerview.widget.RecyclerView
+                                        android:id="@+id/rv_language"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="@dimen/dp5"
+                                        android:overScrollMode="never"/>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/dp1">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:id="@+id/rl_portfolio"
+                                    android:onClick="@{v->vm.onClick(v)}"
+                                    android:layout_width="match_parent"
+                                    android:clickable="true"
+                                    android:padding="5dp"
+                                    android:foreground="?attr/selectableItemBackground"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_toLeftOf="@+id/iv_two"
+                                        style="@style/TextViewStyleSubTitleRegular"
+                                        android:text="@string/portfolio"
+                                        android:padding="@dimen/dp10"
+                                        android:textColor="@color/grey"/>
+
+                                    <ImageView
+                                        android:id="@+id/iv_two"
+                                        android:layout_width="@dimen/dp24"
+                                        android:layout_height="@dimen/dp24"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_centerVertical="true"
+                                        android:padding="@dimen/dp5"
+                                        android:rotation='@{type.equalsIgnoreCase("3")?0:-90}'
+                                        android:src="@drawable/ic_drop_down_iocn"/>
+
+                                </RelativeLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/ll_portfolio"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="visible"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/tv_no_portfolio"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="@string/no_portfolio"/>
+
+                                    <androidx.recyclerview.widget.RecyclerView
+                                        android:id="@+id/rv_portfolio"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="@dimen/dp5"
+                                        android:overScrollMode="never"/>
+
+                                    <TextView
+                                        android:id="@+id/txtViewMore"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Show More"
+                                        android:paddingLeft="10dp"
+                                        android:paddingRight="10dp"
+                                        android:paddingTop="5dp"
+                                        android:paddingBottom="5dp"
+                                        android:visibility="gone"
+                                        android:textSize="12sp"
+                                        android:layout_marginBottom="5dp"
+                                        android:layout_gravity="center"
+                                        android:textColor="@color/white"
+                                        android:fontFamily="@font/sfpro_regular"
+                                        android:onClick="@{v->vm.onClick(v)}"
+                                        android:background="@drawable/roude_corners_shape"/>
+
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/dp1">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:id="@+id/rl_my_service"
+                                    android:onClick="@{v->vm.onClick(v)}"
+                                    android:clickable="true"
+                                    android:padding="5dp"
+                                    android:visibility="gone"
+                                    android:foreground="?attr/selectableItemBackground"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_toLeftOf="@+id/iv_three"
+                                        style="@style/TextViewStyleSubTitleRegular"
+                                        android:text="@string/my_services"
+                                        android:padding="@dimen/dp10"
+                                        android:textColor="@color/grey"/>
+
+                                    <ImageView
+                                        android:id="@+id/iv_three"
+                                        android:layout_width="@dimen/dp24"
+                                        android:layout_height="@dimen/dp24"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_centerVertical="true"
+                                        android:padding="@dimen/dp5"
+                                        android:rotation='@{type.equalsIgnoreCase("4")?0:-90}'
+                                        android:src="@drawable/ic_drop_down_iocn"/>
+
+                                </RelativeLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/ll_services"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/tv_no_services"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="@string/no_service"/>
+                                    <androidx.recyclerview.widget.RecyclerView
+                                        android:id="@+id/rv_services"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="@dimen/dp5"
+                                        android:overScrollMode="never"/>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:id="@+id/rl_awards"
+                                    android:onClick="@{v->vm.onClick(v)}"
+                                    android:clickable="true"
+                                    android:padding="5dp"
+                                    android:foreground="?attr/selectableItemBackground"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_toLeftOf="@+id/iv_six"
+                                        style="@style/TextViewStyleSubTitleRegular"
+                                        android:text="@string/certificate_and_awards"
+                                        android:padding="@dimen/dp10"
+                                        android:textColor="@color/grey"/>
+
+                                    <ImageView
+                                        android:id="@+id/iv_six"
+                                        android:layout_width="@dimen/dp24"
+                                        android:layout_height="@dimen/dp24"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_centerVertical="true"
+                                        android:padding="@dimen/dp5"
+                                        android:rotation='@{type.equalsIgnoreCase("6")?0:-90}'
+                                        android:src="@drawable/ic_drop_down_iocn"/>
+
+                                </RelativeLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/ll_certificate"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="visible"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:id="@+id/tv_no_certificate"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="@string/no_certificate"/>
+
+                                    <androidx.recyclerview.widget.RecyclerView
+                                        android:id="@+id/rv_certificate"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="@dimen/dp5"
+                                        android:overScrollMode="never"/>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp1"
+                            android:background="@color/grey_light"/>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:id="@+id/rl_review"
+                                    android:onClick="@{v->vm.onClick(v)}"
+                                    android:clickable="true"
+                                    android:padding="5dp"
+                                    android:foreground="?attr/selectableItemBackground"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_toLeftOf="@+id/iv_seven"
+                                        style="@style/TextViewStyleSubTitleRegular"
+                                        android:text="@string/reviews"
+                                        android:padding="@dimen/dp10"
+                                        android:textColor="@color/grey"/>
+
+                                    <ImageView
+                                        android:id="@+id/iv_seven"
+                                        android:layout_width="@dimen/dp24"
+                                        android:layout_height="@dimen/dp24"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_centerVertical="true"
+                                        android:padding="@dimen/dp5"
+                                        android:rotation='@{type.equalsIgnoreCase("7")?0:-90}'
+                                        android:src="@drawable/ic_drop_down_iocn"/>
+
+                                </RelativeLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/ll_review"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="visible"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/tv_no_review"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="@string/no_reviews"/>
+
+                                    <androidx.recyclerview.widget.RecyclerView
+                                        android:id="@+id/rv_reviews"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="@dimen/dp5"
+                                        android:overScrollMode="never"/>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/dp1">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:id="@+id/rl_businesshour"
+                                    android:onClick="@{v->vm.onClick(v)}"
+                                    android:clickable="true"
+                                    android:padding="5dp"
+                                    android:foreground="?attr/selectableItemBackground"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_toLeftOf="@+id/iv_four"
+                                        style="@style/TextViewStyleSubTitleRegular"
+                                        android:text="@string/business_hours"
+                                        android:padding="@dimen/dp10"
+                                        android:textColor="@color/grey"/>
+
+                                    <ImageView
+                                        android:id="@+id/iv_four"
+                                        android:layout_width="@dimen/dp24"
+                                        android:layout_height="@dimen/dp24"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_centerVertical="true"
+                                        android:padding="@dimen/dp5"
+                                        android:rotation='@{type.equalsIgnoreCase("5")?0:-90}'
+                                        android:src="@drawable/ic_drop_down_iocn"/>
+
+                                </RelativeLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/ll_business_hours"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/tv_no_business_hours"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="@string/no_business_hours"/>
+
+                                    <androidx.recyclerview.widget.RecyclerView
+                                        android:id="@+id/rv_business_hour"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="@dimen/dp5"
+                                        android:overScrollMode="never"/>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp100"/>
+
+                    </LinearLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
+
+            <RelativeLayout
+                android:id="@+id/ll_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <include android:id="@+id/header"
+                    layout="@layout/toolbar_layout"
+                    app:vm="@{vm}" />
+
+
+                <ImageView
+                    android:id="@+id/iv_share"
+                    android:onClick="@{v->vm.onClick(v)}"
+                    android:foreground="?selectableItemBackground"
+                    android:layout_width="@dimen/dp36"
+                    android:layout_height="@dimen/dp36"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/iv_fav"
+                    android:layout_marginEnd="@dimen/dp10"
+                    android:padding="@dimen/dp7"
+                    android:src="@drawable/ic_share_icon"/>
+
+                <ImageView
+                    android:id="@+id/iv_fav"
+                    android:onClick="@{v->vm.onClick(v)}"
+                    android:foreground="?selectableItemBackground"
+                    android:layout_width="@dimen/dp36"
+                    android:layout_height="@dimen/dp36"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/dp10"
+                    android:padding="7dp"
+                    android:src="@{profile.like_status==1?@drawable/ic_fav_selected:@drawable/ic_fav_unselect}"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/spin_kit"
+            style="@style/SpinKitView.Large.ThreeBounce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="@{check?View.VISIBLE:View.GONE}"
+            app:SpinKit_Color="?textColorTheme" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/b_message"
+                android:onClick="@{v->vm.onClick(v)}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/messsage"
+                android:textColor="@color/white"
+                android:background="@color/colorPrimary"
+                android:foreground="?attr/selectableItemBackground"/>
+
+            <View
+                android:layout_width="1dp"
+                android:background="@color/white"
+                android:layout_height="match_parent"/>
+
+            <Button
+                android:id="@+id/b_hire"
+                android:onClick="@{v->vm.onClick(v)}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/hire_now"
+                android:textColor="@color/white"
+                android:background="@color/colorPrimary"
+                android:foreground="?attr/selectableItemBackground"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+
+</layout>

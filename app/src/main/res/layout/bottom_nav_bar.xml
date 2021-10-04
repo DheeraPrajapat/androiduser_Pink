@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="value"
+            type="Integer" />
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.di.base.viewmodel.BaseActivityViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp80"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <LinearLayout
+            android:id="@+id/ll_menu"
+            android:onClick="@{v->vm.onClick(v)}"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/dp20"
+            android:background="@color/white"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_list_icon"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:text="@string/all_jobs"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_fav"
+            android:onClick="@{v->vm.onClick(v)}"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/dp20"
+            android:background="@color/white"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_favorite_icon"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:text="@string/favourites"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp20"
+                android:background="@color/white">
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_home"
+                android:layout_width="@dimen/dp60"
+                android:layout_height="@dimen/dp60"
+                app:cardBackgroundColor="@color/colorPrimary"
+                android:layout_centerHorizontal="true"
+                android:onClick="@{v->vm.onClick(v)}"
+                android:foreground="?selectableItemBackground"
+                app:cardCornerRadius="@dimen/dp35">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/home"
+                    android:padding="@dimen/dp10" />
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_settings"
+            android:onClick="@{v->vm.onClick(v)}"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/dp20"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="@dimen/dp40"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_add_post_icon"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:text="@string/add_post"/>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/ll_message"
+            android:onClick="@{v->vm.onClick(v)}"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/dp20"
+            android:background="@color/white"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_message_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:text="@string/messsage"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_badge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/badge_shape"
+                android:gravity="center"
+                android:padding="5dp"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                android:textSize="11sp" />
+
+
+        </FrameLayout>
+        <!--android:tint="@{value==5?@color/selected:@color/unselect}"-->
+    </LinearLayout>
+
+</layout>

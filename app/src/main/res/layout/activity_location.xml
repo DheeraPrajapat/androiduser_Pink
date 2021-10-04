@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="check"
+            type="boolean" />
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.ui.activity.LocationActivityVM" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <fragment
+                    android:id="@+id/map_view"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/white_trans">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:id="@+id/rl_top"
+                            android:layout_width="match_parent"
+                            android:background="@color/colorPrimaryDark"
+                            android:layout_height="60dp">
+
+                            <include
+                                android:id="@+id/header"
+                                layout="@layout/toolbar_layout"
+                                app:vm="@{vm}"/>
+
+
+                        </RelativeLayout>
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp20"
+                            android:layout_marginEnd="@dimen/dp20"
+                            android:layout_marginTop="@dimen/dp10"
+                            android:visibility="gone"
+                            android:layout_marginBottom="@dimen/dp20"
+                            android:layout_below="@+id/rl_top"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="@dimen/dp5"
+                            android:elevation="@dimen/dp5">
+
+                            <EditText
+                                android:id="@+id/et_search"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp45"
+                                android:onClick="@{(v)->vm.onClick(v)}"
+                                style="@style/EditText_Regular"
+                                android:background="@drawable/edit_white_solid"
+                                android:backgroundTint="@color/white"
+                                android:drawableLeft="@drawable/places_ic_search"
+                                android:paddingStart="@dimen/dp10"
+                                android:visibility="visible"
+                                android:imeOptions="actionSearch"
+                                android:singleLine="true"
+                                android:editable="false"
+                                android:focusable="false"
+                                android:inputType="text"
+                                android:maxLines="1"
+                                android:gravity="center_vertical"
+                                android:drawablePadding="@dimen/dp10"
+                                android:hint="Search Location"
+                                android:textSize="@dimen/sp14"
+                                />
+
+                        </androidx.cardview.widget.CardView>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txtFullAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/dp15"
+                    android:textAlignment="center"
+                    />
+
+
+                <Button
+                    android:id="@+id/btn_save"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SAVE"
+                    android:onClick="@{(v)->vm.onClick(v)}"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="@color/colorPrimary"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</layout>

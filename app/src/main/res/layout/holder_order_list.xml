@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="bean"
+            type="com.marius.valeyou.localMarketModel.responseModel.marketHome.MarketPostModel" />
+
+        <variable
+            name="callback"
+            type="com.marius.valeyou.di.base.adapter.SimpleRecyclerViewAdapter.SimpleCallback" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_home_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp10"
+        android:foreground="?selectableItemBackground"
+        app:cardCornerRadius="@dimen/dp10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/dp10">
+
+            <ImageView
+                android:layout_width="@dimen/dp80"
+                android:layout_height="@dimen/dp80"
+                android:scaleType="fitXY"
+                app:profile_image="@{bean.postImages.get(0).image}" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginEnd="0dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/relName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{v->callback.onItemClick(v,bean)}">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toStartOf="@+id/txtDate"
+                        android:gravity="start"
+                        android:fontFamily="@font/poppins_medium"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:text='@{bean.capitalize(bean.title)}'
+                        android:textSize="@dimen/sp14" />
+
+                    <TextView
+                        android:id="@+id/txtDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="@dimen/sp12"
+                        android:timestamp_date='@{bean.createdAt+""}'
+                        />
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/txtDesc"
+                    style="@style/TextViewStyleTitleMedium"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/poppins_medium"
+                    android:onClick="@{v->callback.onItemClick(v,bean)}"
+                    android:text='@{bean.capitalize(bean.tag)}'
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp12" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/txtPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/poppins_medium"
+                        android:onClick="@{v->callback.onItemClick(v,bean)}"
+                        android:text='@{bean.getStrPrice()+" brl"}'
+                        android:textSize="@dimen/sp14" />
+
+                    <TextView
+                        android:id="@+id/txtSoled"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/poppins_medium"
+                        android:onClick="@{v->callback.onItemClick(v,bean)}"
+                        android:text='@{bean.getSoldStatus()}'
+                        android:textColor="@color/green"
+                        android:textSize="@dimen/sp14" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

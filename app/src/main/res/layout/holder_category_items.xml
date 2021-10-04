@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <variable
+            name="bean"
+            type="com.marius.valeyou.data.beans.respbean.CategoryListBean" />
+
+        <variable
+            name="callback"
+            type="com.marius.valeyou.di.base.adapter.SimpleRecyclerViewAdapter.SimpleCallback" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_click"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp10"
+        android:onClick="@{v->callback.onItemClick(v,bean)}"
+        android:foreground="?selectableItemBackground"
+        app:cardCornerRadius="@dimen/dp10">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp130"
+            android:padding="@dimen/dp10"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="@dimen/dp50"
+                android:layout_height="@dimen/dp50"
+                app:image_url="@{bean.image}" />
+
+            <TextView
+                style="@style/TextViewStyleTitleMedium"
+                android:text="@{bean.name}"
+                android:padding="@dimen/dp10"
+                android:textSize="@dimen/sp14"
+                android:textColor="@color/edit_text" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

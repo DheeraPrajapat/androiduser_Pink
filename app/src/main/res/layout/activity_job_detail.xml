@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="check"
+            type="boolean" />
+
+        <variable
+            name="bean"
+            type="com.marius.valeyou.data.beans.respbean.JobDetailsBean" />
+
+
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.ui.fragment.myjob.detail.JobDetailActivityVM" />
+    </data>
+
+
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/back_gradient_view">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp150"
+                    android:background="@color/white" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp100"
+                    android:background="@color/white"
+                    android:layout_marginTop="@dimen/dp100"
+                    android:rotation="-10"
+                    android:layout_marginStart="-50dp"
+                    android:layout_marginEnd="-50dp"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/back_round_corner2"
+                android:padding="@dimen/dp10"
+                android:layout_marginTop="70dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/white"
+                android:elevation="@dimen/dp2">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/iv_one"
+                    android:layout_width="@dimen/dp70"
+                    android:layout_height="@dimen/dp70"
+                    app:cardCornerRadius="@dimen/dp10"
+                    android:visibility="visible"
+                    android:layout_margin="@dimen/dp10">
+                    <ImageView
+                        android:id="@+id/job_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        />
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_toRightOf="@id/iv_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            style="@style/TextViewStyleSubTitleRegular"
+                            android:layout_marginTop="2dp"
+                            android:text='@{bean.title}'
+                            android:textSize="15dp"
+                            />
+
+                        <TextView
+                            android:layout_below="@+id/iv_one"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sfpro_bold"
+                            android:textColor="@color/black"
+                            android:layout_marginLeft="@dimen/dp10"
+                            android:textSize="18dp"
+                            />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:textSize="@dimen/sp12"
+                        android:textColor="@color/edit_text"
+                        android:layout_marginTop="@dimen/dp5"
+                        android:drawableLeft="@drawable/ic_miles_icon"
+                        android:drawablePadding="@dimen/dp5"
+                        android:text='@{bean.city}' />
+
+                    <TextView
+                        android:id="@+id/txtDate"
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:textSize="@dimen/sp12"
+                        android:textColor="@color/edit_text"
+                        android:layout_marginTop="@dimen/dp5"
+                        android:drawableLeft="@drawable/ic_calendar_icon"
+                        android:drawablePadding="@dimen/dp5"
+                        />
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            style="@style/TextViewStyleSubTitleRegular"
+                            android:textColor="@color/edit_text"
+                            android:text="@string/job_status"/>
+
+                        <TextView
+                            android:id="@+id/jobstatus"
+                            style="@style/TextViewStyleSubTitleRegular"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:job_status='@{bean.status}'/>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            style="@style/TextViewStyleSubTitleRegular"
+                            android:textColor="@color/edit_text"
+                            android:text="@string/price"/>
+
+                        <TextView
+                            android:id="@+id/price"
+                            style="@style/TextViewStyleSubTitleRegular"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:textColor="@color/green"
+                            android:text='@{bean.bidPrice==0?" : "+bean.endPrice:" : "+bean.bidPrice+""}'/>
+
+
+                        <ImageView
+                            android:id="@+id/iv_chat"
+                            android:layout_width="40dp"
+                            android:layout_gravity="right"
+                            android:padding="7dp"
+                            android:onClick="@{(v)->vm.onClick(v)}"
+                            android:src="@drawable/ic_chat_sidemenu"
+                            android:background="?attr/selectableItemBackground"
+                            android:layout_height="40dp"/>
+
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv1_idCode"
+                style="@style/TextViewStyleSubTitleRegular"
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_height="wrap_content"
+                android:textColor="@color/edit_text"
+                android:layout_below="@id/rl_one"
+                android:visibility='@{bean.jobType==0?View.GONE:View.VISIBLE}'
+                android:text='@{"Confirmation Code : "+bean.confirmationCode}'
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/dp10"
+                android:layout_below="@+id/tv1_idCode">
+
+                <TextView
+                    style="@style/TextViewStyleSubTitleRegular"
+                    android:padding="@dimen/dp2"
+                    android:textSize="@dimen/sp14"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/colorPrimary"
+                    android:text="@string/description"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/dp13"
+                    android:padding="5sp"
+                    android:text='@{bean.description}'
+                    android:fontFamily="@font/sfpro_regular"/>
+
+                <LinearLayout
+                    android:id="@+id/uploads"
+                    android:layout_width="match_parent"
+                    android:layout_below="@id/options"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/uploaded_work"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textAllCaps="false"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:layout_gravity="center_vertical"
+                        android:backgroundTint="@color/grey_light1"
+                        android:onClick="@{(v)->vm.onClick(v)}"
+                        android:text="@string/upload_images"
+                        android:fontFamily="@font/sfpro_regular"
+                        android:layout_margin="@dimen/dp5"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp14" />
+
+                    <Button
+                        android:id="@+id/uploadedAttachments"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textAllCaps="false"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:layout_gravity="center_vertical"
+                        android:backgroundTint="@color/grey_light1"
+                        android:onClick="@{(v)->vm.onClick(v)}"
+                        android:text="@string/upload_atachments"
+                        android:fontFamily="@font/sfpro_regular"
+                        android:layout_margin="@dimen/dp5"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp14" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/options"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:layout_below="@id/reschedule_job"
+                    >
+
+                    <Button
+                        android:id="@+id/cancelJobBtn"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="@dimen/dp45"
+                        android:visibility="visible"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/grey_light1"
+                        android:onClick="@{(v)->vm.onClick(v)}"
+                        android:text="@string/cancel_job"
+                        android:layout_margin="@dimen/dp10"
+                        android:backgroundTint="@color/red"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp14" />
+
+                    <Button
+                        android:id="@+id/reschedule_job"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textAllCaps="false"
+                        android:layout_height="@dimen/dp45"
+                        android:visibility="visible"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/grey_light1"
+                        android:onClick="@{(v)->vm.onClick(v)}"
+                        android:text="@string/reschdeule_job"
+                        android:layout_margin="@dimen/dp10"
+                        android:textColor="@color/white"
+                        android:backgroundTint="@color/colorPrimary"
+                        android:textSize="@dimen/sp14" />
+
+                </LinearLayout>
+
+
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/updatePrice"
+                    android:visibility="gone"
+                    android:textAllCaps="false"
+                    android:text="Update Job Price"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="@color/grey_light1"
+                    android:textColor="@color/black"
+                    android:onClick="@{(v)->vm.onClick(v)}"
+                    />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/additionalCost"
+                    android:layout_marginTop="10dp"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/sfpro_regular"
+                    android:visibility='@{bean.total_additional_amount==0?View.GONE:View.VISIBLE}'
+                    android:backgroundTint="@color/yellow"
+                    android:textColor="@color/white"
+                    android:onClick="@{(v)->vm.onClick(v)}"
+                    />
+
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/completeButton"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone"
+                    android:background="@color/colorPrimary"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:onClick="@{(v)->vm.onClick(v)}"
+                    />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvJobDcheduler"
+                    android:layout_marginTop="@dimen/dp20"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+
+
+            </LinearLayout>
+
+            <include android:id="@+id/header"
+                layout="@layout/toolbar_transparent"
+                app:vm="@{vm}"/>
+
+        </RelativeLayout>
+
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/spin_kit"
+            style="@style/SpinKitView.Large.ThreeBounce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="300dp"
+            android:layout_marginLeft="150dp"
+            android:visibility="@{check?View.VISIBLE:View.GONE}"
+            app:SpinKit_Color="?textColorTheme" />
+
+    </FrameLayout>
+</layout>

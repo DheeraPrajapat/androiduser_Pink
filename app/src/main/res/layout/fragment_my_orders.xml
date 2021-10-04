@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".localMarketModel.ui.fragment.orders.MyOrdersFragment">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.localMarketModel.ui.fragment.orders.MyOrdersFragmentVM" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:alpha=".2"
+            android:background="@color/white" />
+
+        <LinearLayout
+            android:id="@+id/llTab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/tvPrivate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/sfpro_regular"
+                android:background="@color/colorPrimary"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:onClick="@{v->vm.onClick(v)}"
+                android:paddingVertical="@dimen/dp15"
+                android:text="@string/private_text"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dp14" />
+
+            <TextView
+                android:id="@+id/tvCommercial"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:fontFamily="@font/sfpro_regular"
+                android:onClick="@{v->vm.onClick(v)}"
+                android:paddingVertical="@dimen/dp15"
+                android:text="@string/commercial"
+                android:textSize="@dimen/dp14" />
+        </LinearLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llTab">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvMyOrder"
+                android:layout_width="match_parent"
+                 android:layout_height="match_parent" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <TextView
+            android:id="@+id/noProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/no_private_product_found"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+
+</layout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent">
+
+    <ImageView
+        android:id="@+id/ivCancel"
+        android:layout_width="@dimen/dp50"
+        android:layout_height="@dimen/dp60"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/dp5"
+        android:padding="@dimen/dp10"
+        android:src="@drawable/ic_cancel_icon" />
+
+    <ImageView
+        android:id="@+id/ivFullImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dp60" />
+</RelativeLayout>

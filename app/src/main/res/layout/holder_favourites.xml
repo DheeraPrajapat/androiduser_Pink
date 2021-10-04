@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="callback"
+            type="com.marius.valeyou.di.base.adapter.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+        <variable
+            name="bean"
+            type="com.marius.valeyou.localMarketModel.responseModel.FavouriteModel.Datum" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp10"
+        android:layout_marginVertical="@dimen/dp4"
+        app:cardBackgroundColor="@color/colorPrimaryDark"
+        app:cardCornerRadius="@dimen/dp10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/dp10">
+
+            <ImageView
+                android:layout_width="@dimen/dp50"
+                android:layout_height="@dimen/dp50"
+                android:scaleType="fitXY"
+                app:profile_image="@{bean.marketPost.postImages.size()==1?bean.marketPost.postImages.get(0).image:bean.marketPost.title}" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/dp8"
+                android:paddingEnd="@dimen/dp1">
+
+
+                <TextView
+                    android:id="@+id/txtTitle"
+                    style="@style/TextViewStyleSubTitleRegular"
+                    android:layout_width="match_parent"
+                    android:layout_toStartOf="@+id/imgFav"
+                    android:gravity="start"
+                    android:onClick="@{v->callback.onItemClick(v,bean)}"
+                    android:text="@{bean.marketPost.title}"
+                    android:textColor="@color/textColor" />
+
+                <TextView
+                    android:id="@+id/txtDesc"
+                    style="@style/TextViewStyleSubTitleRegular"
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/txtTitle"
+                    android:layout_toStartOf="@+id/imgFav"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:onClick="@{v->callback.onItemClick(v,bean)}"
+                    android:paddingVertical="@dimen/dp6"
+                    android:text="@{bean.marketPost.description}"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/sp12" />
+
+
+                <ImageView
+                    android:id="@+id/imgFav"
+                    android:layout_width="@dimen/dp30"
+                    android:layout_height="@dimen/dp30"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginHorizontal="@dimen/dp10"
+                    android:onClick="@{v->callback.onItemClick(v,bean)}"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_fav_selected"
+                    app:tint="@color/colorPrimary" />
+
+                <RelativeLayout
+                    android:id="@+id/relBottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtDesc"
+                    android:onClick="@{v->callback.onItemClick(v,bean)}">
+
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:text='@{bean.marketPost.getStrPrice()+" brl"}'
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/sp12" />
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:layout_alignParentEnd="true"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/sp12"
+                        android:timestamp_date='@{bean.createdAt+""}' />
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

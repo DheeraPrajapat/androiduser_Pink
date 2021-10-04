@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="bean"
+            type="com.marius.valeyou.localMarketModel.responseModel.marketHome.MarketPostModel" />
+
+        <variable
+            name="callback"
+            type="com.marius.valeyou.localMarketModel.ui.fragment.home.AdapterMarketHome.ClickCallback" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp10"
+            android:foreground="?selectableItemBackground"
+            app:cardCornerRadius="@dimen/dp10">
+
+            <TextView
+                android:id="@+id/txtType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="end"
+                android:layout_marginEnd="@dimen/sp10"
+                android:fontFamily="@font/poppins_medium"
+                android:padding="2dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp12" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp10">
+
+                <ImageView
+                    android:id="@+id/ivImage"
+                    android:layout_width="@dimen/dp80"
+                    android:layout_height="@dimen/dp80"
+                    android:layout_marginVertical="8dp"
+                    android:onClick="@{v->callback.onItemClick(v,bean)}"
+                    android:scaleType="fitXY"
+                    app:profile_image="@{bean.postImages.get(0).image}" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp10"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="0dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/relName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{v->callback.onItemClick(v,bean)}">
+
+
+                        <TextView
+                            android:id="@+id/tvTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toStartOf="@+id/txtDate"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/poppins_medium"
+                            android:gravity="start"
+                            android:maxLines="1"
+                            android:textSize="@dimen/sp14" />
+
+                        <TextView
+                            android:id="@+id/txtDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textSize="@dimen/sp12"
+                            android:timestamp_date='@{bean.createdAt+""}' />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtDesc"
+                            style="@style/TextViewStyleTitleMedium"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_toStartOf="@+id/tvOwnerType"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/poppins_medium"
+                            android:gravity="start"
+                            android:maxLines="2"
+                            android:onClick="@{v->callback.onItemClick(v,bean)}"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp12" />
+
+                        <TextView
+                            android:id="@+id/tvOwnerType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text='@{bean.ownerType+""}'
+                            android:textSize="@dimen/sp12" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/txtPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/poppins_medium"
+                            android:onClick="@{v->callback.onItemClick(v,bean)}"
+                            android:text='@{bean.getStrPrice()+" brl"}'
+                            android:textSize="@dimen/sp14" />
+
+                        <ImageView
+                            android:id="@+id/imgFav"
+                            android:layout_width="@dimen/dp30"
+                            android:layout_height="@dimen/dp30"
+                            android:layout_alignParentEnd="true"
+                            android:onClick="@{v->callback.onItemClick(v,bean)}"
+                            android:padding="2dp"
+                            android:src='@{bean.fav == 0? @drawable/ic_fav:@drawable/ic_fav_selected}'
+                            app:tint="@color/colorPrimary" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:visibility="gone"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="@string/banner_ad_unit_id" />
+    </LinearLayout>
+
+</layout>

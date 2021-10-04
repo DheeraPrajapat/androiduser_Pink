@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="check"
+            type="boolean" />
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.localMarketModel.ui.fragment.userPost.UserPostFragmentVM" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/pageBgColor">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/dp10">
+
+                <LinearLayout
+                    android:id="@+id/llSlide"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/corner_white"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp200">
+
+                        <androidx.viewpager.widget.ViewPager
+                            android:id="@+id/viewPager"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                        <com.viewpagerindicator.CirclePageIndicator
+                            android:id="@+id/indicator"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:gravity="center"
+                            android:padding="6dp"
+                            app:fillColor="@android:color/white"
+                            app:pageColor="@color/green"
+                            app:radius="4dp"
+                            app:strokeColor="@color/green" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dp10"
+                        android:layout_marginTop="@dimen/dp10">
+
+                        <TextView
+                            style="@style/TextViewStyleSubTitleRegular"
+                            android:layout_marginTop="@dimen/dp10"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Company Name"
+                            android:textColor="@color/textColorMarket" />
+
+                        <TextView
+                            android:id="@+id/txtCompanyName"
+                            style="@style/TextViewStyleSubTitleRegular"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="@dimen/dp10"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textColor="@color/textColorMarket" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dp10">
+
+                        <TextView
+                            android:id="@+id/txtLocation"
+                            style="@style/TextViewStyleSubTitleRegular"
+                            android:layout_marginTop="@dimen/dp10"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Address"
+                            android:textColor="@color/textColorMarket" />
+
+                        <TextView
+                            android:id="@+id/txtCompanyAddress"
+                            style="@style/TextViewStyleSubTitleRegular"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="@dimen/dp10"
+                            android:layout_marginTop="@dimen/dp10"
+                            android:layout_toEndOf="@+id/txtLocation"
+                            android:fontFamily="@font/poppins_medium"
+                            android:gravity="end|center_vertical"
+                            android:textColor="@color/textColorMarket" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginHorizontal="@dimen/dp10">
+
+
+                        <TextView
+                            android:id="@+id/cvusinessHour"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="@dimen/dp10"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:fontFamily="@font/poppins_medium"
+                            android:padding="5dp"
+                            android:text="@string/view_more"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="10dp">
+
+
+                        </TextView>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvUserPost"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvMessage"
+                android:layout_width="@dimen/dp50"
+                android:layout_height="@dimen/dp50"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="@dimen/dp14"
+                android:layout_marginBottom="@dimen/dp14"
+                android:padding="@dimen/dp10"
+                android:translationX="2dp"
+                app:cardCornerRadius="@dimen/dp30">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp14"
+                    android:src="@drawable/chat_icon" />
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

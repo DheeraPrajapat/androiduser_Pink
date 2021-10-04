@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="callback"
+            type="com.marius.valeyou.di.base.dialog.BaseCustomDialog.Listener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp20"
+            app:cardCornerRadius="@dimen/dp10">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/dp2"
+                android:padding="@dimen/dp10">
+
+                <ImageView
+                    android:id="@+id/iv_cancel"
+                    android:layout_width="@dimen/dp30"
+                    android:layout_height="@dimen/dp30"
+                    android:layout_alignParentEnd="true"
+                    android:onClick="@{v->callback.onViewClick(v)}"
+                    android:src="@drawable/ic_cancel_icon" />
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    style="@style/TextViewStyleSubTitleRegular"
+                    android:layout_below="@+id/iv_cancel"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="Post this add As"
+                    android:textColor="@color/colorPrimary" />
+
+                <RadioGroup
+                    android:id="@+id/rGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_title"
+                    android:layout_marginVertical="@dimen/dp10"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rbPrivate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingHorizontal="@dimen/dp6"
+                        android:paddingVertical="@dimen/dp10"
+                        android:text="Private seller"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp14" />
+
+                    <RadioButton
+                        android:id="@+id/rbCommercial"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dp10"
+                        android:gravity="center"
+                        android:paddingHorizontal="@dimen/dp6"
+                        android:paddingVertical="@dimen/dp10"
+                        android:text="Commercial seller"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp14" />
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:id="@+id/rlCompanies"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rGroup"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/dp10"
+                            android:gravity="center"
+                            android:layout_marginHorizontal="@dimen/sp30"
+                            android:text="Company Name"
+                            android:textColor="@color/colorAccent" />
+
+                        <ImageView
+                            android:id="@+id/ivCreateCompany"
+                            android:layout_width="@dimen/dp40"
+                            android:layout_height="@dimen/dp40"
+                            android:padding="@dimen/sp10"
+                            android:onClick="@{(v)->callback.onViewClick(v)}"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="5dp"
+                            android:src="@drawable/ic_add_icon" />
+                    </RelativeLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvCompanies"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtShopName"
+                    style="@style/TextViewStyleSubTitleRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rlCompanies"
+                    android:layout_marginHorizontal="@dimen/dp20"
+                    android:gravity="center"
+                    android:lineSpacingMultiplier="1.5"
+                    android:textColor="@color/black"
+                    android:visibility="gone" />
+
+
+                <Button
+                    android:id="@+id/btn_submit"
+                    style="@style/RectangleButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/txtShopName"
+                    android:layout_marginHorizontal="@dimen/dp10"
+                    android:layout_marginVertical="@dimen/dp30"
+                    android:onClick="@{(v)->callback.onViewClick(v)}"
+                    android:text="@string/submit"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp14" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</layout>

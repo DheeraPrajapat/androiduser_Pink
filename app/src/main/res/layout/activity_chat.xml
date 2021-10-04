@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="vm"
+            type="com.marius.valeyou.ui.fragment.message.chatview.ChatActivityVM" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/back_gradient_view">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp110"
+                android:background="@color/white" />
+
+           <!-- <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp100"
+                android:background="@color/white"
+                android:layout_marginTop="@dimen/dp100"
+                android:rotation="-10"
+                android:layout_marginStart="-50dp"
+                android:layout_marginEnd="-50dp"
+                />-->
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/cv_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp50"
+            android:orientation="vertical"
+            app:cardCornerRadius="@dimen/dp10">
+
+            <LinearLayout
+                android:id="@+id/rl_user_head"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginEnd="@dimen/dp10"
+                android:paddingBottom="5dp"
+                android:layout_marginBottom="@dimen/dp10">
+
+
+                <LinearLayout
+                    android:id="@+id/ll_picture"
+                    android:layout_width="@dimen/dp60"
+                    android:layout_height="@dimen/dp60"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/back_round_corner5"
+                    android:backgroundTint="?textColorTheme"
+                    android:gravity="center">
+
+                    <androidx.cardview.widget.CardView
+
+                        android:layout_width="@dimen/dp50"
+                        android:layout_height="@dimen/dp50"
+                        android:clickable="true"
+                        android:onClick="@{v->vm.onClick(v)}"
+                        app:cardCornerRadius="@dimen/dp45">
+
+                        <ImageView
+                            android:id="@+id/img_user"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:onClick="@{v->vm.onClick(v)}"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/placeholder" />
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        style="@style/TextViewMedium"
+                        android:layout_width="0dp"
+                        android:layout_marginStart="@dimen/dp10"
+                        android:layout_weight="1"
+                        android:text="Michel Jospeh"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/dp15"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_block"
+                        style="@style/TextViewRegular"
+                        android:layout_below="@id/tv_name"
+                        android:layout_marginStart="@dimen/dp10"
+                        android:layout_marginLeft="@dimen/dp20"
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/back_round_corner3"
+                        android:onClick="@{v->vm.onClick(v)}"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="5dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="5dp"
+                        android:text="@string/block"
+                        android:textColor="@color/edit_text"
+                        android:textSize="13dp"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="60dp"
+                android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/llShop"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:visibility="gone"
+                android:onClick="@{v->vm.onClick(v)}"
+                android:background="@color/grey_light1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvPostName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textSize="@dimen/dp15" />
+
+                <TextView
+                    android:id="@+id/tvPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvPostName"
+                    android:layout_marginRight="5sp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textSize="@dimen/dp15" />
+
+            </LinearLayout>
+
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipeRefreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/llShop"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginEnd="@dimen/dp10"
+                android:layout_marginBottom="60dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_chat_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/rl_user_head" />
+
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/dp5"
+            android:layout_alignParentBottom="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="@dimen/dp5">
+
+
+
+
+                <EditText
+                    android:id="@+id/et_chat"
+                    android:layout_toRightOf="@+id/iv_add"
+                    android:layout_toLeftOf="@+id/iv_send"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    style="@style/EditText_Regular"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/dp10"
+                    android:hint="@string/write_something_here"
+                    android:textColor="@color/grey"
+                    android:background="@android:color/transparent"/>
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp50"
+                    android:layout_height="@dimen/dp50"
+                    android:layout_gravity="bottom"
+                    android:id="@+id/galary"
+                    android:onClick="@{v->vm.onClick(v)}"
+                    android:foreground="?selectableItemBackground"
+                    android:gravity="center"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_gallary" />
+
+                </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="@dimen/dp50"
+                android:layout_height="@dimen/dp50"
+                android:layout_gravity="bottom"
+                android:id="@+id/iv_send"
+                android:onClick="@{v->vm.onClick(v)}"
+                android:foreground="?selectableItemBackground"
+                android:gravity="center"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_send_icon" />
+
+            </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include android:id="@+id/header"
+                layout="@layout/toolbar_layout"
+                app:vm="@{vm}"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

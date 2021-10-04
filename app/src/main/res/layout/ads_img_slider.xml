@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+
+    >
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:id="@+id/img_RV_slider"
+        >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:id="@+id/content_RL"
+
+        android:background="@drawable/trans_slider"
+
+        >
+
+        <!--android:background="#6F000000"-->
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="15dp"
+            android:padding="17dp"
+            android:id="@+id/id_cross"
+            android:src="@drawable/ic_cross_white"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Ad Title"
+            android:layout_toRightOf="@+id/id_cross"
+            android:layout_marginTop="15dp"
+
+
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:id="@+id/ad_title"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Ad Price"
+            android:id="@+id/ad_price"
+            android:layout_toRightOf="@+id/id_cross"
+            android:layout_below="@+id/ad_title"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_alignParentRight="true"
+            android:textSize="14sp"
+            android:text="3/10"
+            android:id="@+id/current_img_num"
+            android:textColor="@color/white"
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:weightSum="1"
+        android:id="@+id/chat_now"
+        android:visibility="gone"
+        android:background="@color/blue"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/makeoffer_tv_id"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:layout_marginTop="1dp"
+            android:text="Make Offer and Chat"
+            android:textSize="14dp"
+            android:visibility="gone"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginTop="1dp"
+            android:textAlignment="center"
+            android:text="Chat Now"
+            android:visibility="gone"
+            android:id="@+id/text_view_chat_now"
+            android:textSize="14dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

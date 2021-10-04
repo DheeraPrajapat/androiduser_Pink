@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:rsb="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="check"
+            type="boolean" />
+
+        <variable
+            name="categoryBean"
+            type="com.marius.valeyou.localMarketModel.responseModel.MarketCategoryModel" />
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.localMarketModel.ui.fragment.home.HomeFragmentMarketVM" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/dp4"
+            android:elevation="@dimen/dp3"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/dp10"
+            android:weightSum="5">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/img0"
+                    android:layout_width="@dimen/dp50"
+                    android:layout_height="@dimen/dp50"
+                    android:background="@drawable/circle_blue_light"
+                    android:padding="@dimen/dp10"
+                    app:profile_image="@{categoryBean.getData().get(0).icon}" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center"
+                    android:paddingVertical="@dimen/dp2"
+                    android:text="@{categoryBean.getData().get(0).name}"
+                    android:textSize="@dimen/sp10" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/img1"
+                    android:layout_width="@dimen/dp50"
+                    android:layout_height="@dimen/dp50"
+                    android:background="@drawable/circle_blue_light"
+                    android:padding="@dimen/dp10"
+                    app:profile_image="@{categoryBean.getData().get(1).icon}" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center"
+                    android:paddingVertical="@dimen/dp2"
+                    android:text="@{categoryBean.getData().get(1).name}"
+                    android:textSize="@dimen/sp10" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/img2"
+                    android:layout_width="@dimen/dp50"
+                    android:layout_height="@dimen/dp50"
+                    android:background="@drawable/circle_blue_light"
+                    android:padding="@dimen/dp10"
+                    app:profile_image="@{categoryBean.getData().get(2).icon}" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center"
+                    android:paddingVertical="@dimen/dp2"
+                    android:text="@{categoryBean.getData().get(2).name}"
+                    android:textSize="@dimen/sp10" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/img3"
+                    android:layout_width="@dimen/dp50"
+                    android:layout_height="@dimen/dp50"
+                    android:background="@drawable/circle_blue_light"
+                    android:padding="@dimen/dp10"
+                    app:profile_image="@{categoryBean.getData().get(3).icon}" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center"
+                    android:paddingVertical="@dimen/dp2"
+                    android:text="@{categoryBean.getData().get(3).name}"
+                    android:textSize="@dimen/sp10" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/llViewAll"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{v->vm.onClick(v)}"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/img4"
+                    android:layout_width="@dimen/dp50"
+                    android:layout_height="@dimen/dp50"
+                    android:background="@drawable/circle_blue_light"
+                    android:padding="@dimen/dp10"
+                    android:src="@drawable/ic_view_all" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center"
+                    android:paddingVertical="@dimen/dp2"
+                    android:text="View All"
+                    android:textSize="@dimen/sp10" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/txtList"
+                android:layout_width="@dimen/dp90"
+                android:layout_height="@dimen/dp30"
+                android:background="@drawable/rounded_corners_grey"
+                android:elevation="@dimen/dp4"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
+                android:onClick="@{v->vm.onClick(v)}"
+                android:padding="@dimen/dp5"
+                android:text="LIST"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp14" />
+
+
+            <TextView
+                android:id="@+id/txtMap"
+                android:layout_width="@dimen/dp90"
+                android:layout_height="@dimen/dp30"
+                android:layout_marginHorizontal="@dimen/dp10"
+                android:background="@drawable/rounded_corners_shape"
+                android:elevation="@dimen/dp4"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
+                android:onClick="@{v->vm.onClick(v)}"
+                android:padding="@dimen/dp5"
+                android:text="MAP"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp14" />
+
+
+            <ImageView
+                android:id="@+id/imgFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{v->vm.onClick(v)}"
+                android:padding="@dimen/dp10"
+                android:src="@drawable/ic_filter_icon" />
+
+            <ImageView
+                android:id="@+id/imgCurrentLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{v->vm.onClick(v)}"
+                android:padding="@dimen/dp10"
+                android:src="@drawable/ic_my_location"
+                app:tint="@color/colorPrimary" />
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relSeek"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtRadius"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp20"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
+                android:text="Radius:10km"
+                android:textSize="@dimen/sp14" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtRadius">
+
+                <androidx.appcompat.widget.AppCompatSeekBar
+                    android:id="@+id/seekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginHorizontal="@dimen/dp10"
+                    android:layout_toStartOf="@+id/txtDone"
+                    android:max="40" />
+
+
+                <TextView
+                    android:id="@+id/txtDone"
+                    android:layout_width="@dimen/dp90"
+                    android:layout_height="@dimen/dp30"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/dp6"
+                    android:background="@drawable/rounded_corners_shape"
+                    android:elevation="@dimen/dp4"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center"
+                    android:onClick="@{v->vm.onClick(v)}"
+                    android:text="Done"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp14" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/frameLayout"
+
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                    <fragment
+                        android:layout_marginBottom="@dimen/dp90"
+                        android:id="@+id/map_view"
+                        class="com.google.android.gms.maps.SupportMapFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/txt_no_record"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/opps_no_ads_around_you"
+                    android:visibility="gone" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_list_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="@dimen/dp90"
+                    android:overScrollMode="never"
+                    android:scrollbars="none"
+                    android:visibility="gone" />
+
+
+            </FrameLayout>
+
+            <include
+                android:id="@+id/bottom_sheet_behavior_id"
+                layout="@layout/home_page_swip_up"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior" />
+
+
+            <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                ads:adSize="SMART_BANNER"
+                ads:adUnitId="@string/banner_ad_unit_id" />
+
+            <ImageView
+                android:id="@+id/createAd"
+                android:layout_width="@dimen/dp50"
+                android:layout_height="@dimen/dp50"
+                android:layout_gravity="bottom|end"
+                android:layout_marginHorizontal="@dimen/dp20"
+                android:layout_marginBottom="@dimen/dp50"
+                android:background="@drawable/circle_blue"
+                android:onClick="@{v->vm.onClick(v)}"
+                android:padding="@dimen/dp6"
+                android:src="@drawable/ic_add"
+                app:tint="@color/white" />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </LinearLayout>
+
+</layout>

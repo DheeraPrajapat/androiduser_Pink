@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp10"
+        android:background="@color/colorPrimaryDark"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp20"
+        android:textSize="@dimen/dp15"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="@string/enter_number_of_hours_to_hire_for"/>
+
+    <EditText
+        android:id="@+id/totalHours"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="10sp"
+        android:inputType="number"
+        android:layout_margin="@dimen/dp20"
+        android:textAlignment="center"
+        android:background="@drawable/edit_white_solid"
+        android:layout_height="@dimen/dp40"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:text="@string/cancelar"
+            android:textColor="@color/grey" />
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save"
+            android:textColor="@color/colorPrimaryDark"
+            android:background="?attr/selectableItemBackground"/>
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

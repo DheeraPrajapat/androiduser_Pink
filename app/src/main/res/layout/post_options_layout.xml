@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="callback"
+            type="com.marius.valeyou.di.base.dialog.BaseCustomDialog.Listener" />
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.ui.activity.main.MainActivityVM"/>
+
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bottom_sheet_background_white"
+        android:gravity="bottom">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/bottom_sheet_background_two"
+            app:cardCornerRadius="@dimen/dp10">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select option"
+                android:textSize="@dimen/dp12"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/dp10"
+                android:textColor="@color/grey"
+                android:layout_gravity="center_horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp10"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/dp30"
+                android:orientation="horizontal"
+                android:elevation="@dimen/dp2">
+
+
+                <LinearLayout
+                    android:id="@+id/ll_post"
+                    android:layout_width="@dimen/dp100"
+                    android:onClick="@{v->vm.onClick(v)}"
+                    android:layout_marginRight="@dimen/sp20"
+                    android:background="@drawable/white_back_with_doted_border"
+                    android:orientation="vertical"
+                    android:layout_height="100dp">
+
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:padding="@dimen/dp12"
+                        android:src="@drawable/ic_job_post"
+                        android:background="@drawable/circle"
+                        android:layout_gravity="center"
+                        android:layout_height="70dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Post Job"
+                        android:textSize="12dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_gravity="center"
+                        android:textColor="?colorPrimaryTheme"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_marketPlace"
+                    android:layout_width="@dimen/dp100"
+                    android:onClick="@{v->vm.onClick(v)}"
+                    android:orientation="vertical"
+                    android:background="@drawable/white_back_with_doted_border"
+                    android:layout_marginLeft="@dimen/sp20"
+                    android:layout_height="@dimen/dp100">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_market_place"
+                        android:background="@drawable/circle"
+                        android:padding="@dimen/dp12"
+                        android:layout_height="70dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Marketplace"
+                        android:textSize="12dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_gravity="center"
+                        android:textColor="?colorPrimaryTheme"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center">
+
+
+            <ImageView
+                android:id="@+id/iv_cancel"
+                android:onClick="@{v->vm.onClick(v)}"
+                android:layout_width="@dimen/dp40"
+                android:layout_height="@dimen/dp40"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="@dimen/dp10"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_cancel_icon"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

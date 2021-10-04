@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="imagePath"
+            type="String" />
+
+        <variable
+            name="bean"
+            type="com.marius.valeyou.localMarketModel.responseModel.marketHome.MarketPostModel" />
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.localMarketModel.ui.fragment.homeListDetail.HomeListDetailFragmentVM" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:padding="@dimen/dp10">
+
+            <ImageView
+                android:id="@+id/imgMain"
+                android:layout_width="@dimen/dp140"
+                android:layout_height="@dimen/dp140"
+                android:layout_gravity="center_horizontal"
+                android:onClick="@{v->vm.onClick(v)}"
+                android:src="@drawable/ic_camera"
+                app:profile_image="@{imagePath}" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dp10">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/imgFav"
+                    android:fontFamily="@font/poppins_medium"
+                    android:paddingHorizontal="@dimen/dp6"
+                    android:paddingVertical="@dimen/dp8"
+                    android:text='@{bean.category}'
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sp14" />
+
+
+                <ImageView
+                    android:id="@+id/imgFav"
+                    android:layout_width="@dimen/dp30"
+                    android:layout_height="@dimen/dp30"
+                    android:layout_marginEnd="@dimen/dp5"
+                    android:layout_toStartOf="@+id/imgDelete"
+                    android:onClick="@{v->vm.onClick(v)}"
+                    android:src='@{bean.fav == 0? @drawable/ic_fav:@drawable/ic_fav_selected}'
+                    app:tint="@color/colorPrimary" />
+
+
+                <ImageView
+                    android:id="@+id/imgDelete"
+                    android:layout_width="@dimen/dp30"
+                    android:layout_height="@dimen/dp30"
+                    android:layout_marginHorizontal="@dimen/dp10"
+                    android:layout_toStartOf="@+id/imgShare"
+                    android:onClick="@{v->vm.onClick(v)}"
+                    android:src="@drawable/ic_delete_icon"
+                    android:visibility="gone"
+                    app:tint="@color/colorPrimary" />
+
+                <ImageView
+                    android:id="@+id/imgShare"
+                    android:layout_width="@dimen/dp30"
+                    android:layout_height="@dimen/dp30"
+                    android:layout_alignParentEnd="true"
+                    android:onClick="@{v->vm.onClick(v)}"
+                    android:src="@drawable/ic_share_icon"
+                    app:tint="@color/colorPrimary" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txtUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:fontFamily="@font/poppins_medium"
+                    android:onClick="@{v->vm.onClick(v)}"
+                    android:paddingHorizontal="@dimen/dp8"
+                    android:paddingVertical="@dimen/dp8"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp14" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtUser"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text='@{bean.getStrPrice()+" brl"}'
+                    android:textColor="@color/textColorMarket"
+                    android:textSize="@dimen/sp18" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp5"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="start"
+                    android:paddingVertical="@dimen/dp5"
+                    android:text="Highlight Display : "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sp13" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="start"
+                    android:paddingVertical="@dimen/dp5"
+                    android:paddingHorizontal="@dimen/dp1"
+                    android:maxLines="1"
+                    android:text='@{bean.capitalize(bean.tag)}'
+                    android:textColor="@color/textColorMarket"
+                    android:textSize="@dimen/sp13" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="start"
+                    android:paddingVertical="@dimen/dp5"
+                    android:text="Description : "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sp13" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="start"
+                    android:paddingVertical="@dimen/dp5"
+                    android:maxLines="3"
+                    android:paddingHorizontal="@dimen/dp1"
+                    android:text='@{bean.capitalize(bean.description)}'
+                    android:textColor="@color/textColorMarket"
+                    android:textSize="@dimen/sp13" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgCall"
+                        android:layout_width="@dimen/dp50"
+                        android:layout_height="@dimen/dp50"
+                        android:background="@drawable/circle_blue"
+                        android:onClick="@{v->vm.onClick(v)}"
+                        android:padding="@dimen/dp12"
+                        android:src="@drawable/ic_call"
+                        app:tint="@color/white" />
+
+
+                    <ImageView
+                        android:id="@+id/imgChat"
+                        android:layout_width="@dimen/dp50"
+                        android:layout_height="@dimen/dp50"
+                        android:layout_marginVertical="@dimen/dp8"
+                        android:background="@drawable/circle_blue"
+                        android:onClick="@{v->vm.onClick(v)}"
+                        android:padding="@dimen/dp10"
+                        android:src="@drawable/chat_icon"
+                        app:tint="@color/white" />
+
+
+                    <ImageView
+                        android:id="@+id/imgLocation"
+                        android:layout_width="@dimen/dp50"
+                        android:layout_height="@dimen/dp50"
+                        android:background="@drawable/circle_blue"
+                        android:onClick="@{v->vm.onClick(v)}"
+                        android:padding="@dimen/dp10"
+                        android:src="@drawable/ic_location"
+                        app:tint="@color/white" />
+
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

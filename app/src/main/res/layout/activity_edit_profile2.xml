@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".localMarketModel.ui.activity.editProfile.EditProfile2Activity">
+
+    <data>
+
+        <variable
+            name="bean"
+            type="com.marius.valeyou.data.beans.signup.SignupData" />
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.ui.fragment.more.profile.editprofile.EditProfileActivityVM" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@color/colorPrimary" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imgBack"
+                    android:layout_width="@dimen/toolbar_height"
+                    android:layout_height="@dimen/toolbar_height"
+                    android:layout_margin="@dimen/dp10"
+                    android:onClick="@{()->vm.onBack()}"
+                    android:padding="@dimen/dp10"
+                    android:src="@drawable/ic_left_arrow" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/edit_profile"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp14" />
+
+                <TextView
+                    android:id="@+id/tv_two"
+                    style="@style/TextViewStyleTitleMedium"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/dp10"
+                    android:foreground="?selectableItemBackground"
+                    android:onClick="@{v->vm.onClick(v)}"
+                    android:padding="@dimen/dp10"
+                    android:text="@string/save"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp14" />
+
+            </RelativeLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_profile"
+                android:layout_width="@dimen/dp80"
+                android:layout_height="@dimen/dp80"
+                android:layout_centerHorizontal="true"
+                android:onClick="@{v->vm.onClick(v)}"
+                android:layout_marginTop="80dp"
+                android:src="@drawable/placeholder"
+                app:civ_border_color="@color/green"
+                app:civ_border_width="@dimen/dp2"
+                app:civ_circle_background_color="@color/grey_light" />
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:fitsSystemWindows="true"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/dp15">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp15"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:text="@string/first_name"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/sp14" />
+
+                    <EditText
+                        android:id="@+id/et_first_name"
+                        style="@style/EditText_Regular"
+                        android:layout_alignParentEnd="true"
+                        android:background="@android:color/transparent"
+                        android:inputType="text"
+                        android:text='@{bean.capitalize(bean.firstName)}'
+                        android:textColor="@color/edit_text" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp1"
+                    android:background="@color/grey_light" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp15"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:text="@string/last_name"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/sp14" />
+
+                    <EditText
+                        android:id="@+id/et_last_name"
+                        style="@style/EditText_Regular"
+                        android:layout_alignParentEnd="true"
+                        android:background="@android:color/transparent"
+                        android:inputType="textEmailAddress"
+                        android:text="@{bean.capitalize(bean.lastName)}"
+                        android:textColor="@color/edit_text" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp1"
+                    android:background="@color/grey_light" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp15"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:text="@string/email"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/sp14" />
+
+                    <EditText
+                        android:id="@+id/et_email"
+                        style="@style/EditText_Regular"
+                        android:layout_alignParentEnd="true"
+                        android:background="@android:color/transparent"
+                        android:inputType="textEmailAddress"
+                        android:text="@{bean.email}"
+                        android:textColor="@color/edit_text" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp1"
+                    android:background="@color/grey_light" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp15"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:text="@string/phone"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/sp14" />
+
+                    <EditText
+                        android:id="@+id/et_phone"
+                        style="@style/EditText_Regular"
+                        android:layout_alignParentEnd="true"
+                        android:background="@android:color/transparent"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:text="@{bean.phone}"
+                        android:textColor="@color/edit_text" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp1"
+                    android:background="@color/grey_light" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp15"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:text="@string/date_of_birth"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/sp14" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <Spinner
+                                    android:id="@+id/etDate"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_weight="1"
+                                    android:background="@android:color/transparent"
+                                    android:fontFamily="@font/sfpro_regular"
+                                    android:singleLine="true"
+                                    android:textColor="@color/edit_text"
+                                    android:textSize="@dimen/sp14"
+                                    android:visibility="invisible" />
+
+                                <EditText
+                                    android:id="@+id/etday"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginRight="5dp"
+                                    android:background="@android:color/transparent"
+                                    android:editable="false"
+                                    android:focusable="false"
+                                    android:fontFamily="@font/sfpro_regular"
+                                    android:onClick="@{v->vm.onClick(v)}"
+                                    android:padding="15dp"
+                                    android:singleLine="true"
+                                    android:text="@string/day"
+                                    android:textColor="@color/edit_text"
+                                    android:textSize="@dimen/sp14" />
+
+                            </FrameLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp1"
+                                android:background="@color/grey_light" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="/"
+                            android:textSize="14dp" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/etMonth"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginRight="5dp"
+                                android:background="@android:color/transparent"
+                                android:editable="false"
+                                android:focusable="false"
+                                android:fontFamily="@font/sfpro_regular"
+                                android:onClick="@{v->vm.onClick(v)}"
+                                android:padding="15dp"
+                                android:singleLine="true"
+                                android:text="@string/month"
+                                android:textColor="@color/edit_text"
+                                android:textSize="@dimen/sp14" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp1"
+                                android:background="@color/grey_light" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="/"
+                            android:textSize="14dp" />
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/etYear"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginRight="5dp"
+                                android:background="@android:color/transparent"
+                                android:editable="false"
+                                android:focusable="false"
+                                android:fontFamily="@font/sfpro_regular"
+                                android:onClick="@{v->vm.onClick(v)}"
+                                android:padding="15dp"
+                                android:singleLine="true"
+                                android:text="@string/year"
+                                android:textColor="@color/edit_text"
+                                android:textSize="@dimen/sp14" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp1"
+                                android:background="@color/grey_light" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp15"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:text="@string/address"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/sp14" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.seatgeek.placesautocomplete.PlacesAutocompleteTextView
+                            android:id="@+id/et_address"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/white"
+                            android:maxLines="3"
+                            android:paddingLeft="10sp"
+                            android:text='@{bean.location}'
+                            android:textColor="@color/edit_text"
+                            android:textSize="@dimen/dp14"
+                            app:pacv_adapterClass="com.marius.valeyou.util.TestPlacesAutocompleteAdapter"
+                            app:pacv_clearEnabled="true"
+                            app:pacv_googleMapsApiKey="AIzaSyA1QFn0_Ba7zVSEt8Sng528LXZuEn9JcMc"
+                            app:pacv_languageCode="en"
+                            app:pacv_resultType="no_type" />
+
+
+                        <ImageView
+                            android:id="@+id/iv_location"
+                            android:layout_width="@dimen/dp30"
+                            android:layout_height="match_parent"
+                            android:onClick="@{v->vm.onClick(v)}"
+                            android:padding="@dimen/dp1"
+                            android:src="@drawable/ic_miles_icon"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp1"
+                    android:background="@color/grey_light" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp15"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:text="@string/state"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/sp14" />
+
+                    <EditText
+                        android:id="@+id/et_state"
+                        style="@style/EditText_Regular"
+                        android:layout_alignParentEnd="true"
+                        android:background="@android:color/transparent"
+                        android:inputType="text"
+                        android:onClick="@{(v)->vm.onClick(v)}"
+                        android:text="@{bean.capitalize(bean.state)}"
+                        android:textColor="@color/edit_text" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp1"
+                    android:background="@color/grey_light" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_states"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp15"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:text="@string/city"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/sp14" />
+
+                    <EditText
+                        android:id="@+id/et_city"
+                        style="@style/EditText_Regular"
+                        android:layout_alignParentEnd="true"
+                        android:background="@android:color/transparent"
+                        android:inputType="text"
+                        android:onClick="@{(v)->vm.onClick(v)}"
+                        android:text="@{bean.capitalize(bean.city)}"
+                        android:textColor="@color/edit_text" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp1"
+                    android:background="@color/grey_light" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_cities"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:visibility="gone" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp15"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:text="@string/about_me"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/sp14" />
+
+                    <EditText
+                        android:id="@+id/et_about"
+                        style="@style/EditText_Regular"
+                        android:text="@{bean.capitalize(bean.description)}"
+                        android:layout_alignParentEnd="true"
+                        android:background="@android:color/transparent"
+                         android:textColor="@color/edit_text" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</layout>

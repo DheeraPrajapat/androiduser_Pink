@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+
+        <variable
+            name="bean"
+            type="com.marius.valeyou.data.beans.respbean.GetProfileBean" />
+
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.localMarketModel.ui.activity.other_user_profile.OtherUserProfileVM" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/rlToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp150"
+            android:background="@color/colorPrimary"
+            android:paddingTop="40dp">
+
+            <ImageView
+                android:id="@+id/imgBack"
+                android:layout_width="@dimen/toolbar_height"
+                android:layout_height="50dp"
+                android:background="?selectableItemBackground"
+                android:onClick="@{()->vm.onBack()}"
+                android:padding="@dimen/dp15"
+                android:src="@drawable/ic_back_white" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_toEndOf="@+id/imgBack"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center_vertical"
+                android:paddingTop="2dp"
+                android:text="Profile"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp16" />
+
+        </RelativeLayout>
+
+        <ScrollView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp120"
+            android:background="@drawable/rounded_corners_shape"
+            android:backgroundTint="@color/white"
+            android:fillViewport="true"
+            android:paddingHorizontal="@dimen/dp10"
+            android:paddingTop="@dimen/dp45">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextViewStyleSubTitleRegular"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text='@{bean.firstName+" "+bean.lastName}'
+                    android:textColor="@color/textColorMarket"
+                    android:textSize="@dimen/sp12" />
+
+                <TextView
+                    style="@style/TextViewStyleTitleMedium"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text='@{bean.location}'
+                    android:textColor="@color/textColorMarket"
+                    android:textSize="@dimen/sp16" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Name"
+                        android:textColor="@color/textColorMarket" />
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text='@{bean.firstName+" "+bean.lastName}'
+                        android:textColor="@color/textColorMarket" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="@dimen/dp10"
+                    android:background="@color/grey_light"
+                    android:visibility="gone" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Email"
+                        android:textColor="@color/textColorMarket" />
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text='@{bean.email}'
+                        android:textColor="@color/textColorMarket" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="@dimen/dp10"
+                    android:background="@color/grey_light" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Phone Number"
+                        android:textColor="@color/textColorMarket" />
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text='@{bean.phone}'
+                        android:textColor="@color/textColorMarket" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="@dimen/dp10"
+                    android:background="@color/grey_light" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/date_of_birth"
+                        android:textColor="@color/textColorMarket" />
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text='@{bean.dob}'
+                        android:textColor="@color/textColorMarket" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="@dimen/dp10"
+                    android:background="@color/grey_light" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txtLocation"
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Address"
+                        android:textColor="@color/textColorMarket" />
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/dp10"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:layout_toEndOf="@+id/txtLocation"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="end|center_vertical"
+                        android:text='@{bean.location}'
+                        android:textColor="@color/textColorMarket" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="@dimen/dp10"
+                    android:background="@color/grey_light" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible">
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Category"
+                        android:textColor="@color/textColorMarket" />
+
+                    <TextView
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Auto/Boat"
+                        android:textColor="@color/textColorMarket" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="@dimen/dp10"
+                    android:background="@color/grey_light"
+                    android:visibility="invisible" />
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="@dimen/dp70"
+            android:layout_height="@dimen/dp70"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp80"
+            android:padding="@dimen/dp1"
+
+            android:scaleType="centerCrop"
+            app:civ_border_color="@color/grey_light"
+            app:civ_border_width="@dimen/dp1"
+            app:profile_image="@{bean.image}" />
+
+    </RelativeLayout>
+
+</layout>

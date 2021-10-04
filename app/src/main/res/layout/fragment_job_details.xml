@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="loading"
+            type="boolean" />
+
+        <variable
+            name="bean"
+            type="com.marius.valeyou.data.beans.respbean.JobDetailsBean" />
+
+        <variable
+            name="vm"
+            type="com.marius.valeyou.ui.fragment.myjob.jobdetails.JobDetailsFragmentVM" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/back_gradient_view">
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:background="@color/colorPrimary"
+            android:layout_height="@dimen/toolbar_height">
+
+            <ImageView
+                android:id="@+id/image_Back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="?selectableItemBackground"
+                android:padding="@dimen/dp15"
+                android:onClick="@{v->vm.onClick(v)}"
+                android:src="@drawable/ic_back_icon"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:layout_marginTop="@dimen/dp150"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp100"
+                android:background="@color/white"
+                android:layout_marginTop="@dimen/dp100"
+                android:rotation="-10"
+                android:layout_marginStart="-50dp"
+                android:layout_marginEnd="-50dp"
+                />
+
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp60"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginEnd="@dimen/dp10"
+            android:layout_marginBottom="@dimen/dp80"
+            app:cardCornerRadius="@dimen/dp10">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                android:overScrollMode="never"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_margin="@dimen/dp10">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_one"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/back_round_corner2"
+                        android:padding="@dimen/dp10"
+                        android:layout_margin="@dimen/dp5"
+                        android:backgroundTint="@color/white"
+                        android:elevation="@dimen/dp2">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_one"
+                            android:layout_width="@dimen/dp70"
+                            android:layout_height="@dimen/dp70"
+                            android:layout_margin="@dimen/dp10"
+                            app:cardCornerRadius="10dp">
+
+                        <ImageView
+                            android:id="@+id/iv_one"
+                            android:layout_width="@dimen/dp70"
+                            android:layout_height="@dimen/dp70"
+                            app:job_detail_image_src='@{bean.orderImages}'
+                            android:scaleType="centerCrop"
+                            />
+                        </androidx.cardview.widget.CardView>
+
+                        <LinearLayout
+                            android:layout_toRightOf="@+id/cv_one"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                style="@style/TextViewStyleSubTitleRegular"
+                                android:text="@{bean.title}" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    style="@style/TextViewStyleSubTitleRegular"
+                                    android:textSize="@dimen/sp12"
+                                    android:textColor="@color/edit_text"
+                                    android:paddingEnd="@dimen/dp10"
+                                    android:text="@string/job_status"
+                                    />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                style="@style/TextViewStyleSubTitleRegular"
+                                android:textSize="@dimen/sp12"
+                                android:textColor="@color/edit_text"
+                                android:paddingEnd="@dimen/dp10"
+                                app:type='@{bean.type}'
+                                android:job_status='@{bean.status}'
+                                />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    style="@style/TextViewStyleSubTitleRegular"
+                                    android:textSize="@dimen/sp12"
+                                    android:textColor="@color/edit_text"
+                                    android:paddingEnd="@dimen/dp10"
+                                    android:text="@string/price"
+                                    />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    style="@style/TextViewStyleSubTitleRegular"
+                                    android:textSize="@dimen/sp12"
+                                    android:textColor="@color/black"
+                                    android:paddingEnd="@dimen/dp10"
+                                    android:text='@{bean.endPrice+" brl"}'
+                                    />
+                            </LinearLayout>
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                style="@style/TextViewStyleSubTitleRegular"
+                                android:textSize="@dimen/sp12"
+                                android:textColor="@color/edit_text"
+                                android:paddingEnd="@dimen/dp10"
+                                android:visibility='@{bean.jobType==0?View.GONE:View.VISIBLE}'
+                                android:text='@{"Confirmation Code : "+bean.confirmationCode}'
+                                />
+
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/rl_two"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/back_round_corner2"
+                        android:padding="@dimen/dp10"
+                        android:layout_margin="@dimen/dp5"
+                        android:backgroundTint="@color/white"
+                        android:orientation="vertical"
+                        android:elevation="@dimen/dp2">
+
+                        <TextView
+                            style="@style/TextViewStyleSubTitleRegular"
+                            android:text="@string/location" />
+
+                        <TextView
+                            style="@style/TextViewStyleSubTitleRegular"
+                            android:textSize="@dimen/sp12"
+                            android:textColor="@color/edit_text"
+                            android:drawableLeft="@drawable/ic_miles_icon"
+                            android:drawablePadding="@dimen/dp5"
+                            android:text='@{bean.city}' />
+
+                        <TextView
+                            android:id="@+id/txtTime"
+                            style="@style/TextViewStyleSubTitleRegular"
+                            android:textSize="@dimen/sp12"
+                            android:textColor="@color/edit_text"
+                            android:drawableLeft="@drawable/ic_calendar_icon"
+                            android:drawablePadding="@dimen/dp5"
+                           />
+
+
+
+
+                        <TextView
+                            style="@style/TextViewStyleSubTitleRegular"
+                            android:text="@string/category"
+                            android:layout_marginTop="@dimen/dp10"/>
+
+                        <TextView
+                            android:id="@+id/txtcategory"
+                            style="@style/TextViewStyleSubTitleRegular"
+                            android:textSize="@dimen/sp12"
+                            android:textColor="@color/edit_text"
+                            />
+
+
+                        <TextView
+                            style="@style/TextViewStyleSubTitleRegular"
+                            android:text="@string/description"
+                            android:layout_marginTop="@dimen/dp5"/>
+
+                        <TextView
+                            style="@style/TextViewStyleSubTitleRegular"
+                            android:textSize="@dimen/sp12"
+                            android:textColor="@color/edit_text"
+                            android:text="@{bean.description}" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp100"
+                            android:visibility="gone"
+                            android:layout_marginTop="@dimen/dp10">
+
+                            <ImageView
+                                android:layout_width="@dimen/dp100"
+                                android:layout_height="@dimen/dp100"
+                                android:background="@color/light_green"/>
+
+                            <ImageView
+                                android:layout_width="@dimen/dp100"
+                                android:layout_height="@dimen/dp100"
+                                android:layout_alignParentEnd="true"
+                                android:background="@color/light_green"/>
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/proText"
+                        style="@style/TextViewStyleSubTitleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12dp"
+                        android:visibility="gone"
+                        android:layout_marginLeft="@dimen/dp10"
+                        android:text="Provider"/>
+
+                <LinearLayout
+                    android:id="@+id/ll_provider_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/back_round_corner2"
+                    android:padding="@dimen/dp10"
+                    android:visibility="gone"
+                    android:onClick="@{(v)->vm.onClick(v)}"
+                    android:layout_margin="@dimen/dp5"
+                    android:backgroundTint="@color/white"
+                    android:orientation="horizontal"
+                    android:elevation="@dimen/dp2">
+
+
+                    <com.marius.valeyou.util.glide.CircleImageView
+                        android:layout_width="@dimen/dp50"
+                        android:src="@drawable/placeholder"
+                        app:profile_image='@{bean.provider.image}'
+                        android:layout_height="@dimen/dp50"/>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dp15"
+                            android:fontFamily="@font/sfpro_regular"
+                            android:layout_gravity="center_vertical"
+                            android:text='@{bean.provider.firstName+" "+bean.provider.lastName}'
+                            />
+
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+
+                    <Button
+                        android:id="@+id/cancelJobBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/cancel_job"
+                        android:layout_margin="10dp"
+                        android:visibility="gone"
+                        android:textColor="@color/white"
+                        style="@style/RectangleButtonStyle"
+                        android:onClick="@{(v)->vm.onClick(v)}"/>
+
+                    <Button
+                        android:id="@+id/deleteJobBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/delete_job"
+                        android:layout_margin="10dp"
+                        android:visibility="gone"
+                        android:textColor="@color/white"
+                        style="@style/RectangleButtonStyle"
+                        android:onClick="@{(v)->vm.onClick(v)}"/>
+
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_bids"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/no_bid_yet"
+                            style="@style/TextViewStyleTitleMedium"
+                            android:textColor="@color/grey"
+                            android:visibility='@{bean.status==0?View.VISIBLE:View.GONE}'
+                            android:layout_centerHorizontal="true"
+                            android:padding="@dimen/dp10"/>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_bids"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false"
+                            android:minHeight="@dimen/dp100"
+                            android:overScrollMode="never"
+                            android:scrollbars="none"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.cardview.widget.CardView>
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/spin_kit"
+            style="@style/SpinKitView.Large.ThreeBounce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="@{loading?View.VISIBLE:View.GONE}"
+            app:SpinKit_Color="?textColorTheme" />
+
+    </RelativeLayout>
+
+</layout>

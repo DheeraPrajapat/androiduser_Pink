@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="bean"
+            type="com.marius.valeyou.data.beans.StatesModel" />
+
+        <variable
+            name="callback"
+            type="com.marius.valeyou.di.base.adapter.SimpleRecyclerViewAdapter.SimpleCallback" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_states"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:orientation="vertical"
+        android:onClick="@{v->callback.onItemClick(v,bean)}">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            style="@style/TextViewStyleSubTitleRegular"
+            android:padding="@dimen/dp5"
+            android:text="@{bean.name}"
+            android:drawablePadding="@dimen/dp10"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/sp12" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/grey_light"/>
+
+
+    </LinearLayout>
+
+</layout>

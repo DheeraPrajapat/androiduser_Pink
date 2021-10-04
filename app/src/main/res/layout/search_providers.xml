@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <variable
+            name="bean"
+            type="com.marius.valeyou.data.beans.respbean.ProviderNearMe" />
+
+        <variable
+            name="callback"
+            type="com.marius.valeyou.di.base.adapter.SimpleRecyclerViewAdapter.SimpleCallback" />
+    </data>
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rl_one"
+            android:onClick="@{v->callback.onItemClick(v,bean)}"
+            android:foreground="?selectableItemBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp5"
+            android:padding="@dimen/dp10"
+            android:backgroundTint="@color/white"
+            android:elevation="@dimen/dp2">
+
+            <TextView
+                android:layout_toRightOf="@+id/iv_one"
+                android:layout_width="match_parent"
+                style="@style/TextViewStyleSubTitleRegular"
+               android:text='@{bean.firstName+" "+bean.lastName}'
+                android:textColor="@color/grey"
+                android:layout_centerVertical="true"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>
